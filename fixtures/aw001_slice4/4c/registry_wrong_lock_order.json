@@ -1,0 +1,159 @@
+{
+  "contract_version": "0.5.0-rc1-slice4c",
+  "global_lock_order": [
+    "FulfillmentTicket",
+    "ProtectiveOrder",
+    "Case / Commitment",
+    "AuthorityRecord",
+    "CommandRecord"
+  ],
+  "actions": {
+    "STAGE_OUTPUT_RELEASE": {
+      "required_power": "STAGE_OUTPUT_RELEASE",
+      "requires_effectiveness_envelope": true,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_INTAKE_OR_FOUR_TUPLE",
+        "CHECK_OUTPUT_RELEASE",
+        "CHECK_RECOVERY_TEMPLATE_DEPLOYMENT",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "write_policy": "CREATE_OUTPUT_STAGING"
+    },
+    "PUBLISH_LOCAL_OUTPUT": {
+      "required_power": "PUBLISH_LOCAL_OUTPUT",
+      "requires_effectiveness_envelope": true,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_INTAKE_OR_FOUR_TUPLE",
+        "CHECK_OUTPUT_RELEASE",
+        "CHECK_RECOVERY_TEMPLATE_DEPLOYMENT",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "write_policy": "PUBLISH_STAGING_LOCAL"
+    },
+    "WITHDRAW_OUTPUT": {
+      "required_power": "WITHDRAW_OUTPUT",
+      "requires_effectiveness_envelope": true,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_INTAKE_OR_FOUR_TUPLE",
+        "CHECK_OUTPUT_RELEASE",
+        "CHECK_RECOVERY_TEMPLATE_DEPLOYMENT",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "write_policy": "WITHDRAW_ARTIFACT_AND_BUMP_POLICY"
+    },
+    "DISPATCH_NOTIFICATION": {
+      "required_power": "DISPATCH_NOTIFICATION",
+      "requires_effectiveness_envelope": true,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_INTAKE_OR_FOUR_TUPLE",
+        "CHECK_OUTPUT_RELEASE",
+        "CHECK_RECOVERY_TEMPLATE_DEPLOYMENT",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "write_policy": "DISPATCH_NOTIFICATION_ONCE"
+    },
+    "RECORD_RECOVERY_MANIFEST": {
+      "required_power": "RECORD_RECOVERY_MANIFEST",
+      "requires_effectiveness_envelope": true,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_INTAKE_OR_FOUR_TUPLE",
+        "CHECK_OUTPUT_RELEASE",
+        "CHECK_RECOVERY_TEMPLATE_DEPLOYMENT",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "write_policy": "CREATE_RECOVERY_MANIFEST"
+    },
+    "INSTALL_TEMPLATE_PACKAGE": {
+      "required_power": "INSTALL_TEMPLATE_PACKAGE",
+      "requires_effectiveness_envelope": true,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_INTAKE_OR_FOUR_TUPLE",
+        "CHECK_OUTPUT_RELEASE",
+        "CHECK_RECOVERY_TEMPLATE_DEPLOYMENT",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "write_policy": "CREATE_TEMPLATE_INSTALLATION"
+    },
+    "RECORD_DEPLOYMENT_MANIFEST": {
+      "required_power": "RECORD_DEPLOYMENT_MANIFEST",
+      "requires_effectiveness_envelope": true,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_INTAKE_OR_FOUR_TUPLE",
+        "CHECK_OUTPUT_RELEASE",
+        "CHECK_RECOVERY_TEMPLATE_DEPLOYMENT",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "write_policy": "CREATE_DEPLOYMENT_RECORD"
+    }
+  }
+}

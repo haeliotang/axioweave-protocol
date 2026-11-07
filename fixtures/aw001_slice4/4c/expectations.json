@@ -1,0 +1,138 @@
+{
+  "pt_stage_output": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_publish_local_output": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_withdraw_output": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_dispatch_notification": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_dispatch_metadata_only": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_rejected_publish_withdrawn_artifact": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_recovery_manifest_complete": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_recovery_manifest_quarantined": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_install_template": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_record_deployment": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_record_incompatible_deployment": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_rejected_stage_withdrawn": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_rejected_stage_stale_policy": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_rejected_publish_stale_policy": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_rejected_publish_already_published": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_rejected_withdraw_twice": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_rejected_dispatch_after_withdrawal": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_rejected_dispatch_twice": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_rejected_recovery_preserved_after_mismatch": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_rejected_template_contract_unsupported": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_rejected_deployment_operator_unmapped": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "ft_deployment_refs_missing": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": "ERR_UNRESOLVED_EVIDENCE_REFERENCE"
+  },
+  "ft_missing_four_tuple": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": "ERR_INCOMPLETE_FOUR_TUPLE"
+  },
+  "ft_receipt_binding": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": "ERR_RECEIPT_BINDING_MISMATCH"
+  },
+  "ft_declared_outcome": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": "ERR_DECLARED_OUTCOME_MISMATCH"
+  },
+  "ft_rejected_domain_mutation": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": "ERR_REJECTED_DOMAIN_MUTATION"
+  },
+  "ft_applied_wrong_domain": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": "ERR_WRITE_SET_VIOLATION"
+  },
+  "ft_schema_release_now": {
+    "validation_layer": "JSON_SCHEMA",
+    "error_code": "ERR_CLIENT_FORBIDDEN_FIELD"
+  },
+  "ft_schema_execution_restore": {
+    "validation_layer": "JSON_SCHEMA",
+    "error_code": "ERR_CLIENT_FORBIDDEN_FIELD"
+  },
+  "ft_schema_charter_override": {
+    "validation_layer": "JSON_SCHEMA",
+    "error_code": "ERR_CLIENT_FORBIDDEN_FIELD"
+  },
+  "ft_schema_template_authorization": {
+    "validation_layer": "JSON_SCHEMA",
+    "error_code": "ERR_CLIENT_FORBIDDEN_FIELD"
+  },
+  "registry_valid": {
+    "validation_layer": "REGISTRY_LOADER",
+    "error_code": null
+  },
+  "registry_missing_validator": {
+    "validation_layer": "REGISTRY_LOADER",
+    "error_code": "ERR_REGISTRY_MANDATORY_VALIDATOR_MISSING"
+  },
+  "registry_wrong_lock_order": {
+    "validation_layer": "REGISTRY_LOADER",
+    "error_code": "ERR_REGISTRY_LOCK_ORDER_MISMATCH"
+  }
+}

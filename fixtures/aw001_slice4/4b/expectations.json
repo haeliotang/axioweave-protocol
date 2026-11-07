@@ -1,0 +1,142 @@
+{
+  "pt_baseline_v1": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_baseline_update": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_branch": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_branch_hypothetical": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_open_ai_session": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_ai_draft": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_confirm_ai_draft_accepted": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_confirm_ai_draft_rejected": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_revoke_ai_session": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_freeze_branch_candidate": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_rejected_branch_param_not_allowed": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_rejected_branch_stale_base": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_rejected_session_forbidden_input": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_rejected_session_purpose_not_allowed": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_rejected_session_cross_case_input": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_rejected_draft_source_not_allowed": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_rejected_draft_session_revoked": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_rejected_confirm_non_human": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_rejected_confirm_already_confirmed": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_rejected_revoke_revoked": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_rejected_freeze_stale_branch": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_rejected_freeze_hypothetical": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_rejected_freeze_gates_incomplete": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_rejected_baseline_version_conflict": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "ft_missing_four_tuple": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": "ERR_INCOMPLETE_FOUR_TUPLE"
+  },
+  "ft_receipt_binding": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": "ERR_RECEIPT_BINDING_MISMATCH"
+  },
+  "ft_declared_outcome": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": "ERR_DECLARED_OUTCOME_MISMATCH"
+  },
+  "ft_rejected_domain_mutation": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": "ERR_REJECTED_DOMAIN_MUTATION"
+  },
+  "ft_applied_wrong_domain": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": "ERR_WRITE_SET_VIOLATION"
+  },
+  "ft_schema_effective_action": {
+    "validation_layer": "JSON_SCHEMA",
+    "error_code": "ERR_CLIENT_FORBIDDEN_FIELD"
+  },
+  "ft_schema_actor_field": {
+    "validation_layer": "JSON_SCHEMA",
+    "error_code": "ERR_CLIENT_FORBIDDEN_FIELD"
+  },
+  "ft_schema_human_approved_field": {
+    "validation_layer": "JSON_SCHEMA",
+    "error_code": "ERR_CLIENT_FORBIDDEN_FIELD"
+  },
+  "registry_valid": {
+    "validation_layer": "REGISTRY_LOADER",
+    "error_code": null
+  },
+  "registry_missing_validator": {
+    "validation_layer": "REGISTRY_LOADER",
+    "error_code": "ERR_REGISTRY_MANDATORY_VALIDATOR_MISSING"
+  },
+  "registry_wrong_lock_order": {
+    "validation_layer": "REGISTRY_LOADER",
+    "error_code": "ERR_REGISTRY_LOCK_ORDER_MISMATCH"
+  }
+}

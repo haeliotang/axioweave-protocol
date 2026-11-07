@@ -1,0 +1,75 @@
+{
+  "contract_version": "0.4.0-rc1-slice3b",
+  "global_lock_order": [
+    "FulfillmentTicket",
+    "ProtectiveOrder",
+    "Case / Commitment",
+    "AuthorityRecord",
+    "CommandRecord"
+  ],
+  "actions": {
+    "DEFINE_OBSERVABLE_METRIC": {
+      "required_power": "DEFINE_OBSERVABLE_METRIC",
+      "requires_effectiveness_envelope": true,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_INTAKE_OR_FOUR_TUPLE",
+        "CHECK_METRIC_WINDOW_AND_BUCKETS",
+        "CHECK_METRIC_LEDGER",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "write_policy": "CREATE_OBSERVABLE_METRIC_SPEC"
+    },
+    "EVALUATE_METRIC_WINDOW": {
+      "required_power": "EVALUATE_METRIC_WINDOW",
+      "requires_effectiveness_envelope": true,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_INTAKE_OR_FOUR_TUPLE",
+        "CHECK_METRIC_WINDOW_AND_BUCKETS",
+        "CHECK_METRIC_LEDGER",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "write_policy": "CREATE_METRIC_EVALUATION"
+    },
+    "EXTEND_METRIC_WINDOW": {
+      "required_power": "EXTEND_METRIC_WINDOW",
+      "requires_effectiveness_envelope": true,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_INTAKE_OR_FOUR_TUPLE",
+        "CHECK_METRIC_WINDOW_AND_BUCKETS",
+        "CHECK_METRIC_LEDGER",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "write_policy": "EXTEND_METRIC_EVALUATION"
+    }
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "contract_version": "0.3.0-rc1-slice2c",
+  "global_lock_order": [
+    "CommandRecord",
+    "AuthorityRecord",
+    "Case / Commitment",
+    "ProtectiveOrder",
+    "FulfillmentTicket"
+  ],
+  "actions": {
+    "SUBMIT_APPEAL": {
+      "required_power": null,
+      "requires_effectiveness_envelope": false,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_INTAKE_OR_FOUR_TUPLE",
+        "CHECK_INDIVIDUAL_AUTHORITY_AND_CONSENT",
+        "CHECK_QUALIFIED_POOL",
+        "CHECK_HISTORICAL_RECUSAL",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "write_policy": "CREATE_APPEAL_ONLY"
+    },
+    "OPEN_APPEAL_ADMISSIBILITY_REVIEW": {
+      "required_power": "REVIEW_APPEAL_ADMISSIBILITY",
+      "requires_effectiveness_envelope": true,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_INTAKE_OR_FOUR_TUPLE",
+        "CHECK_INDIVIDUAL_AUTHORITY_AND_CONSENT",
+        "CHECK_QUALIFIED_POOL",
+        "CHECK_HISTORICAL_RECUSAL",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "write_policy": "OPEN_REVIEW_ONLY"
+    },
+    "RULE_APPEAL_ADMISSIBILITY": {
+      "required_power": "REVIEW_APPEAL_ADMISSIBILITY",
+      "requires_effectiveness_envelope": true,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_INTAKE_OR_FOUR_TUPLE",
+        "CHECK_INDIVIDUAL_AUTHORITY_AND_CONSENT",
+        "CHECK_QUALIFIED_POOL",
+        "CHECK_HISTORICAL_RECUSAL",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "write_policy": "ADMISSIBILITY_ONLY"
+    },
+    "ADJUDICATE_APPEAL": {
+      "required_power": "ADJUDICATE_APPEAL",
+      "requires_effectiveness_envelope": true,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_INTAKE_OR_FOUR_TUPLE",
+        "CHECK_INDIVIDUAL_AUTHORITY_AND_CONSENT",
+        "CHECK_QUALIFIED_POOL",
+        "CHECK_HISTORICAL_RECUSAL",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "write_policy": "MERITS_ONLY"
+    },
+    "RECORD_SOD_DEFERRAL": {
+      "required_power": "ESCALATE_OR_DEFER_FOR_SOD",
+      "requires_effectiveness_envelope": true,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_INTAKE_OR_FOUR_TUPLE",
+        "CHECK_INDIVIDUAL_AUTHORITY_AND_CONSENT",
+        "CHECK_QUALIFIED_POOL",
+        "CHECK_HISTORICAL_RECUSAL",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "write_policy": "DEFERRAL_ONLY"
+    },
+    "APPROVE_COMMITMENT_COLLECTIVE": {
+      "required_power": "APPROVE_COMMITMENT",
+      "requires_effectiveness_envelope": true,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_INTAKE_OR_FOUR_TUPLE",
+        "CHECK_INDIVIDUAL_AUTHORITY_AND_CONSENT",
+        "CHECK_QUALIFIED_POOL",
+        "CHECK_HISTORICAL_RECUSAL",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "write_policy": "UPDATE_POOL_CREATE_COMMITMENT_ALL_TICKETS"
+    }
+  }
+}

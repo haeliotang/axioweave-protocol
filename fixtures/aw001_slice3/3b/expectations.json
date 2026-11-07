@@ -1,0 +1,150 @@
+{
+  "pt_define_metric": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_evaluation_satisfied_lt": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_evaluation_violated_lt": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_evaluation_indeterminate_uncertainty": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_evaluation_gte_satisfied": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_evaluation_within_band_satisfied": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_evaluation_outside_band_violated": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_evaluation_insufficient_coverage": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_evaluation_not_yet_evaluated": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_evaluation_gap_bounds": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_evaluation_point_estimate_preapproved": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_evaluation_statistical_interval": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_evaluation_duplicate_dedupe": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_extend_window_late_data": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_rejected_unaligned_window": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_rejected_observation_outside_window": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_rejected_observation_time_invalid": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_rejected_dedupe_key_missing": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_rejected_interval_invalid": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_rejected_band_invalid": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_rejected_interval_type_mismatch": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_rejected_confidence_missing": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_rejected_point_estimate_not_preapproved": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_rejected_version_conflict": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_rejected_supersedes_mismatch": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_rejected_window_not_extended": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "pt_rejected_duplicate_metric": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": null
+  },
+  "ft_missing_four_tuple": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": "ERR_INCOMPLETE_FOUR_TUPLE"
+  },
+  "ft_receipt_binding": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": "ERR_RECEIPT_BINDING_MISMATCH"
+  },
+  "ft_declared_outcome": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": "ERR_DECLARED_OUTCOME_MISMATCH"
+  },
+  "ft_rejected_domain_mutation": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": "ERR_REJECTED_DOMAIN_MUTATION"
+  },
+  "ft_applied_wrong_domain": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": "ERR_WRITE_SET_VIOLATION"
+  },
+  "ft_schema_interpolation": {
+    "validation_layer": "JSON_SCHEMA",
+    "error_code": "ERR_CLIENT_FORBIDDEN_FIELD"
+  },
+  "ft_coverage_claimed_as_violation": {
+    "validation_layer": "OFFLINE_SEMANTIC",
+    "error_code": "ERR_WRITE_SET_VIOLATION"
+  },
+  "registry_valid": {
+    "validation_layer": "REGISTRY_LOADER",
+    "error_code": null
+  },
+  "registry_missing_validator": {
+    "validation_layer": "REGISTRY_LOADER",
+    "error_code": "ERR_REGISTRY_MANDATORY_VALIDATOR_MISSING"
+  },
+  "registry_wrong_lock_order": {
+    "validation_layer": "REGISTRY_LOADER",
+    "error_code": "ERR_REGISTRY_LOCK_ORDER_MISMATCH"
+  }
+}

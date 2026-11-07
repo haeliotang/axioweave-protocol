@@ -1,0 +1,27 @@
+[
+  {
+    "command": [
+      "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+      "tools/validate_aw001_slice2c.py",
+      "fixtures/aw001_slice2/2c/pt_submit_minimal.json",
+      "fixtures/aw001_slice2/2c/pt_adjudicate_upheld.json",
+      "fixtures/aw001_slice2/2c/pt_deferral_registrar.json"
+    ],
+    "expected_exit_code": 0,
+    "exit_code": 0,
+    "stdout": "{\"input\": \"fixtures/aw001_slice2/2c/pt_submit_minimal.json\", \"is_valid\": true, \"validation_layer\": \"OFFLINE_SEMANTIC\", \"error_code\": null, \"failed_path\": null}\n{\"input\": \"fixtures/aw001_slice2/2c/pt_adjudicate_upheld.json\", \"is_valid\": true, \"validation_layer\": \"OFFLINE_SEMANTIC\", \"error_code\": null, \"failed_path\": null}\n{\"input\": \"fixtures/aw001_slice2/2c/pt_deferral_registrar.json\", \"is_valid\": true, \"validation_layer\": \"OFFLINE_SEMANTIC\", \"error_code\": null, \"failed_path\": null}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+      "tools/validate_aw001_slice2c.py",
+      "fixtures/aw001_slice2/2c/ft_client_identity.json",
+      "fixtures/aw001_slice2/2c/pt_open_review.json"
+    ],
+    "expected_exit_code": 1,
+    "exit_code": 1,
+    "stdout": "{\"input\": \"fixtures/aw001_slice2/2c/ft_client_identity.json\", \"is_valid\": false, \"validation_layer\": \"JSON_SCHEMA\", \"error_code\": \"ERR_CLIENT_FORBIDDEN_FIELD\", \"failed_path\": \"/command\"}\n{\"input\": \"fixtures/aw001_slice2/2c/pt_open_review.json\", \"is_valid\": true, \"validation_layer\": \"OFFLINE_SEMANTIC\", \"error_code\": null, \"failed_path\": null}\n",
+    "stderr": ""
+  }
+]

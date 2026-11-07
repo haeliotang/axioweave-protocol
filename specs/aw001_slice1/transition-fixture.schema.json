@@ -1,0 +1,1028 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://axioweave.invalid/schemas/aw001-slice1/0.2.0-rc1-slice1",
+  "title": "AW-001 Slice 1 synthetic transition fixture",
+  "description": "Offline consistency only. Does not authenticate sources or authorize execution.",
+  "$ref": "#/$defs/Slice1TransitionFixture",
+  "$defs": {
+    "Text": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "Version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "ActionId": {
+      "type": "string",
+      "enum": [
+        "SUBMIT_CONSTRAINT_CLAIM",
+        "CERTIFY_CASE_CONSTRAINT",
+        "REJECT_CONSTRAINT_CLAIM",
+        "RECORD_CLAIMANT_STANCE"
+      ]
+    },
+    "AuthorizedPower": {
+      "type": "string",
+      "enum": [
+        "CERTIFY_CONSTRAINT",
+        "REJECT_SUBMISSION"
+      ]
+    },
+    "Timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+    },
+    "Digest": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "EvidenceRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_id",
+        "revision",
+        "content_sha256"
+      ],
+      "properties": {
+        "evidence_id": {
+          "$ref": "#/$defs/Text"
+        },
+        "revision": {
+          "$ref": "#/$defs/Version"
+        },
+        "content_sha256": {
+          "$ref": "#/$defs/Digest"
+        }
+      }
+    },
+    "MetricSpecRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "metric_id",
+        "version_seq",
+        "definition_ref"
+      ],
+      "properties": {
+        "metric_id": {
+          "$ref": "#/$defs/Text"
+        },
+        "version_seq": {
+          "$ref": "#/$defs/Version"
+        },
+        "definition_ref": {
+          "$ref": "#/$defs/EvidenceRef"
+        }
+      }
+    },
+    "ScopeSpec": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tenant_node_id",
+        "case_id",
+        "target_object_id",
+        "effective_from",
+        "effective_until"
+      ],
+      "properties": {
+        "tenant_node_id": {
+          "$ref": "#/$defs/Text"
+        },
+        "case_id": {
+          "$ref": "#/$defs/Text"
+        },
+        "target_object_id": {
+          "$ref": "#/$defs/Text"
+        },
+        "effective_from": {
+          "$ref": "#/$defs/Timestamp"
+        },
+        "effective_until": {
+          "$ref": "#/$defs/Timestamp"
+        }
+      }
+    },
+    "RemedySpec": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "notice_recipients",
+        "challenge_window_hours",
+        "review_body_id",
+        "rollback_or_compensation_procedure_ref"
+      ],
+      "properties": {
+        "notice_recipients": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Text"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "challenge_window_hours": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "review_body_id": {
+          "$ref": "#/$defs/Text"
+        },
+        "rollback_or_compensation_procedure_ref": {
+          "$ref": "#/$defs/EvidenceRef"
+        }
+      }
+    },
+    "EnvelopeInput": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mandate_clause_ref",
+        "evidence_refs",
+        "scope_spec",
+        "remedy_spec"
+      ],
+      "properties": {
+        "mandate_clause_ref": {
+          "$ref": "#/$defs/Text"
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/EvidenceRef"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "scope_spec": {
+          "$ref": "#/$defs/ScopeSpec"
+        },
+        "remedy_spec": {
+          "$ref": "#/$defs/RemedySpec"
+        }
+      }
+    },
+    "MandateClaim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mandate_id",
+        "expected_version_hash",
+        "claimed_power"
+      ],
+      "properties": {
+        "mandate_id": {
+          "$ref": "#/$defs/Text"
+        },
+        "expected_version_hash": {
+          "$ref": "#/$defs/Digest"
+        },
+        "claimed_power": {
+          "$ref": "#/$defs/AuthorizedPower"
+        }
+      }
+    },
+    "Receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "receipt_id",
+        "command_id",
+        "attempt_id",
+        "idempotency_key",
+        "authenticated_principal_id",
+        "mandate_id",
+        "evaluated_version_hash",
+        "requested_power",
+        "target_object_id",
+        "evaluated_target_version_seq",
+        "checked_at",
+        "authority_source_id",
+        "verification_status"
+      ],
+      "properties": {
+        "receipt_id": {
+          "$ref": "#/$defs/Text"
+        },
+        "command_id": {
+          "$ref": "#/$defs/Text"
+        },
+        "attempt_id": {
+          "$ref": "#/$defs/Text"
+        },
+        "idempotency_key": {
+          "$ref": "#/$defs/Text"
+        },
+        "authenticated_principal_id": {
+          "$ref": "#/$defs/Text"
+        },
+        "mandate_id": {
+          "$ref": "#/$defs/Text"
+        },
+        "evaluated_version_hash": {
+          "$ref": "#/$defs/Digest"
+        },
+        "requested_power": {
+          "$ref": "#/$defs/AuthorizedPower"
+        },
+        "target_object_id": {
+          "$ref": "#/$defs/Text"
+        },
+        "evaluated_target_version_seq": {
+          "$ref": "#/$defs/Version"
+        },
+        "checked_at": {
+          "$ref": "#/$defs/Timestamp"
+        },
+        "authority_source_id": {
+          "$ref": "#/$defs/Text"
+        },
+        "verification_status": {
+          "type": "string",
+          "enum": [
+            "VERIFIED_ACTIVE",
+            "EXPIRED",
+            "REVOKED",
+            "POWER_NOT_GRANTED",
+            "SCOPE_MISMATCH",
+            "UNKNOWN_MANDATE",
+            "SOURCE_UNAVAILABLE"
+          ]
+        }
+      }
+    },
+    "MandateRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mandate_id",
+        "version_hash",
+        "clause_reference"
+      ],
+      "properties": {
+        "mandate_id": {
+          "$ref": "#/$defs/Text"
+        },
+        "version_hash": {
+          "$ref": "#/$defs/Digest"
+        },
+        "clause_reference": {
+          "$ref": "#/$defs/Text"
+        }
+      }
+    },
+    "Envelope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "envelope_id",
+        "action_type",
+        "target_object_id",
+        "evaluated_target_version_seq",
+        "resulting_target_version_seq",
+        "mandate_ref",
+        "auth_check_receipt",
+        "evidence_refs",
+        "scope_spec",
+        "remedy_spec"
+      ],
+      "properties": {
+        "envelope_id": {
+          "$ref": "#/$defs/Text"
+        },
+        "action_type": {
+          "type": "string",
+          "enum": [
+            "CERTIFY_CASE_CONSTRAINT",
+            "REJECT_CONSTRAINT_CLAIM"
+          ]
+        },
+        "target_object_id": {
+          "$ref": "#/$defs/Text"
+        },
+        "evaluated_target_version_seq": {
+          "$ref": "#/$defs/Version"
+        },
+        "resulting_target_version_seq": {
+          "$ref": "#/$defs/Version"
+        },
+        "mandate_ref": {
+          "$ref": "#/$defs/MandateRef"
+        },
+        "auth_check_receipt": {
+          "$ref": "#/$defs/Receipt"
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/EvidenceRef"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "scope_spec": {
+          "$ref": "#/$defs/ScopeSpec"
+        },
+        "remedy_spec": {
+          "$ref": "#/$defs/RemedySpec"
+        }
+      }
+    },
+    "Stance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stance_status",
+        "tradeoff_consent",
+        "expressed_participation_intent"
+      ],
+      "properties": {
+        "stance_status": {
+          "type": "string",
+          "enum": [
+            "UNSPECIFIED_PENDING_CLAIMANT",
+            "RECORDED_BY_CLAIMANT"
+          ]
+        },
+        "tradeoff_consent": {
+          "type": "string",
+          "enum": [
+            "UNSPECIFIED",
+            "CONSENTED_TO_TRADEOFF",
+            "REFUSED_TRADEOFF_CONVERSION"
+          ]
+        },
+        "expressed_participation_intent": {
+          "type": "string",
+          "enum": [
+            "CONTINUE_DELIBERATION_AND_APPEAL",
+            "REQUEST_SUBITEM_OPT_OUT",
+            "REQUEST_CASE_WITHDRAWAL"
+          ]
+        },
+        "formal_reservation_text": {
+          "$ref": "#/$defs/Text"
+        }
+      }
+    },
+    "ConstraintRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "object_id",
+        "case_id",
+        "tenant_node_id",
+        "acl_policy_ref",
+        "claimant_principal_id",
+        "version_seq",
+        "constraint_stage",
+        "classification",
+        "review_outcome",
+        "measurement_kind",
+        "claimant_post_review_stance",
+        "effective_standing_status"
+      ],
+      "properties": {
+        "object_id": {
+          "$ref": "#/$defs/Text"
+        },
+        "case_id": {
+          "$ref": "#/$defs/Text"
+        },
+        "tenant_node_id": {
+          "$ref": "#/$defs/Text"
+        },
+        "acl_policy_ref": {
+          "$ref": "#/$defs/Text"
+        },
+        "claimant_principal_id": {
+          "$ref": "#/$defs/Text"
+        },
+        "version_seq": {
+          "$ref": "#/$defs/Version"
+        },
+        "constraint_stage": {
+          "type": "string",
+          "enum": [
+            "DRAFT",
+            "SUBMITTED",
+            "EFFECTIVE",
+            "RESOLVED_NON_EFFECTIVE"
+          ]
+        },
+        "classification": {
+          "type": "string",
+          "enum": [
+            "PROPOSED_CLAIM",
+            "CASE_RATIFIED"
+          ]
+        },
+        "review_outcome": {
+          "type": "string",
+          "enum": [
+            "PENDING_REVIEW",
+            "RATIFIED_FOR_CASE",
+            "NOT_ADOPTED_AS_CASE_CONSTRAINT"
+          ]
+        },
+        "measurement_kind": {
+          "type": "string",
+          "enum": [
+            "QUALITATIVE",
+            "QUANTITATIVE"
+          ]
+        },
+        "claimant_post_review_stance": {
+          "$ref": "#/$defs/Stance"
+        },
+        "effective_standing_status": {
+          "type": "string",
+          "enum": [
+            "ACTIVE_STANDING",
+            "SUSPENDED_STANDING",
+            "WITHDRAWN_STANDING"
+          ]
+        },
+        "claim_title": {
+          "$ref": "#/$defs/Text"
+        },
+        "raw_statement_text": {
+          "$ref": "#/$defs/Text"
+        },
+        "source_ref": {
+          "$ref": "#/$defs/EvidenceRef"
+        },
+        "metric_spec": {
+          "$ref": "#/$defs/MetricSpecRef"
+        }
+      }
+    },
+    "ReviewDecision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "decision_id",
+        "version_seq",
+        "decision_stage",
+        "review_outcome",
+        "review_rationale",
+        "reviewer_principal_id",
+        "effectiveness_envelope"
+      ],
+      "properties": {
+        "decision_id": {
+          "$ref": "#/$defs/Text"
+        },
+        "version_seq": {
+          "const": 1
+        },
+        "decision_stage": {
+          "const": "EFFECTIVE"
+        },
+        "review_outcome": {
+          "type": "string",
+          "enum": [
+            "RATIFIED_FOR_CASE",
+            "NOT_ADOPTED_AS_CASE_CONSTRAINT"
+          ]
+        },
+        "review_rationale": {
+          "$ref": "#/$defs/Text"
+        },
+        "reviewer_principal_id": {
+          "$ref": "#/$defs/Text"
+        },
+        "effectiveness_envelope": {
+          "$ref": "#/$defs/Envelope"
+        }
+      }
+    },
+    "State": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "constraint_record",
+        "review_decision_record"
+      ],
+      "properties": {
+        "constraint_record": {
+          "$ref": "#/$defs/ConstraintRecord"
+        },
+        "review_decision_record": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ReviewDecision"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "SubmitPayload": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claim_title",
+        "raw_statement_text",
+        "claimed_classification"
+      ],
+      "properties": {
+        "claim_title": {
+          "$ref": "#/$defs/Text"
+        },
+        "raw_statement_text": {
+          "$ref": "#/$defs/Text"
+        },
+        "claimed_classification": {
+          "const": "PROPOSED_CLAIM"
+        },
+        "source_ref": {
+          "$ref": "#/$defs/EvidenceRef"
+        },
+        "metric_spec": {
+          "$ref": "#/$defs/MetricSpecRef"
+        }
+      }
+    },
+    "CertifyPayload": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ratified_classification",
+        "review_rationale",
+        "effectiveness_envelope_input"
+      ],
+      "properties": {
+        "ratified_classification": {
+          "const": "CASE_RATIFIED"
+        },
+        "review_rationale": {
+          "$ref": "#/$defs/Text"
+        },
+        "metric_spec": {
+          "$ref": "#/$defs/MetricSpecRef"
+        },
+        "effectiveness_envelope_input": {
+          "$ref": "#/$defs/EnvelopeInput"
+        }
+      }
+    },
+    "RejectPayload": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "review_outcome",
+        "review_rationale",
+        "effectiveness_envelope_input"
+      ],
+      "properties": {
+        "review_outcome": {
+          "const": "NOT_ADOPTED_AS_CASE_CONSTRAINT"
+        },
+        "review_rationale": {
+          "$ref": "#/$defs/Text"
+        },
+        "effectiveness_envelope_input": {
+          "$ref": "#/$defs/EnvelopeInput"
+        }
+      }
+    },
+    "StancePayload": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tradeoff_consent",
+        "expressed_participation_intent"
+      ],
+      "properties": {
+        "formal_reservation_text": {
+          "$ref": "#/$defs/Text"
+        },
+        "tradeoff_consent": {
+          "type": "string",
+          "enum": [
+            "CONSENTED_TO_TRADEOFF",
+            "REFUSED_TRADEOFF_CONVERSION"
+          ]
+        },
+        "expressed_participation_intent": {
+          "type": "string",
+          "enum": [
+            "CONTINUE_DELIBERATION_AND_APPEAL",
+            "REQUEST_SUBITEM_OPT_OUT",
+            "REQUEST_CASE_WITHDRAWAL"
+          ]
+        }
+      }
+    },
+    "Command": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "command_id",
+        "idempotency_key",
+        "requested_action",
+        "target_object_id",
+        "target_expected_version_seq",
+        "payload"
+      ],
+      "properties": {
+        "command_id": {
+          "$ref": "#/$defs/Text"
+        },
+        "idempotency_key": {
+          "$ref": "#/$defs/Text"
+        },
+        "requested_action": {
+          "$ref": "#/$defs/ActionId"
+        },
+        "target_object_id": {
+          "$ref": "#/$defs/Text"
+        },
+        "target_expected_version_seq": {
+          "$ref": "#/$defs/Version"
+        },
+        "mandate_claim": {
+          "$ref": "#/$defs/MandateClaim"
+        },
+        "payload": {
+          "type": "object"
+        }
+      }
+    },
+    "AuthoritySnapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mandate_id",
+        "version_hash",
+        "principal_id",
+        "tenant_node_id",
+        "case_id",
+        "target_object_id",
+        "powers",
+        "clause_reference",
+        "authority_source_id",
+        "status",
+        "valid_from",
+        "valid_until"
+      ],
+      "properties": {
+        "mandate_id": {
+          "$ref": "#/$defs/Text"
+        },
+        "version_hash": {
+          "$ref": "#/$defs/Digest"
+        },
+        "principal_id": {
+          "$ref": "#/$defs/Text"
+        },
+        "tenant_node_id": {
+          "$ref": "#/$defs/Text"
+        },
+        "case_id": {
+          "$ref": "#/$defs/Text"
+        },
+        "target_object_id": {
+          "$ref": "#/$defs/Text"
+        },
+        "powers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/AuthorizedPower"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "clause_reference": {
+          "$ref": "#/$defs/Text"
+        },
+        "authority_source_id": {
+          "$ref": "#/$defs/Text"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "ACTIVE",
+            "EXPIRED",
+            "REVOKED",
+            "SOURCE_UNAVAILABLE"
+          ]
+        },
+        "valid_from": {
+          "$ref": "#/$defs/Timestamp"
+        },
+        "valid_until": {
+          "$ref": "#/$defs/Timestamp"
+        }
+      }
+    },
+    "IntakePolicyCheck": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "policy_ref",
+        "authenticated_principal_id",
+        "target_object_id",
+        "checked_at",
+        "result"
+      ],
+      "properties": {
+        "policy_ref": {
+          "$ref": "#/$defs/Text"
+        },
+        "authenticated_principal_id": {
+          "$ref": "#/$defs/Text"
+        },
+        "target_object_id": {
+          "$ref": "#/$defs/Text"
+        },
+        "checked_at": {
+          "$ref": "#/$defs/Timestamp"
+        },
+        "result": {
+          "type": "string",
+          "enum": [
+            "ALLOWED",
+            "DENIED"
+          ]
+        }
+      }
+    },
+    "ServerContext": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract_version",
+        "scenario_id",
+        "mode",
+        "data_classification",
+        "execution_enabled",
+        "authenticated_principal_id",
+        "tenant_node_id",
+        "case_id",
+        "checked_at",
+        "acl_policy_refs",
+        "evidence_snapshots",
+        "attempt_id"
+      ],
+      "properties": {
+        "contract_version": {
+          "const": "0.2.0-rc1-slice1"
+        },
+        "scenario_id": {
+          "$ref": "#/$defs/Text"
+        },
+        "mode": {
+          "const": "simulation"
+        },
+        "data_classification": {
+          "const": "synthetic"
+        },
+        "execution_enabled": {
+          "const": false
+        },
+        "authenticated_principal_id": {
+          "$ref": "#/$defs/Text"
+        },
+        "tenant_node_id": {
+          "$ref": "#/$defs/Text"
+        },
+        "case_id": {
+          "$ref": "#/$defs/Text"
+        },
+        "checked_at": {
+          "$ref": "#/$defs/Timestamp"
+        },
+        "acl_policy_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Text"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "evidence_snapshots": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/EvidenceRef"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "intake_policy_check": {
+          "$ref": "#/$defs/IntakePolicyCheck"
+        },
+        "authority_snapshot": {
+          "$ref": "#/$defs/AuthoritySnapshot"
+        },
+        "generated_auth_receipt": {
+          "$ref": "#/$defs/Receipt"
+        },
+        "attempt_id": {
+          "$ref": "#/$defs/Text"
+        }
+      }
+    },
+    "FixtureCommon": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "before",
+        "command",
+        "server_context",
+        "after"
+      ],
+      "properties": {
+        "before": {
+          "$ref": "#/$defs/State"
+        },
+        "command": {
+          "$ref": "#/$defs/Command"
+        },
+        "server_context": {
+          "$ref": "#/$defs/ServerContext"
+        },
+        "after": {
+          "$ref": "#/$defs/State"
+        }
+      }
+    },
+    "Slice1TransitionFixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "before",
+        "command",
+        "server_context",
+        "after"
+      ],
+      "properties": {
+        "before": {
+          "$ref": "#/$defs/State"
+        },
+        "command": {
+          "$ref": "#/$defs/Command"
+        },
+        "server_context": {
+          "$ref": "#/$defs/ServerContext"
+        },
+        "after": {
+          "$ref": "#/$defs/State"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "command": {
+                "properties": {
+                  "requested_action": {
+                    "const": "SUBMIT_CONSTRAINT_CLAIM"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "command": {
+                "properties": {
+                  "payload": {
+                    "$ref": "#/$defs/SubmitPayload"
+                  },
+                  "mandate_claim": false
+                }
+              },
+              "server_context": {
+                "properties": {
+                  "authority_snapshot": false,
+                  "generated_auth_receipt": false
+                },
+                "required": [
+                  "intake_policy_check"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "command": {
+                "properties": {
+                  "requested_action": {
+                    "const": "CERTIFY_CASE_CONSTRAINT"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "command": {
+                "properties": {
+                  "payload": {
+                    "$ref": "#/$defs/CertifyPayload"
+                  },
+                  "mandate_claim": {
+                    "$ref": "#/$defs/MandateClaim"
+                  }
+                },
+                "required": [
+                  "mandate_claim"
+                ]
+              },
+              "server_context": {
+                "properties": {
+                  "intake_policy_check": false
+                },
+                "required": [
+                  "authority_snapshot",
+                  "generated_auth_receipt"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "command": {
+                "properties": {
+                  "requested_action": {
+                    "const": "REJECT_CONSTRAINT_CLAIM"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "command": {
+                "properties": {
+                  "payload": {
+                    "$ref": "#/$defs/RejectPayload"
+                  },
+                  "mandate_claim": {
+                    "$ref": "#/$defs/MandateClaim"
+                  }
+                },
+                "required": [
+                  "mandate_claim"
+                ]
+              },
+              "server_context": {
+                "properties": {
+                  "intake_policy_check": false
+                },
+                "required": [
+                  "authority_snapshot",
+                  "generated_auth_receipt"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "command": {
+                "properties": {
+                  "requested_action": {
+                    "const": "RECORD_CLAIMANT_STANCE"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "command": {
+                "properties": {
+                  "payload": {
+                    "$ref": "#/$defs/StancePayload"
+                  },
+                  "mandate_claim": false
+                }
+              },
+              "server_context": {
+                "properties": {
+                  "intake_policy_check": false,
+                  "authority_snapshot": false,
+                  "generated_auth_receipt": false
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

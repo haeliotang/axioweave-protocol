@@ -1,0 +1,1034 @@
+{
+  "before": {
+    "domain_objects": {
+      "operations": {
+        "cases": [
+          {
+            "object_id": "case-1",
+            "kind": "CASE",
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "parent_object_id": null,
+            "version_seq": 1,
+            "proposer_member_id": "member-proposer",
+            "rule_version_seq": 1,
+            "template_sod_policy": {
+              "version": "pack-a-v1",
+              "exclude_commitment_executors_from_verification": false
+            }
+          }
+        ],
+        "resource_pools": [
+          {
+            "object_id": "pool-1",
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "version_seq": 1,
+            "resource_spec": {
+              "resource_kind": "FUNDS",
+              "unit_code": "USD_CENTS"
+            },
+            "total_capacity_minor": 100000,
+            "committed_obligations_minor": 0
+          }
+        ],
+        "commitments": [],
+        "tickets": [],
+        "execution_verifications": [],
+        "protective_orders": [],
+        "protection_envelopes": [],
+        "effectiveness_envelopes": []
+      },
+      "governance_markings": [
+        {
+          "marking_id": "marking-1",
+          "object_id": "case-1",
+          "case_id": "case-1",
+          "tenant_node_id": "node-1",
+          "version_seq": 1,
+          "object_version_seq": 1,
+          "access_requirements": [
+            "REVIEWERS"
+          ],
+          "allowed_purposes": [
+            "CASE_ANALYSIS",
+            "TRANSLATION"
+          ],
+          "ai_processing": "RESTRICTED",
+          "export_policy": "RESTRICTED",
+          "retention_class": "STANDARD",
+          "cross_case_policy": "SINGLE_CASE_ONLY",
+          "policy_version_seq": 1,
+          "created_command_id": "cmd-marking-marking-1",
+          "created_envelope_id": "env-marking-marking-1"
+        },
+        {
+          "marking_id": "marking-2",
+          "object_id": "pool-1",
+          "case_id": "case-1",
+          "tenant_node_id": "node-1",
+          "version_seq": 1,
+          "object_version_seq": 1,
+          "access_requirements": [
+            "REVIEWERS"
+          ],
+          "allowed_purposes": [
+            "CASE_ANALYSIS"
+          ],
+          "ai_processing": "ALLOWED",
+          "export_policy": "RESTRICTED",
+          "retention_class": "STANDARD",
+          "cross_case_policy": "SINGLE_CASE_ONLY",
+          "policy_version_seq": 1,
+          "created_command_id": "cmd-marking-marking-2",
+          "created_envelope_id": "env-marking-marking-2"
+        }
+      ],
+      "baseline_snapshots": [
+        {
+          "baseline_id": "baseline-1",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "version_seq": 1,
+          "supersedes_baseline_id": null,
+          "constraints": {
+            "binding_external": [
+              "BINDING_TRADE_RULES"
+            ],
+            "case_ratified": [
+              "CASE_BUDGET_CAP"
+            ]
+          },
+          "parameter_allowlist": [
+            "borrow_ratio",
+            "term_months"
+          ],
+          "source_ref": {
+            "evidence_id": "baseline-source",
+            "revision": 1,
+            "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "created_command_id": "cmd-record_baseline_snapshot-organizer",
+          "created_envelope_id": "env-record_baseline_snapshot-organizer-baseline-1"
+        }
+      ],
+      "proposal_branches": [],
+      "ai_sessions": [],
+      "ai_drafts": [],
+      "effectiveness_envelopes": [
+        {
+          "envelope_id": "env-record_baseline_snapshot-organizer-baseline-1",
+          "action_type": "RECORD_BASELINE_SNAPSHOT",
+          "target_object_id": "case-1",
+          "evaluated_target_version_seq": 1,
+          "resulting_versions": [
+            {
+              "object_id": "baseline-1",
+              "version_seq": 1
+            }
+          ],
+          "mandate_ref": {
+            "mandate_id": "mandate-baseline",
+            "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "clause_reference": "clause-mandate-baseline"
+          },
+          "auth_check_receipt": {
+            "receipt_id": "receipt-organizer",
+            "command_id": "cmd-record_baseline_snapshot-organizer",
+            "attempt_id": "attempt-1",
+            "generation": 1,
+            "idempotency_key": "idem-record_baseline_snapshot-organizer",
+            "authenticated_principal_id": "principal-organizer",
+            "mandate_id": "mandate-baseline",
+            "evaluated_version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "requested_power": "RECORD_BASELINE_SNAPSHOT",
+            "target_object_id": "case-1",
+            "evaluated_target_version_seq": 1,
+            "checked_at": "2026-11-06T00:00:00Z",
+            "authority_source_id": "authority-source-1",
+            "domain_sha256": "sha256:b6810bc9eb0476214cb84a0642cbba045ece90de95e99a775795f9f9bc66d984",
+            "context_sha256": "sha256:04ccfaaa74736b4137f573a9cfa19b7fc67e88403381c4fd9978291b718a472b",
+            "verification_status": "VERIFIED_ACTIVE"
+          },
+          "evidence_refs": [
+            {
+              "evidence_id": "baseline-source",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          ],
+          "scope_spec": {
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "effective_from": "2026-09-01T00:00:00Z",
+            "effective_until": "2027-01-01T00:00:00Z",
+            "resource_spec": {
+              "resource_kind": "FUNDS",
+              "unit_code": "USD_CENTS"
+            },
+            "max_amount_minor": 100000
+          },
+          "remedy_spec": {
+            "notice_recipients": [
+              "member-organizer"
+            ],
+            "challenge_window_hours": 24,
+            "review_body_id": "review-body-1",
+            "rollback_or_compensation_procedure_ref": {
+              "evidence_id": "remedy-source",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          },
+          "effect_parameters_sha256": "sha256:e4f1e0f2b768dc379e3a0c5d6838f401d0d00a4dd415d9bf56094f05bbfe4d30",
+          "actor_member_id": "member-organizer",
+          "payload_snapshot": {
+            "baseline_id": "baseline-1",
+            "supersedes_baseline_id": null,
+            "constraints": {
+              "binding_external": [
+                "BINDING_TRADE_RULES"
+              ],
+              "case_ratified": [
+                "CASE_BUDGET_CAP"
+              ]
+            },
+            "parameter_allowlist": [
+              "borrow_ratio",
+              "term_months"
+            ],
+            "source_ref": {
+              "evidence_id": "baseline-source",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "effectiveness_envelope_input": {
+              "mandate_clause_ref": "clause-mandate-baseline",
+              "evidence_refs": [
+                {
+                  "evidence_id": "baseline-source",
+                  "revision": 1,
+                  "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                }
+              ],
+              "scope_spec": {
+                "tenant_node_id": "node-1",
+                "case_id": "case-1",
+                "effective_from": "2026-09-01T00:00:00Z",
+                "effective_until": "2027-01-01T00:00:00Z",
+                "resource_spec": {
+                  "resource_kind": "FUNDS",
+                  "unit_code": "USD_CENTS"
+                },
+                "max_amount_minor": 100000
+              },
+              "remedy_spec": {
+                "notice_recipients": [
+                  "member-organizer"
+                ],
+                "challenge_window_hours": 24,
+                "review_body_id": "review-body-1",
+                "rollback_or_compensation_procedure_ref": {
+                  "evidence_id": "remedy-source",
+                  "revision": 1,
+                  "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "command_record": {
+      "command_id": "cmd-record_proposal_branch-organizer",
+      "tenant_node_id": "node-1",
+      "principal_id": "principal-organizer",
+      "action_id": "RECORD_PROPOSAL_BRANCH",
+      "idempotency_key": "idem-record_proposal_branch-organizer",
+      "request_sha256": "sha256:f619092e83557df18fe916dd4a72aac2091f591e0b361ec3b897f2c3452721fa",
+      "current_attempt_id": "attempt-1",
+      "generation": 1,
+      "version_seq": 1,
+      "status": "IN_FLIGHT",
+      "result_id": null
+    },
+    "command_attempt": {
+      "attempt_id": "attempt-1",
+      "command_id": "cmd-record_proposal_branch-organizer",
+      "generation": 1,
+      "version_seq": 1,
+      "status": "IN_FLIGHT"
+    }
+  },
+  "command": {
+    "command_id": "cmd-record_proposal_branch-organizer",
+    "idempotency_key": "idem-record_proposal_branch-organizer",
+    "requested_action": "RECORD_PROPOSAL_BRANCH",
+    "target_object_id": "case-1",
+    "target_expected_version_seq": 1,
+    "mandate_claim": {
+      "mandate_id": "mandate-branch",
+      "expected_version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "claimed_power": "RECORD_PROPOSAL_BRANCH"
+    },
+    "payload": {
+      "branch_id": "branch-1",
+      "base_baseline_id": "baseline-1",
+      "base_baseline_version": 1,
+      "option_code": "OPTION_A",
+      "parameters": [
+        {
+          "parameter_key": "borrow_ratio",
+          "value_minor": 30
+        }
+      ],
+      "hypothetical_constraint_changes": [],
+      "model_ref": "model-v1",
+      "input_refs": [
+        {
+          "evidence_id": "baseline-source",
+          "revision": 1,
+          "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      ],
+      "effectiveness_envelope_input": {
+        "mandate_clause_ref": "clause-mandate-branch",
+        "evidence_refs": [
+          {
+            "evidence_id": "baseline-source",
+            "revision": 1,
+            "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ],
+        "scope_spec": {
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "effective_from": "2026-09-01T00:00:00Z",
+          "effective_until": "2027-01-01T00:00:00Z",
+          "resource_spec": {
+            "resource_kind": "FUNDS",
+            "unit_code": "USD_CENTS"
+          },
+          "max_amount_minor": 100000
+        },
+        "remedy_spec": {
+          "notice_recipients": [
+            "member-organizer"
+          ],
+          "challenge_window_hours": 24,
+          "review_body_id": "review-body-1",
+          "rollback_or_compensation_procedure_ref": {
+            "evidence_id": "remedy-source",
+            "revision": 1,
+            "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        }
+      }
+    },
+    "dependency_versions": [
+      {
+        "object_id": "case-1",
+        "version_seq": 1
+      }
+    ]
+  },
+  "server_context": {
+    "contract_version": "0.5.0-rc1-slice4b",
+    "mode": "simulation",
+    "data_classification": "synthetic",
+    "execution_enabled": false,
+    "tenant_node_id": "node-1",
+    "case_id": "case-1",
+    "authenticated_principal_id": "principal-organizer",
+    "authenticated_member_id": "member-organizer",
+    "member_directory": [
+      {
+        "principal_id": "principal-organizer",
+        "member_id": "member-organizer",
+        "status": "VERIFIED",
+        "source_ref": {
+          "evidence_id": "member-principal-organizer",
+          "revision": 1,
+          "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      },
+      {
+        "principal_id": "principal-ai-user",
+        "member_id": "member-ai-user",
+        "status": "VERIFIED",
+        "source_ref": {
+          "evidence_id": "member-principal-ai-user",
+          "revision": 1,
+          "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      },
+      {
+        "principal_id": "principal-freezer",
+        "member_id": "member-freezer",
+        "status": "VERIFIED",
+        "source_ref": {
+          "evidence_id": "member-principal-freezer",
+          "revision": 1,
+          "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      },
+      {
+        "principal_id": "principal-proposer",
+        "member_id": "member-proposer",
+        "status": "VERIFIED",
+        "source_ref": {
+          "evidence_id": "member-principal-proposer",
+          "revision": 1,
+          "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      }
+    ],
+    "access_granted": true,
+    "evaluated_at": "2026-11-06T00:00:00Z",
+    "attempt_id": "attempt-1",
+    "generation": 1,
+    "authority_source_id": "authority-source-1",
+    "authority_source_status": "AVAILABLE",
+    "authority_inventory_complete": true,
+    "authority_snapshots": [
+      {
+        "mandate_id": "mandate-baseline",
+        "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "principal_id": "principal-organizer",
+        "tenant_node_id": "node-1",
+        "case_id": "case-1",
+        "powers": [
+          "RECORD_BASELINE_SNAPSHOT"
+        ],
+        "allowed_target_ids": [
+          "case-1"
+        ],
+        "clause_reference": "clause-mandate-baseline",
+        "status": "ACTIVE",
+        "valid_from": "2026-09-01T00:00:00Z",
+        "valid_until": "2027-01-01T00:00:00Z"
+      },
+      {
+        "mandate_id": "mandate-branch",
+        "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "principal_id": "principal-organizer",
+        "tenant_node_id": "node-1",
+        "case_id": "case-1",
+        "powers": [
+          "RECORD_PROPOSAL_BRANCH"
+        ],
+        "allowed_target_ids": [
+          "case-1"
+        ],
+        "clause_reference": "clause-mandate-branch",
+        "status": "ACTIVE",
+        "valid_from": "2026-09-01T00:00:00Z",
+        "valid_until": "2027-01-01T00:00:00Z"
+      },
+      {
+        "mandate_id": "mandate-session",
+        "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "principal_id": "principal-ai-user",
+        "tenant_node_id": "node-1",
+        "case_id": "case-1",
+        "powers": [
+          "OPEN_AI_DRAFT_SESSION"
+        ],
+        "allowed_target_ids": [
+          "case-1"
+        ],
+        "clause_reference": "clause-mandate-session",
+        "status": "ACTIVE",
+        "valid_from": "2026-09-01T00:00:00Z",
+        "valid_until": "2027-01-01T00:00:00Z"
+      },
+      {
+        "mandate_id": "mandate-draft",
+        "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "principal_id": "principal-ai-user",
+        "tenant_node_id": "node-1",
+        "case_id": "case-1",
+        "powers": [
+          "RECORD_AI_DRAFT"
+        ],
+        "allowed_target_ids": [
+          "case-1"
+        ],
+        "clause_reference": "clause-mandate-draft",
+        "status": "ACTIVE",
+        "valid_from": "2026-09-01T00:00:00Z",
+        "valid_until": "2027-01-01T00:00:00Z"
+      },
+      {
+        "mandate_id": "mandate-revoke",
+        "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "principal_id": "principal-ai-user",
+        "tenant_node_id": "node-1",
+        "case_id": "case-1",
+        "powers": [
+          "REVOKE_AI_SESSION"
+        ],
+        "allowed_target_ids": [
+          "case-1"
+        ],
+        "clause_reference": "clause-mandate-revoke",
+        "status": "ACTIVE",
+        "valid_from": "2026-09-01T00:00:00Z",
+        "valid_until": "2027-01-01T00:00:00Z"
+      },
+      {
+        "mandate_id": "mandate-freeze",
+        "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "principal_id": "principal-freezer",
+        "tenant_node_id": "node-1",
+        "case_id": "case-1",
+        "powers": [
+          "FREEZE_BRANCH_CANDIDATE"
+        ],
+        "allowed_target_ids": [
+          "case-1"
+        ],
+        "clause_reference": "clause-mandate-freeze",
+        "status": "ACTIVE",
+        "valid_from": "2026-09-01T00:00:00Z",
+        "valid_until": "2027-01-01T00:00:00Z"
+      }
+    ],
+    "evidence_snapshots": [
+      {
+        "evidence_id": "member-principal-organizer",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "member-principal-ai-user",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "member-principal-freezer",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "member-principal-proposer",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "baseline-source",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "remedy-source",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "delegation",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "provider-policy",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "participation-audit",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      }
+    ],
+    "generated_auth_receipt": {
+      "receipt_id": "receipt-organizer",
+      "command_id": "cmd-record_proposal_branch-organizer",
+      "attempt_id": "attempt-1",
+      "generation": 1,
+      "idempotency_key": "idem-record_proposal_branch-organizer",
+      "authenticated_principal_id": "principal-organizer",
+      "mandate_id": "mandate-branch",
+      "evaluated_version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "requested_power": "RECORD_PROPOSAL_BRANCH",
+      "target_object_id": "case-1",
+      "evaluated_target_version_seq": 1,
+      "checked_at": "2026-11-06T00:00:00Z",
+      "authority_source_id": "authority-source-1",
+      "domain_sha256": "sha256:1f35ef77c30090f71f50c291117dfa73ef4c7f2c122c032fca9e00fdff8d6aab",
+      "context_sha256": "sha256:3c2b154ddb97d199f16c80dd58fa92c360d7b75ce174666a9da3f7df376e295e",
+      "verification_status": "VERIFIED_ACTIVE"
+    },
+    "new_envelope_id": "env-record_proposal_branch-organizer-branch-1",
+    "execution_observation": "NORMAL",
+    "branch_gate_snapshot": null
+  },
+  "after": {
+    "domain_objects": {
+      "operations": {
+        "cases": [
+          {
+            "object_id": "case-1",
+            "kind": "CASE",
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "parent_object_id": null,
+            "version_seq": 1,
+            "proposer_member_id": "member-proposer",
+            "rule_version_seq": 1,
+            "template_sod_policy": {
+              "version": "pack-a-v1",
+              "exclude_commitment_executors_from_verification": false
+            }
+          }
+        ],
+        "resource_pools": [
+          {
+            "object_id": "pool-1",
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "version_seq": 1,
+            "resource_spec": {
+              "resource_kind": "FUNDS",
+              "unit_code": "USD_CENTS"
+            },
+            "total_capacity_minor": 100000,
+            "committed_obligations_minor": 0
+          }
+        ],
+        "commitments": [],
+        "tickets": [],
+        "execution_verifications": [],
+        "protective_orders": [],
+        "protection_envelopes": [],
+        "effectiveness_envelopes": []
+      },
+      "governance_markings": [
+        {
+          "marking_id": "marking-1",
+          "object_id": "case-1",
+          "case_id": "case-1",
+          "tenant_node_id": "node-1",
+          "version_seq": 1,
+          "object_version_seq": 1,
+          "access_requirements": [
+            "REVIEWERS"
+          ],
+          "allowed_purposes": [
+            "CASE_ANALYSIS",
+            "TRANSLATION"
+          ],
+          "ai_processing": "RESTRICTED",
+          "export_policy": "RESTRICTED",
+          "retention_class": "STANDARD",
+          "cross_case_policy": "SINGLE_CASE_ONLY",
+          "policy_version_seq": 1,
+          "created_command_id": "cmd-marking-marking-1",
+          "created_envelope_id": "env-marking-marking-1"
+        },
+        {
+          "marking_id": "marking-2",
+          "object_id": "pool-1",
+          "case_id": "case-1",
+          "tenant_node_id": "node-1",
+          "version_seq": 1,
+          "object_version_seq": 1,
+          "access_requirements": [
+            "REVIEWERS"
+          ],
+          "allowed_purposes": [
+            "CASE_ANALYSIS"
+          ],
+          "ai_processing": "ALLOWED",
+          "export_policy": "RESTRICTED",
+          "retention_class": "STANDARD",
+          "cross_case_policy": "SINGLE_CASE_ONLY",
+          "policy_version_seq": 1,
+          "created_command_id": "cmd-marking-marking-2",
+          "created_envelope_id": "env-marking-marking-2"
+        }
+      ],
+      "baseline_snapshots": [
+        {
+          "baseline_id": "baseline-1",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "version_seq": 1,
+          "supersedes_baseline_id": null,
+          "constraints": {
+            "binding_external": [
+              "BINDING_TRADE_RULES"
+            ],
+            "case_ratified": [
+              "CASE_BUDGET_CAP"
+            ]
+          },
+          "parameter_allowlist": [
+            "borrow_ratio",
+            "term_months"
+          ],
+          "source_ref": {
+            "evidence_id": "baseline-source",
+            "revision": 1,
+            "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "created_command_id": "cmd-record_baseline_snapshot-organizer",
+          "created_envelope_id": "env-record_baseline_snapshot-organizer-baseline-1"
+        }
+      ],
+      "proposal_branches": [
+        {
+          "branch_id": "branch-1",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "version_seq": 1,
+          "base_baseline_id": "baseline-1",
+          "base_baseline_version": 1,
+          "option_code": "OPTION_A",
+          "parameters": [
+            {
+              "parameter_key": "borrow_ratio",
+              "value_minor": 30
+            }
+          ],
+          "hypothetical_constraint_changes": [],
+          "directly_votable": true,
+          "status": "DRAFT",
+          "model_ref": "model-v1",
+          "input_refs": [
+            {
+              "evidence_id": "baseline-source",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          ],
+          "created_command_id": "cmd-record_proposal_branch-organizer",
+          "created_envelope_id": "env-record_proposal_branch-organizer-branch-1",
+          "freeze_evidence": null,
+          "frozen_envelope_id": null
+        }
+      ],
+      "ai_sessions": [],
+      "ai_drafts": [],
+      "effectiveness_envelopes": [
+        {
+          "envelope_id": "env-record_baseline_snapshot-organizer-baseline-1",
+          "action_type": "RECORD_BASELINE_SNAPSHOT",
+          "target_object_id": "case-1",
+          "evaluated_target_version_seq": 1,
+          "resulting_versions": [
+            {
+              "object_id": "baseline-1",
+              "version_seq": 1
+            }
+          ],
+          "mandate_ref": {
+            "mandate_id": "mandate-baseline",
+            "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "clause_reference": "clause-mandate-baseline"
+          },
+          "auth_check_receipt": {
+            "receipt_id": "receipt-organizer",
+            "command_id": "cmd-record_baseline_snapshot-organizer",
+            "attempt_id": "attempt-1",
+            "generation": 1,
+            "idempotency_key": "idem-record_baseline_snapshot-organizer",
+            "authenticated_principal_id": "principal-organizer",
+            "mandate_id": "mandate-baseline",
+            "evaluated_version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "requested_power": "RECORD_BASELINE_SNAPSHOT",
+            "target_object_id": "case-1",
+            "evaluated_target_version_seq": 1,
+            "checked_at": "2026-11-06T00:00:00Z",
+            "authority_source_id": "authority-source-1",
+            "domain_sha256": "sha256:b6810bc9eb0476214cb84a0642cbba045ece90de95e99a775795f9f9bc66d984",
+            "context_sha256": "sha256:04ccfaaa74736b4137f573a9cfa19b7fc67e88403381c4fd9978291b718a472b",
+            "verification_status": "VERIFIED_ACTIVE"
+          },
+          "evidence_refs": [
+            {
+              "evidence_id": "baseline-source",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          ],
+          "scope_spec": {
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "effective_from": "2026-09-01T00:00:00Z",
+            "effective_until": "2027-01-01T00:00:00Z",
+            "resource_spec": {
+              "resource_kind": "FUNDS",
+              "unit_code": "USD_CENTS"
+            },
+            "max_amount_minor": 100000
+          },
+          "remedy_spec": {
+            "notice_recipients": [
+              "member-organizer"
+            ],
+            "challenge_window_hours": 24,
+            "review_body_id": "review-body-1",
+            "rollback_or_compensation_procedure_ref": {
+              "evidence_id": "remedy-source",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          },
+          "effect_parameters_sha256": "sha256:e4f1e0f2b768dc379e3a0c5d6838f401d0d00a4dd415d9bf56094f05bbfe4d30",
+          "actor_member_id": "member-organizer",
+          "payload_snapshot": {
+            "baseline_id": "baseline-1",
+            "supersedes_baseline_id": null,
+            "constraints": {
+              "binding_external": [
+                "BINDING_TRADE_RULES"
+              ],
+              "case_ratified": [
+                "CASE_BUDGET_CAP"
+              ]
+            },
+            "parameter_allowlist": [
+              "borrow_ratio",
+              "term_months"
+            ],
+            "source_ref": {
+              "evidence_id": "baseline-source",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "effectiveness_envelope_input": {
+              "mandate_clause_ref": "clause-mandate-baseline",
+              "evidence_refs": [
+                {
+                  "evidence_id": "baseline-source",
+                  "revision": 1,
+                  "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                }
+              ],
+              "scope_spec": {
+                "tenant_node_id": "node-1",
+                "case_id": "case-1",
+                "effective_from": "2026-09-01T00:00:00Z",
+                "effective_until": "2027-01-01T00:00:00Z",
+                "resource_spec": {
+                  "resource_kind": "FUNDS",
+                  "unit_code": "USD_CENTS"
+                },
+                "max_amount_minor": 100000
+              },
+              "remedy_spec": {
+                "notice_recipients": [
+                  "member-organizer"
+                ],
+                "challenge_window_hours": 24,
+                "review_body_id": "review-body-1",
+                "rollback_or_compensation_procedure_ref": {
+                  "evidence_id": "remedy-source",
+                  "revision": 1,
+                  "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                }
+              }
+            }
+          }
+        },
+        {
+          "envelope_id": "env-record_proposal_branch-organizer-branch-1",
+          "action_type": "RECORD_PROPOSAL_BRANCH",
+          "target_object_id": "case-1",
+          "evaluated_target_version_seq": 1,
+          "resulting_versions": [
+            {
+              "object_id": "branch-1",
+              "version_seq": 1
+            }
+          ],
+          "mandate_ref": {
+            "mandate_id": "mandate-branch",
+            "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "clause_reference": "clause-mandate-branch"
+          },
+          "auth_check_receipt": {
+            "receipt_id": "receipt-organizer",
+            "command_id": "cmd-record_proposal_branch-organizer",
+            "attempt_id": "attempt-1",
+            "generation": 1,
+            "idempotency_key": "idem-record_proposal_branch-organizer",
+            "authenticated_principal_id": "principal-organizer",
+            "mandate_id": "mandate-branch",
+            "evaluated_version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "requested_power": "RECORD_PROPOSAL_BRANCH",
+            "target_object_id": "case-1",
+            "evaluated_target_version_seq": 1,
+            "checked_at": "2026-11-06T00:00:00Z",
+            "authority_source_id": "authority-source-1",
+            "domain_sha256": "sha256:1f35ef77c30090f71f50c291117dfa73ef4c7f2c122c032fca9e00fdff8d6aab",
+            "context_sha256": "sha256:3c2b154ddb97d199f16c80dd58fa92c360d7b75ce174666a9da3f7df376e295e",
+            "verification_status": "VERIFIED_ACTIVE"
+          },
+          "evidence_refs": [
+            {
+              "evidence_id": "baseline-source",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          ],
+          "scope_spec": {
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "effective_from": "2026-09-01T00:00:00Z",
+            "effective_until": "2027-01-01T00:00:00Z",
+            "resource_spec": {
+              "resource_kind": "FUNDS",
+              "unit_code": "USD_CENTS"
+            },
+            "max_amount_minor": 100000
+          },
+          "remedy_spec": {
+            "notice_recipients": [
+              "member-organizer"
+            ],
+            "challenge_window_hours": 24,
+            "review_body_id": "review-body-1",
+            "rollback_or_compensation_procedure_ref": {
+              "evidence_id": "remedy-source",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          },
+          "effect_parameters_sha256": "sha256:680090d49729e1b3e36474aa97c5f74b9efd3784bcb00a18dc18849b0f9d0653",
+          "actor_member_id": "member-organizer",
+          "payload_snapshot": {
+            "branch_id": "branch-1",
+            "base_baseline_id": "baseline-1",
+            "base_baseline_version": 1,
+            "option_code": "OPTION_A",
+            "parameters": [
+              {
+                "parameter_key": "borrow_ratio",
+                "value_minor": 30
+              }
+            ],
+            "hypothetical_constraint_changes": [],
+            "model_ref": "model-v1",
+            "input_refs": [
+              {
+                "evidence_id": "baseline-source",
+                "revision": 1,
+                "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+              }
+            ],
+            "effectiveness_envelope_input": {
+              "mandate_clause_ref": "clause-mandate-branch",
+              "evidence_refs": [
+                {
+                  "evidence_id": "baseline-source",
+                  "revision": 1,
+                  "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                }
+              ],
+              "scope_spec": {
+                "tenant_node_id": "node-1",
+                "case_id": "case-1",
+                "effective_from": "2026-09-01T00:00:00Z",
+                "effective_until": "2027-01-01T00:00:00Z",
+                "resource_spec": {
+                  "resource_kind": "FUNDS",
+                  "unit_code": "USD_CENTS"
+                },
+                "max_amount_minor": 100000
+              },
+              "remedy_spec": {
+                "notice_recipients": [
+                  "member-organizer"
+                ],
+                "challenge_window_hours": 24,
+                "review_body_id": "review-body-1",
+                "rollback_or_compensation_procedure_ref": {
+                  "evidence_id": "remedy-source",
+                  "revision": 1,
+                  "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "execution_outcome": {
+      "outcome": "APPLIED",
+      "command_record": {
+        "command_id": "cmd-record_proposal_branch-organizer",
+        "tenant_node_id": "node-1",
+        "principal_id": "principal-organizer",
+        "action_id": "RECORD_PROPOSAL_BRANCH",
+        "idempotency_key": "idem-record_proposal_branch-organizer",
+        "request_sha256": "sha256:f619092e83557df18fe916dd4a72aac2091f591e0b361ec3b897f2c3452721fa",
+        "current_attempt_id": "attempt-1",
+        "generation": 1,
+        "version_seq": 2,
+        "status": "APPLIED",
+        "result_id": "result-1"
+      },
+      "command_attempt": {
+        "attempt_id": "attempt-1",
+        "command_id": "cmd-record_proposal_branch-organizer",
+        "generation": 1,
+        "version_seq": 2,
+        "status": "APPLIED"
+      },
+      "command_result": {
+        "result_id": "result-1",
+        "command_id": "cmd-record_proposal_branch-organizer",
+        "attempt_id": "attempt-1",
+        "generation": 1,
+        "status": "APPLIED",
+        "retry_disposition": "FINAL",
+        "applied_versions": [
+          {
+            "object_id": "branch-1",
+            "version_seq": 1
+          }
+        ]
+      },
+      "command_rejection": null,
+      "auth_check_receipt": {
+        "receipt_id": "receipt-organizer",
+        "command_id": "cmd-record_proposal_branch-organizer",
+        "attempt_id": "attempt-1",
+        "generation": 1,
+        "idempotency_key": "idem-record_proposal_branch-organizer",
+        "authenticated_principal_id": "principal-organizer",
+        "mandate_id": "mandate-branch",
+        "evaluated_version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "requested_power": "RECORD_PROPOSAL_BRANCH",
+        "target_object_id": "case-1",
+        "evaluated_target_version_seq": 1,
+        "checked_at": "2026-11-06T00:00:00Z",
+        "authority_source_id": "authority-source-1",
+        "domain_sha256": "sha256:1f35ef77c30090f71f50c291117dfa73ef4c7f2c122c032fca9e00fdff8d6aab",
+        "context_sha256": "sha256:3c2b154ddb97d199f16c80dd58fa92c360d7b75ce174666a9da3f7df376e295e",
+        "verification_status": "VERIFIED_ACTIVE"
+      },
+      "audit_event": {
+        "audit_id": "audit-event-1",
+        "command_id": "cmd-record_proposal_branch-organizer",
+        "attempt_id": "attempt-1",
+        "generation": 1,
+        "principal_id": "principal-organizer",
+        "action_id": "RECORD_PROPOSAL_BRANCH",
+        "outcome": "APPLIED",
+        "checked_at": "2026-11-06T00:00:00Z",
+        "before_domain_sha256": "sha256:1f35ef77c30090f71f50c291117dfa73ef4c7f2c122c032fca9e00fdff8d6aab",
+        "after_domain_sha256": "sha256:8152a315bc018dbd1780bdbdad3db4f20c323d9834290571f2b68c95172981f0",
+        "written_versions": [
+          {
+            "object_id": "branch-1",
+            "version_seq": 1
+          }
+        ]
+      },
+      "fault_observation": null
+    }
+  }
+}

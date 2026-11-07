@@ -1,0 +1,58 @@
+{
+  "recorded_at": "2026-11-05T16:12:03.968971+00:00",
+  "contract_version": "0.3.0-rc1-slice2c",
+  "python_executable": "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+  "python_version": "3.14.0",
+  "jsonschema_version": "4.23.0",
+  "test_runs": [
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+        "-m",
+        "unittest",
+        "-v",
+        "test_aw001_slice1",
+        "test_aw001_slice2",
+        "test_aw001_slice2b",
+        "test_case_packet"
+      ],
+      "exit_code": 0,
+      "output": "baseline-tests.txt",
+      "test_count": 197,
+      "cwd": "tests",
+      "environment": {
+        "PYTHONPATH": "/Users/hao/Documents/axioweave"
+      }
+    },
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_aw001_slice2c.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "output": "slice2c-tests.txt",
+      "test_count": 86
+    },
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "output": "all-tests.txt",
+      "test_count": 283
+    }
+  ]
+}

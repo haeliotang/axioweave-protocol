@@ -1,0 +1,122 @@
+{
+  "contract_version": "0.5.0-rc1-slice4a",
+  "global_lock_order": [
+    "FulfillmentTicket",
+    "ProtectiveOrder",
+    "Case / Commitment",
+    "AuthorityRecord",
+    "CommandRecord"
+  ],
+  "actions": {
+    "SET_GOVERNANCE_MARKINGS": {
+      "required_power": "SET_GOVERNANCE_MARKINGS",
+      "requires_effectiveness_envelope": true,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_INTAKE_OR_FOUR_TUPLE",
+        "CHECK_MARKING_MONOTONICITY",
+        "CHECK_DERIVED_MARKINGS",
+        "CHECK_LINEAGE_DAG_AND_CASE_SCOPE",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "write_policy": "ADD_OR_TIGHTEN_MARKING"
+    },
+    "RELAX_GOVERNANCE_MARKINGS": {
+      "required_power": "RELAX_GOVERNANCE_MARKINGS",
+      "requires_effectiveness_envelope": true,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_INTAKE_OR_FOUR_TUPLE",
+        "CHECK_MARKING_MONOTONICITY",
+        "CHECK_DERIVED_MARKINGS",
+        "CHECK_LINEAGE_DAG_AND_CASE_SCOPE",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "write_policy": "RELAX_MARKING"
+    },
+    "RECORD_DERIVED_OUTPUT": {
+      "required_power": "RECORD_DERIVED_OUTPUT",
+      "requires_effectiveness_envelope": true,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_INTAKE_OR_FOUR_TUPLE",
+        "CHECK_MARKING_MONOTONICITY",
+        "CHECK_DERIVED_MARKINGS",
+        "CHECK_LINEAGE_DAG_AND_CASE_SCOPE",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "write_policy": "CREATE_DERIVED_OUTPUT"
+    },
+    "RECORD_LINEAGE_EDGE": {
+      "required_power": "RECORD_LINEAGE_EDGE",
+      "requires_effectiveness_envelope": true,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_INTAKE_OR_FOUR_TUPLE",
+        "CHECK_MARKING_MONOTONICITY",
+        "CHECK_DERIVED_MARKINGS",
+        "CHECK_LINEAGE_DAG_AND_CASE_SCOPE",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "write_policy": "CREATE_LINEAGE_EDGE"
+    },
+    "RECORD_DEPENDENCY_REVIEW": {
+      "required_power": "RECORD_DEPENDENCY_REVIEW",
+      "requires_effectiveness_envelope": true,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_INTAKE_OR_FOUR_TUPLE",
+        "CHECK_MARKING_MONOTONICITY",
+        "CHECK_DERIVED_MARKINGS",
+        "CHECK_LINEAGE_DAG_AND_CASE_SCOPE",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "write_policy": "CREATE_DEPENDENCY_REVIEW"
+    }
+  }
+}

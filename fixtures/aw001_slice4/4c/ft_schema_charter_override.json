@@ -1,0 +1,935 @@
+{
+  "before": {
+    "domain_objects": {
+      "operations": {
+        "cases": [
+          {
+            "object_id": "case-1",
+            "kind": "CASE",
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "parent_object_id": null,
+            "version_seq": 1,
+            "proposer_member_id": "member-proposer",
+            "rule_version_seq": 1,
+            "template_sod_policy": {
+              "version": "pack-a-v1",
+              "exclude_commitment_executors_from_verification": false
+            }
+          }
+        ],
+        "resource_pools": [
+          {
+            "object_id": "pool-1",
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "version_seq": 1,
+            "resource_spec": {
+              "resource_kind": "FUNDS",
+              "unit_code": "USD_CENTS"
+            },
+            "total_capacity_minor": 100000,
+            "committed_obligations_minor": 0
+          }
+        ],
+        "commitments": [],
+        "tickets": [],
+        "execution_verifications": [],
+        "protective_orders": [],
+        "protection_envelopes": [],
+        "effectiveness_envelopes": []
+      },
+      "case_access_policies": [
+        {
+          "case_id": "case-1",
+          "tenant_node_id": "node-1",
+          "access_policy_version": 1,
+          "updated_by_command_id": "cmd-init"
+        }
+      ],
+      "output_artifacts": [
+        {
+          "artifact_id": "artifact-1",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "artifact_kind": "SUMMARY",
+          "source_refs": [
+            {
+              "evidence_id": "release-source",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          ],
+          "content_sha256": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "display_status": "ACTIVE",
+          "current_policy_version": 1
+        },
+        {
+          "artifact_id": "artifact-2",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "artifact_kind": "NOTIFICATION",
+          "source_refs": [
+            {
+              "evidence_id": "release-source",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          ],
+          "content_sha256": "sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+          "display_status": "ACTIVE",
+          "current_policy_version": 1
+        }
+      ],
+      "output_stagings": [],
+      "output_withdrawals": [],
+      "notification_tasks": [
+        {
+          "notification_id": "task-1",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "artifact_id": "artifact-1",
+          "payload_mode": "FULL_TEXT",
+          "recorded_policy_version": 1,
+          "status": "PENDING",
+          "dispatched_at": null,
+          "attempts": 0,
+          "created_command_id": null,
+          "created_envelope_id": null
+        },
+        {
+          "notification_id": "task-2",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "artifact_id": "artifact-2",
+          "payload_mode": "METADATA_ONLY",
+          "recorded_policy_version": 1,
+          "status": "PENDING",
+          "dispatched_at": null,
+          "attempts": 0,
+          "created_command_id": null,
+          "created_envelope_id": null
+        }
+      ],
+      "recovery_manifests": [],
+      "template_installations": [],
+      "deployment_records": [],
+      "effectiveness_envelopes": []
+    },
+    "command_record": {
+      "command_id": "cmd-record_deployment_manifest-operator",
+      "tenant_node_id": "node-1",
+      "principal_id": "principal-operator",
+      "action_id": "RECORD_DEPLOYMENT_MANIFEST",
+      "idempotency_key": "idem-record_deployment_manifest-operator",
+      "request_sha256": "sha256:5e75d843e91a5c1271af4786ab2814237c442a9670baf0161bfb1e1056cfbad0",
+      "current_attempt_id": "attempt-1",
+      "generation": 1,
+      "version_seq": 1,
+      "status": "IN_FLIGHT",
+      "result_id": null
+    },
+    "command_attempt": {
+      "attempt_id": "attempt-1",
+      "command_id": "cmd-record_deployment_manifest-operator",
+      "generation": 1,
+      "version_seq": 1,
+      "status": "IN_FLIGHT"
+    }
+  },
+  "command": {
+    "command_id": "cmd-record_deployment_manifest-operator",
+    "idempotency_key": "idem-record_deployment_manifest-operator",
+    "requested_action": "RECORD_DEPLOYMENT_MANIFEST",
+    "target_object_id": "case-1",
+    "target_expected_version_seq": 1,
+    "mandate_claim": {
+      "mandate_id": "mandate-deploy",
+      "expected_version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "claimed_power": "RECORD_DEPLOYMENT_MANIFEST"
+    },
+    "payload": {
+      "deployment_id": "deployment-1",
+      "build_ref": {
+        "evidence_id": "build",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "schema_ref": {
+        "evidence_id": "schema",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "action_registry_ref": {
+        "evidence_id": "registry",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "template_versions": [
+        "pack-a@1.0.0"
+      ],
+      "spec_frozen_ref": {
+        "evidence_id": "spec-frozen",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "test_report_ref": {
+        "evidence_id": "test-report",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "target_environment": "LOCAL_SIMULATION",
+      "migration_plan_ref": {
+        "evidence_id": "migration-plan",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "backup_recovery_ref": {
+        "evidence_id": "backup-recovery",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "operator_member_id": "member-operator",
+      "approval_ref": {
+        "evidence_id": "approval",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "rollback_build_ref": {
+        "evidence_id": "rollback",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "compatibility_status": "COMPATIBLE",
+      "effectiveness_envelope_input": {
+        "mandate_clause_ref": "clause-mandate-deploy",
+        "evidence_refs": [
+          {
+            "evidence_id": "release-source",
+            "revision": 1,
+            "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ],
+        "scope_spec": {
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "effective_from": "2026-09-01T00:00:00Z",
+          "effective_until": "2027-01-01T00:00:00Z",
+          "resource_spec": {
+            "resource_kind": "FUNDS",
+            "unit_code": "USD_CENTS"
+          },
+          "max_amount_minor": 100000
+        },
+        "remedy_spec": {
+          "notice_recipients": [
+            "member-publisher"
+          ],
+          "challenge_window_hours": 24,
+          "review_body_id": "review-body-1",
+          "rollback_or_compensation_procedure_ref": {
+            "evidence_id": "remedy-source",
+            "revision": 1,
+            "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        }
+      },
+      "charter_override": true
+    },
+    "dependency_versions": [
+      {
+        "object_id": "case-1",
+        "version_seq": 1
+      }
+    ]
+  },
+  "server_context": {
+    "contract_version": "0.5.0-rc1-slice4c",
+    "mode": "simulation",
+    "data_classification": "synthetic",
+    "execution_enabled": false,
+    "tenant_node_id": "node-1",
+    "case_id": "case-1",
+    "authenticated_principal_id": "principal-operator",
+    "authenticated_member_id": "member-operator",
+    "member_directory": [
+      {
+        "principal_id": "principal-publisher",
+        "member_id": "member-publisher",
+        "status": "VERIFIED",
+        "source_ref": {
+          "evidence_id": "member-principal-publisher",
+          "revision": 1,
+          "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      },
+      {
+        "principal_id": "principal-operator",
+        "member_id": "member-operator",
+        "status": "VERIFIED",
+        "source_ref": {
+          "evidence_id": "member-principal-operator",
+          "revision": 1,
+          "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      },
+      {
+        "principal_id": "principal-recoverer",
+        "member_id": "member-recoverer",
+        "status": "VERIFIED",
+        "source_ref": {
+          "evidence_id": "member-principal-recoverer",
+          "revision": 1,
+          "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      },
+      {
+        "principal_id": "principal-proposer",
+        "member_id": "member-proposer",
+        "status": "VERIFIED",
+        "source_ref": {
+          "evidence_id": "member-principal-proposer",
+          "revision": 1,
+          "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      }
+    ],
+    "access_granted": true,
+    "evaluated_at": "2026-11-06T00:00:00Z",
+    "attempt_id": "attempt-1",
+    "generation": 1,
+    "authority_source_id": "authority-source-1",
+    "authority_source_status": "AVAILABLE",
+    "authority_inventory_complete": true,
+    "authority_snapshots": [
+      {
+        "mandate_id": "mandate-stage",
+        "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "principal_id": "principal-publisher",
+        "tenant_node_id": "node-1",
+        "case_id": "case-1",
+        "powers": [
+          "STAGE_OUTPUT_RELEASE"
+        ],
+        "allowed_target_ids": [
+          "case-1"
+        ],
+        "clause_reference": "clause-mandate-stage",
+        "status": "ACTIVE",
+        "valid_from": "2026-09-01T00:00:00Z",
+        "valid_until": "2027-01-01T00:00:00Z"
+      },
+      {
+        "mandate_id": "mandate-publish",
+        "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "principal_id": "principal-publisher",
+        "tenant_node_id": "node-1",
+        "case_id": "case-1",
+        "powers": [
+          "PUBLISH_LOCAL_OUTPUT"
+        ],
+        "allowed_target_ids": [
+          "case-1"
+        ],
+        "clause_reference": "clause-mandate-publish",
+        "status": "ACTIVE",
+        "valid_from": "2026-09-01T00:00:00Z",
+        "valid_until": "2027-01-01T00:00:00Z"
+      },
+      {
+        "mandate_id": "mandate-withdraw",
+        "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "principal_id": "principal-publisher",
+        "tenant_node_id": "node-1",
+        "case_id": "case-1",
+        "powers": [
+          "WITHDRAW_OUTPUT"
+        ],
+        "allowed_target_ids": [
+          "case-1"
+        ],
+        "clause_reference": "clause-mandate-withdraw",
+        "status": "ACTIVE",
+        "valid_from": "2026-09-01T00:00:00Z",
+        "valid_until": "2027-01-01T00:00:00Z"
+      },
+      {
+        "mandate_id": "mandate-dispatch",
+        "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "principal_id": "principal-publisher",
+        "tenant_node_id": "node-1",
+        "case_id": "case-1",
+        "powers": [
+          "DISPATCH_NOTIFICATION"
+        ],
+        "allowed_target_ids": [
+          "case-1"
+        ],
+        "clause_reference": "clause-mandate-dispatch",
+        "status": "ACTIVE",
+        "valid_from": "2026-09-01T00:00:00Z",
+        "valid_until": "2027-01-01T00:00:00Z"
+      },
+      {
+        "mandate_id": "mandate-recovery",
+        "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "principal_id": "principal-recoverer",
+        "tenant_node_id": "node-1",
+        "case_id": "case-1",
+        "powers": [
+          "RECORD_RECOVERY_MANIFEST",
+          "INSTALL_TEMPLATE_PACKAGE"
+        ],
+        "allowed_target_ids": [
+          "case-1"
+        ],
+        "clause_reference": "clause-mandate-recovery",
+        "status": "ACTIVE",
+        "valid_from": "2026-09-01T00:00:00Z",
+        "valid_until": "2027-01-01T00:00:00Z"
+      },
+      {
+        "mandate_id": "mandate-deploy",
+        "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "principal_id": "principal-operator",
+        "tenant_node_id": "node-1",
+        "case_id": "case-1",
+        "powers": [
+          "RECORD_DEPLOYMENT_MANIFEST"
+        ],
+        "allowed_target_ids": [
+          "case-1"
+        ],
+        "clause_reference": "clause-mandate-deploy",
+        "status": "ACTIVE",
+        "valid_from": "2026-09-01T00:00:00Z",
+        "valid_until": "2027-01-01T00:00:00Z"
+      }
+    ],
+    "evidence_snapshots": [
+      {
+        "evidence_id": "member-principal-publisher",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "member-principal-operator",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "member-principal-recoverer",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "member-principal-proposer",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "release-source",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "remedy-source",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "staging-file",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "published-file",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "template-source",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "local-adoption",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "build",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "schema",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "registry",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "spec-frozen",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "test-report",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "migration-plan",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "backup-recovery",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "approval",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "rollback",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      }
+    ],
+    "generated_auth_receipt": {
+      "receipt_id": "receipt-deployment-1",
+      "command_id": "cmd-record_deployment_manifest-operator",
+      "attempt_id": "attempt-1",
+      "generation": 1,
+      "idempotency_key": "idem-record_deployment_manifest-operator",
+      "authenticated_principal_id": "principal-operator",
+      "mandate_id": "mandate-deploy",
+      "evaluated_version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "requested_power": "RECORD_DEPLOYMENT_MANIFEST",
+      "target_object_id": "case-1",
+      "evaluated_target_version_seq": 1,
+      "checked_at": "2026-11-06T00:00:00Z",
+      "authority_source_id": "authority-source-1",
+      "domain_sha256": "sha256:30f385a6f2b805f00a8f903344fa1a78130b347fd3d9c026cb3a8daacbdfe4aa",
+      "context_sha256": "sha256:e2f59aa387632b78c69eea654dfee2baf3178f1b7073ccb32410fee5848e877b",
+      "verification_status": "VERIFIED_ACTIVE"
+    },
+    "new_envelope_id": "env-record_deployment_manifest-operator-deployment-1",
+    "execution_observation": "NORMAL"
+  },
+  "after": {
+    "domain_objects": {
+      "operations": {
+        "cases": [
+          {
+            "object_id": "case-1",
+            "kind": "CASE",
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "parent_object_id": null,
+            "version_seq": 1,
+            "proposer_member_id": "member-proposer",
+            "rule_version_seq": 1,
+            "template_sod_policy": {
+              "version": "pack-a-v1",
+              "exclude_commitment_executors_from_verification": false
+            }
+          }
+        ],
+        "resource_pools": [
+          {
+            "object_id": "pool-1",
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "version_seq": 1,
+            "resource_spec": {
+              "resource_kind": "FUNDS",
+              "unit_code": "USD_CENTS"
+            },
+            "total_capacity_minor": 100000,
+            "committed_obligations_minor": 0
+          }
+        ],
+        "commitments": [],
+        "tickets": [],
+        "execution_verifications": [],
+        "protective_orders": [],
+        "protection_envelopes": [],
+        "effectiveness_envelopes": []
+      },
+      "case_access_policies": [
+        {
+          "case_id": "case-1",
+          "tenant_node_id": "node-1",
+          "access_policy_version": 1,
+          "updated_by_command_id": "cmd-init"
+        }
+      ],
+      "output_artifacts": [
+        {
+          "artifact_id": "artifact-1",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "artifact_kind": "SUMMARY",
+          "source_refs": [
+            {
+              "evidence_id": "release-source",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          ],
+          "content_sha256": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "display_status": "ACTIVE",
+          "current_policy_version": 1
+        },
+        {
+          "artifact_id": "artifact-2",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "artifact_kind": "NOTIFICATION",
+          "source_refs": [
+            {
+              "evidence_id": "release-source",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          ],
+          "content_sha256": "sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+          "display_status": "ACTIVE",
+          "current_policy_version": 1
+        }
+      ],
+      "output_stagings": [],
+      "output_withdrawals": [],
+      "notification_tasks": [
+        {
+          "notification_id": "task-1",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "artifact_id": "artifact-1",
+          "payload_mode": "FULL_TEXT",
+          "recorded_policy_version": 1,
+          "status": "PENDING",
+          "dispatched_at": null,
+          "attempts": 0,
+          "created_command_id": null,
+          "created_envelope_id": null
+        },
+        {
+          "notification_id": "task-2",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "artifact_id": "artifact-2",
+          "payload_mode": "METADATA_ONLY",
+          "recorded_policy_version": 1,
+          "status": "PENDING",
+          "dispatched_at": null,
+          "attempts": 0,
+          "created_command_id": null,
+          "created_envelope_id": null
+        }
+      ],
+      "recovery_manifests": [],
+      "template_installations": [],
+      "deployment_records": [
+        {
+          "deployment_id": "deployment-1",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "build_ref": {
+            "evidence_id": "build",
+            "revision": 1,
+            "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "schema_ref": {
+            "evidence_id": "schema",
+            "revision": 1,
+            "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "action_registry_ref": {
+            "evidence_id": "registry",
+            "revision": 1,
+            "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "spec_frozen_ref": {
+            "evidence_id": "spec-frozen",
+            "revision": 1,
+            "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "test_report_ref": {
+            "evidence_id": "test-report",
+            "revision": 1,
+            "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "migration_plan_ref": {
+            "evidence_id": "migration-plan",
+            "revision": 1,
+            "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "backup_recovery_ref": {
+            "evidence_id": "backup-recovery",
+            "revision": 1,
+            "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "approval_ref": {
+            "evidence_id": "approval",
+            "revision": 1,
+            "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "rollback_build_ref": {
+            "evidence_id": "rollback",
+            "revision": 1,
+            "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "template_versions": [
+            "pack-a@1.0.0"
+          ],
+          "target_environment": "LOCAL_SIMULATION",
+          "operator_member_id": "member-operator",
+          "compatibility_status": "COMPATIBLE",
+          "actions_enabled": true,
+          "created_command_id": "cmd-record_deployment_manifest-operator",
+          "created_envelope_id": "env-record_deployment_manifest-operator-deployment-1"
+        }
+      ],
+      "effectiveness_envelopes": [
+        {
+          "envelope_id": "env-record_deployment_manifest-operator-deployment-1",
+          "action_type": "RECORD_DEPLOYMENT_MANIFEST",
+          "target_object_id": "case-1",
+          "evaluated_target_version_seq": 1,
+          "resulting_versions": [
+            {
+              "object_id": "deployment-1",
+              "version_seq": 1
+            }
+          ],
+          "mandate_ref": {
+            "mandate_id": "mandate-deploy",
+            "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "clause_reference": "clause-mandate-deploy"
+          },
+          "auth_check_receipt": {
+            "receipt_id": "receipt-deployment-1",
+            "command_id": "cmd-record_deployment_manifest-operator",
+            "attempt_id": "attempt-1",
+            "generation": 1,
+            "idempotency_key": "idem-record_deployment_manifest-operator",
+            "authenticated_principal_id": "principal-operator",
+            "mandate_id": "mandate-deploy",
+            "evaluated_version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "requested_power": "RECORD_DEPLOYMENT_MANIFEST",
+            "target_object_id": "case-1",
+            "evaluated_target_version_seq": 1,
+            "checked_at": "2026-11-06T00:00:00Z",
+            "authority_source_id": "authority-source-1",
+            "domain_sha256": "sha256:30f385a6f2b805f00a8f903344fa1a78130b347fd3d9c026cb3a8daacbdfe4aa",
+            "context_sha256": "sha256:e2f59aa387632b78c69eea654dfee2baf3178f1b7073ccb32410fee5848e877b",
+            "verification_status": "VERIFIED_ACTIVE"
+          },
+          "evidence_refs": [
+            {
+              "evidence_id": "release-source",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          ],
+          "scope_spec": {
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "effective_from": "2026-09-01T00:00:00Z",
+            "effective_until": "2027-01-01T00:00:00Z",
+            "resource_spec": {
+              "resource_kind": "FUNDS",
+              "unit_code": "USD_CENTS"
+            },
+            "max_amount_minor": 100000
+          },
+          "remedy_spec": {
+            "notice_recipients": [
+              "member-publisher"
+            ],
+            "challenge_window_hours": 24,
+            "review_body_id": "review-body-1",
+            "rollback_or_compensation_procedure_ref": {
+              "evidence_id": "remedy-source",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          },
+          "effect_parameters_sha256": "sha256:6c1cca2d361754545ad5531eb17622ca22bbbd5fb53483549af8120b122eb8ba",
+          "actor_member_id": "member-operator",
+          "payload_snapshot": {
+            "deployment_id": "deployment-1",
+            "build_ref": {
+              "evidence_id": "build",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "schema_ref": {
+              "evidence_id": "schema",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "action_registry_ref": {
+              "evidence_id": "registry",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "template_versions": [
+              "pack-a@1.0.0"
+            ],
+            "spec_frozen_ref": {
+              "evidence_id": "spec-frozen",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "test_report_ref": {
+              "evidence_id": "test-report",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "target_environment": "LOCAL_SIMULATION",
+            "migration_plan_ref": {
+              "evidence_id": "migration-plan",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "backup_recovery_ref": {
+              "evidence_id": "backup-recovery",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "operator_member_id": "member-operator",
+            "approval_ref": {
+              "evidence_id": "approval",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "rollback_build_ref": {
+              "evidence_id": "rollback",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "compatibility_status": "COMPATIBLE",
+            "effectiveness_envelope_input": {
+              "mandate_clause_ref": "clause-mandate-deploy",
+              "evidence_refs": [
+                {
+                  "evidence_id": "release-source",
+                  "revision": 1,
+                  "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                }
+              ],
+              "scope_spec": {
+                "tenant_node_id": "node-1",
+                "case_id": "case-1",
+                "effective_from": "2026-09-01T00:00:00Z",
+                "effective_until": "2027-01-01T00:00:00Z",
+                "resource_spec": {
+                  "resource_kind": "FUNDS",
+                  "unit_code": "USD_CENTS"
+                },
+                "max_amount_minor": 100000
+              },
+              "remedy_spec": {
+                "notice_recipients": [
+                  "member-publisher"
+                ],
+                "challenge_window_hours": 24,
+                "review_body_id": "review-body-1",
+                "rollback_or_compensation_procedure_ref": {
+                  "evidence_id": "remedy-source",
+                  "revision": 1,
+                  "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "execution_outcome": {
+      "outcome": "APPLIED",
+      "command_record": {
+        "command_id": "cmd-record_deployment_manifest-operator",
+        "tenant_node_id": "node-1",
+        "principal_id": "principal-operator",
+        "action_id": "RECORD_DEPLOYMENT_MANIFEST",
+        "idempotency_key": "idem-record_deployment_manifest-operator",
+        "request_sha256": "sha256:5e75d843e91a5c1271af4786ab2814237c442a9670baf0161bfb1e1056cfbad0",
+        "current_attempt_id": "attempt-1",
+        "generation": 1,
+        "version_seq": 2,
+        "status": "APPLIED",
+        "result_id": "result-1"
+      },
+      "command_attempt": {
+        "attempt_id": "attempt-1",
+        "command_id": "cmd-record_deployment_manifest-operator",
+        "generation": 1,
+        "version_seq": 2,
+        "status": "APPLIED"
+      },
+      "command_result": {
+        "result_id": "result-1",
+        "command_id": "cmd-record_deployment_manifest-operator",
+        "attempt_id": "attempt-1",
+        "generation": 1,
+        "status": "APPLIED",
+        "retry_disposition": "FINAL",
+        "applied_versions": [
+          {
+            "object_id": "deployment-1",
+            "version_seq": 1
+          }
+        ]
+      },
+      "command_rejection": null,
+      "auth_check_receipt": {
+        "receipt_id": "receipt-deployment-1",
+        "command_id": "cmd-record_deployment_manifest-operator",
+        "attempt_id": "attempt-1",
+        "generation": 1,
+        "idempotency_key": "idem-record_deployment_manifest-operator",
+        "authenticated_principal_id": "principal-operator",
+        "mandate_id": "mandate-deploy",
+        "evaluated_version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "requested_power": "RECORD_DEPLOYMENT_MANIFEST",
+        "target_object_id": "case-1",
+        "evaluated_target_version_seq": 1,
+        "checked_at": "2026-11-06T00:00:00Z",
+        "authority_source_id": "authority-source-1",
+        "domain_sha256": "sha256:30f385a6f2b805f00a8f903344fa1a78130b347fd3d9c026cb3a8daacbdfe4aa",
+        "context_sha256": "sha256:e2f59aa387632b78c69eea654dfee2baf3178f1b7073ccb32410fee5848e877b",
+        "verification_status": "VERIFIED_ACTIVE"
+      },
+      "audit_event": {
+        "audit_id": "audit-event-1",
+        "command_id": "cmd-record_deployment_manifest-operator",
+        "attempt_id": "attempt-1",
+        "generation": 1,
+        "principal_id": "principal-operator",
+        "action_id": "RECORD_DEPLOYMENT_MANIFEST",
+        "outcome": "APPLIED",
+        "checked_at": "2026-11-06T00:00:00Z",
+        "before_domain_sha256": "sha256:30f385a6f2b805f00a8f903344fa1a78130b347fd3d9c026cb3a8daacbdfe4aa",
+        "after_domain_sha256": "sha256:2fd788144b6e75307f769c3b9bda260dc779279a1e69206328ddd0b88522c036",
+        "written_versions": [
+          {
+            "object_id": "deployment-1",
+            "version_seq": 1
+          }
+        ]
+      },
+      "fault_observation": null
+    }
+  }
+}

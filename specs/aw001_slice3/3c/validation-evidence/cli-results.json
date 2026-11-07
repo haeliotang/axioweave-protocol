@@ -1,0 +1,26 @@
+[
+  {
+    "command": [
+      "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+      "tools/validate_aw001_slice3c.py",
+      "fixtures/aw001_slice3/3c/pt_cast_ballot.json",
+      "fixtures/aw001_slice3/3c/pt_close_round.json"
+    ],
+    "expected_exit_code": 0,
+    "exit_code": 0,
+    "stdout": "{\"input\": \"fixtures/aw001_slice3/3c/pt_cast_ballot.json\", \"is_valid\": true, \"validation_layer\": \"OFFLINE_SEMANTIC\", \"error_code\": null, \"failed_path\": null}\n{\"input\": \"fixtures/aw001_slice3/3c/pt_close_round.json\", \"is_valid\": true, \"validation_layer\": \"OFFLINE_SEMANTIC\", \"error_code\": null, \"failed_path\": null}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+      "tools/validate_aw001_slice3c.py",
+      "fixtures/aw001_slice3/3c/ft_ballot_created_at.json",
+      "fixtures/aw001_slice3/3c/pt_cast_ballot.json"
+    ],
+    "expected_exit_code": 1,
+    "exit_code": 1,
+    "stdout": "{\"input\": \"fixtures/aw001_slice3/3c/ft_ballot_created_at.json\", \"is_valid\": false, \"validation_layer\": \"JSON_SCHEMA\", \"error_code\": \"ERR_CLIENT_FORBIDDEN_FIELD\", \"failed_path\": \"/command/payload\"}\n{\"input\": \"fixtures/aw001_slice3/3c/pt_cast_ballot.json\", \"is_valid\": true, \"validation_layer\": \"OFFLINE_SEMANTIC\", \"error_code\": null, \"failed_path\": null}\n",
+    "stderr": ""
+  }
+]

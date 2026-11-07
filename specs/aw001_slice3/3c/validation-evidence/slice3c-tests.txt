@@ -1,0 +1,50 @@
+test_ballot_has_no_identity_or_time_fields (test_aw001_slice3c.BallotIsolationTests.test_ballot_has_no_identity_or_time_fields) ... ok
+test_ballot_ids_are_random_v4 (test_aw001_slice3c.BallotIsolationTests.test_ballot_ids_are_random_v4) ... ok
+test_cast_writes_ballot_and_consumes_eligibility_atomically (test_aw001_slice3c.BallotIsolationTests.test_cast_writes_ballot_and_consumes_eligibility_atomically) ... ok
+test_command_result_and_audit_never_expose_ballot_content (test_aw001_slice3c.BallotIsolationTests.test_command_result_and_audit_never_expose_ballot_content) ... ok
+test_failed_cast_does_not_consume_eligibility (test_aw001_slice3c.BallotIsolationTests.test_failed_cast_does_not_consume_eligibility) ... ok
+test_fingerprint_requires_hmac_and_fresh_nonce (test_aw001_slice3c.BallotIsolationTests.test_fingerprint_requires_hmac_and_fresh_nonce) ... ok
+test_identity_side_and_content_side_do_not_cross_link (test_aw001_slice3c.BallotIsolationTests.test_identity_side_and_content_side_do_not_cross_link) ... ok
+test_serial_and_time_ordered_ballot_ids_are_rejected (test_aw001_slice3c.BallotIsolationTests.test_serial_and_time_ordered_ballot_ids_are_rejected) ... ok
+test_tally_is_derived_from_ballots (test_aw001_slice3c.BallotIsolationTests.test_tally_is_derived_from_ballots) ... ok
+test_bare_request_digest_for_cast_is_rejected (test_aw001_slice3c.BoundaryTests.test_bare_request_digest_for_cast_is_rejected) ... ok
+test_cli_valid_and_invalid_exit_codes (test_aw001_slice3c.BoundaryTests.test_cli_valid_and_invalid_exit_codes) ... ok
+test_cross_slice_operations_are_untouched (test_aw001_slice3c.BoundaryTests.test_cross_slice_operations_are_untouched) ... ok
+test_registry_rejects_relaxed_checks_and_lock_order (test_aw001_slice3c.BoundaryTests.test_registry_rejects_relaxed_checks_and_lock_order) ... ok
+test_round_history_is_not_rewritten (test_aw001_slice3c.BoundaryTests.test_round_history_is_not_rewritten) ... ok
+test_schema_layer_counts_are_stable (test_aw001_slice3c.BoundaryTests.test_schema_layer_counts_are_stable) ... ok
+test_simulation_only (test_aw001_slice3c.BoundaryTests.test_simulation_only) ... ok
+test_ft_applied_wrong_domain (test_aw001_slice3c.GoldenTests.test_ft_applied_wrong_domain) ... ok
+test_ft_audit_written_ballot (test_aw001_slice3c.GoldenTests.test_ft_audit_written_ballot) ... ok
+test_ft_ballot_created_at (test_aw001_slice3c.GoldenTests.test_ft_ballot_created_at) ... ok
+test_ft_ballot_identity_field (test_aw001_slice3c.GoldenTests.test_ft_ballot_identity_field) ... ok
+test_ft_ballot_option_digest_field (test_aw001_slice3c.GoldenTests.test_ft_ballot_option_digest_field) ... ok
+test_ft_bare_request_digest (test_aw001_slice3c.GoldenTests.test_ft_bare_request_digest) ... ok
+test_ft_declared_outcome (test_aw001_slice3c.GoldenTests.test_ft_declared_outcome) ... ok
+test_ft_missing_four_tuple (test_aw001_slice3c.GoldenTests.test_ft_missing_four_tuple) ... ok
+test_ft_receipt_binding (test_aw001_slice3c.GoldenTests.test_ft_receipt_binding) ... ok
+test_ft_rejected_domain_mutation (test_aw001_slice3c.GoldenTests.test_ft_rejected_domain_mutation) ... ok
+test_ft_response_leaks_ballot (test_aw001_slice3c.GoldenTests.test_ft_response_leaks_ballot) ... ok
+test_ft_serial_ballot_id (test_aw001_slice3c.GoldenTests.test_ft_serial_ballot_id) ... ok
+test_pt_cast_ballot (test_aw001_slice3c.GoldenTests.test_pt_cast_ballot) ... ok
+test_pt_cast_second_ballot (test_aw001_slice3c.GoldenTests.test_pt_cast_second_ballot) ... ok
+test_pt_close_round (test_aw001_slice3c.GoldenTests.test_pt_close_round) ... ok
+test_pt_open_round (test_aw001_slice3c.GoldenTests.test_pt_open_round) ... ok
+test_pt_rejected_close_before_time (test_aw001_slice3c.GoldenTests.test_pt_rejected_close_before_time) ... ok
+test_pt_rejected_duplicate_ballot (test_aw001_slice3c.GoldenTests.test_pt_rejected_duplicate_ballot) ... ok
+test_pt_rejected_duplicate_round (test_aw001_slice3c.GoldenTests.test_pt_rejected_duplicate_round) ... ok
+test_pt_rejected_nonce_reused (test_aw001_slice3c.GoldenTests.test_pt_rejected_nonce_reused) ... ok
+test_pt_rejected_not_eligible (test_aw001_slice3c.GoldenTests.test_pt_rejected_not_eligible) ... ok
+test_pt_rejected_open_in_past (test_aw001_slice3c.GoldenTests.test_pt_rejected_open_in_past) ... ok
+test_pt_rejected_option_invalid (test_aw001_slice3c.GoldenTests.test_pt_rejected_option_invalid) ... ok
+test_pt_rejected_raw_hash_fingerprint (test_aw001_slice3c.GoldenTests.test_pt_rejected_raw_hash_fingerprint) ... ok
+test_pt_rejected_round_closed_for_cast (test_aw001_slice3c.GoldenTests.test_pt_rejected_round_closed_for_cast) ... ok
+test_pt_rejected_round_not_open (test_aw001_slice3c.GoldenTests.test_pt_rejected_round_not_open) ... ok
+test_registry_missing_validator (test_aw001_slice3c.GoldenTests.test_registry_missing_validator) ... ok
+test_registry_valid (test_aw001_slice3c.GoldenTests.test_registry_valid) ... ok
+test_registry_wrong_lock_order (test_aw001_slice3c.GoldenTests.test_registry_wrong_lock_order) ... ok
+
+----------------------------------------------------------------------
+Ran 45 tests in 1.384s
+
+OK

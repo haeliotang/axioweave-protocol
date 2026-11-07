@@ -1,0 +1,595 @@
+{
+  "before": {
+    "domain_objects": {
+      "operations": {
+        "cases": [
+          {
+            "object_id": "case-1",
+            "kind": "CASE",
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "parent_object_id": null,
+            "version_seq": 1,
+            "proposer_member_id": "member-proposer",
+            "rule_version_seq": 1,
+            "template_sod_policy": {
+              "version": "pack-a-v1",
+              "exclude_commitment_executors_from_verification": false
+            }
+          }
+        ],
+        "resource_pools": [
+          {
+            "object_id": "pool-1",
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "version_seq": 1,
+            "resource_spec": {
+              "resource_kind": "FUNDS",
+              "unit_code": "USD_CENTS"
+            },
+            "total_capacity_minor": 100000,
+            "committed_obligations_minor": 0
+          }
+        ],
+        "commitments": [],
+        "tickets": [],
+        "execution_verifications": [],
+        "protective_orders": [],
+        "protection_envelopes": [],
+        "effectiveness_envelopes": []
+      },
+      "inclusion_audits": [],
+      "speaker_statements": [
+        {
+          "statement_id": "statement-1",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "version_seq": 1,
+          "speaker_member_id": "member-speaker",
+          "original_versions": [
+            {
+              "version_seq": 1,
+              "language": "en",
+              "text": "We need a support fund.",
+              "display_permission": "PUBLIC_PERMITTED",
+              "recorded_at": "2026-11-06T04:00:00Z",
+              "recorded_command_id": "cmd-record_speaker_statement"
+            }
+          ],
+          "current_original_version_seq": 1,
+          "translations": [
+            {
+              "translation_id": "translation-1",
+              "language": "zh-CN",
+              "current_version_seq": 1,
+              "versions": [
+                {
+                  "version_seq": 1,
+                  "language": "zh-CN",
+                  "text": "我们需要一个支持基金。",
+                  "display_permission": "PUBLIC_PERMITTED",
+                  "source_original_version_seq": 1,
+                  "source_text_sha256": "sha256:45647c7ee98e80be88caea506d1880efcac12164320c7eeba0d1fa920ace6337",
+                  "recorded_at": "2026-11-06T04:00:00Z",
+                  "recorded_command_id": "cmd-record_speaker_statement"
+                }
+              ]
+            }
+          ],
+          "expression_confirmations": [],
+          "display_withdrawals": [],
+          "frozen_at": null,
+          "created_command_id": "cmd-record_speaker_statement",
+          "display_state": {
+            "original": {
+              "display_permission": "PUBLIC_PERMITTED",
+              "display_scope": "PUBLIC",
+              "withdrawal_id": null
+            },
+            "translations": [
+              {
+                "translation_id": "translation-1",
+                "display_permission": "PUBLIC_PERMITTED",
+                "display_scope": "PUBLIC",
+                "fallback_original_version_seq": null,
+                "withdrawal_id": null
+              }
+            ]
+          },
+          "representation": {
+            "original_version_seq": 1,
+            "translations": [
+              {
+                "translation_id": "translation-1",
+                "status": "UNCONFIRMED_DRAFT",
+                "confirmed_text_version_seq": null
+              }
+            ]
+          }
+        }
+      ],
+      "materiality_rulings": [],
+      "effectiveness_envelopes": []
+    },
+    "command_record": {
+      "command_id": "cmd-confirm_statement_expression",
+      "tenant_node_id": "node-1",
+      "principal_id": "principal-speaker",
+      "action_id": "CONFIRM_STATEMENT_EXPRESSION",
+      "idempotency_key": "idem-confirm_statement_expression",
+      "request_sha256": "sha256:176d6ed91a6d7874bab89e1da517ab2bb8c3536078184bb4791f02aa2d0a4ca0",
+      "current_attempt_id": "attempt-1",
+      "generation": 1,
+      "version_seq": 1,
+      "status": "IN_FLIGHT",
+      "result_id": null
+    },
+    "command_attempt": {
+      "attempt_id": "attempt-1",
+      "command_id": "cmd-confirm_statement_expression",
+      "generation": 1,
+      "version_seq": 1,
+      "status": "IN_FLIGHT"
+    }
+  },
+  "command": {
+    "command_id": "cmd-confirm_statement_expression",
+    "idempotency_key": "idem-confirm_statement_expression",
+    "requested_action": "CONFIRM_STATEMENT_EXPRESSION",
+    "target_object_id": "statement-1",
+    "target_expected_version_seq": 1,
+    "mandate_claim": null,
+    "payload": {
+      "confirmation_id": "confirmation-1",
+      "text_ref": {
+        "text_kind": "TRANSLATION",
+        "translation_id": "translation-1",
+        "text_version_seq": 1,
+        "text_sha256": "sha256:d42472e13ac57131252ac6dd324ad81be0d5587c49d05ae0ef799b6cf3596a13"
+      }
+    },
+    "dependency_versions": [
+      {
+        "object_id": "case-1",
+        "version_seq": 1
+      }
+    ]
+  },
+  "server_context": {
+    "contract_version": "0.4.0-rc1-slice3a",
+    "mode": "simulation",
+    "data_classification": "synthetic",
+    "execution_enabled": false,
+    "tenant_node_id": "node-1",
+    "case_id": "case-1",
+    "authenticated_principal_id": "principal-speaker",
+    "authenticated_member_id": "member-speaker",
+    "member_directory": [
+      {
+        "principal_id": "principal-recorder",
+        "member_id": "member-recorder",
+        "status": "VERIFIED",
+        "source_ref": {
+          "evidence_id": "member-principal-recorder",
+          "revision": 1,
+          "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      },
+      {
+        "principal_id": "principal-escalator",
+        "member_id": "member-escalator",
+        "status": "VERIFIED",
+        "source_ref": {
+          "evidence_id": "member-principal-escalator",
+          "revision": 1,
+          "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      },
+      {
+        "principal_id": "principal-decider",
+        "member_id": "member-decider",
+        "status": "VERIFIED",
+        "source_ref": {
+          "evidence_id": "member-principal-decider",
+          "revision": 1,
+          "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      },
+      {
+        "principal_id": "principal-speaker",
+        "member_id": "member-speaker",
+        "status": "VERIFIED",
+        "source_ref": {
+          "evidence_id": "member-principal-speaker",
+          "revision": 1,
+          "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      },
+      {
+        "principal_id": "principal-ruler",
+        "member_id": "member-ruler",
+        "status": "VERIFIED",
+        "source_ref": {
+          "evidence_id": "member-principal-ruler",
+          "revision": 1,
+          "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      },
+      {
+        "principal_id": "principal-proposer",
+        "member_id": "member-proposer",
+        "status": "VERIFIED",
+        "source_ref": {
+          "evidence_id": "member-principal-proposer",
+          "revision": 1,
+          "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      },
+      {
+        "principal_id": "principal-reviewer",
+        "member_id": "member-reviewer",
+        "status": "VERIFIED",
+        "source_ref": {
+          "evidence_id": "member-principal-reviewer",
+          "revision": 1,
+          "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      }
+    ],
+    "access_granted": true,
+    "evaluated_at": "2026-11-06T04:00:00Z",
+    "attempt_id": "attempt-1",
+    "generation": 1,
+    "authority_source_id": "authority-source-1",
+    "authority_source_status": "AVAILABLE",
+    "authority_inventory_complete": true,
+    "authority_snapshots": [
+      {
+        "mandate_id": "mandate-recorder",
+        "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "principal_id": "principal-recorder",
+        "tenant_node_id": "node-1",
+        "case_id": "case-1",
+        "powers": [
+          "RECORD_INCLUSION_AUDIT"
+        ],
+        "allowed_target_ids": [
+          "case-1"
+        ],
+        "clause_reference": "clause-mandate-recorder",
+        "status": "ACTIVE",
+        "valid_from": "2026-09-01T00:00:00Z",
+        "valid_until": "2027-01-01T00:00:00Z"
+      },
+      {
+        "mandate_id": "mandate-escalator",
+        "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "principal_id": "principal-escalator",
+        "tenant_node_id": "node-1",
+        "case_id": "case-1",
+        "powers": [
+          "ESCALATE_INCLUSION_SHORTFALL"
+        ],
+        "allowed_target_ids": [
+          "case-1"
+        ],
+        "clause_reference": "clause-mandate-escalator",
+        "status": "ACTIVE",
+        "valid_from": "2026-09-01T00:00:00Z",
+        "valid_until": "2027-01-01T00:00:00Z"
+      },
+      {
+        "mandate_id": "mandate-decider",
+        "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "principal_id": "principal-decider",
+        "tenant_node_id": "node-1",
+        "case_id": "case-1",
+        "powers": [
+          "DECIDE_PROCEDURAL_GAP_DISCLOSURE"
+        ],
+        "allowed_target_ids": [
+          "case-1"
+        ],
+        "clause_reference": "clause-mandate-decider",
+        "status": "ACTIVE",
+        "valid_from": "2026-09-01T00:00:00Z",
+        "valid_until": "2027-01-01T00:00:00Z"
+      },
+      {
+        "mandate_id": "mandate-ruler",
+        "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "principal_id": "principal-ruler",
+        "tenant_node_id": "node-1",
+        "case_id": "case-1",
+        "powers": [
+          "RULE_BALLOT_MATERIALITY"
+        ],
+        "allowed_target_ids": [
+          "case-1"
+        ],
+        "clause_reference": "clause-mandate-ruler",
+        "status": "ACTIVE",
+        "valid_from": "2026-09-01T00:00:00Z",
+        "valid_until": "2027-01-01T00:00:00Z"
+      },
+      {
+        "mandate_id": "mandate-reviewer",
+        "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "principal_id": "principal-reviewer",
+        "tenant_node_id": "node-1",
+        "case_id": "case-1",
+        "powers": [
+          "REVIEW_PROCEDURAL_GAP"
+        ],
+        "allowed_target_ids": [
+          "case-1"
+        ],
+        "clause_reference": "clause-mandate-reviewer",
+        "status": "ACTIVE",
+        "valid_from": "2026-09-01T00:00:00Z",
+        "valid_until": "2027-01-01T00:00:00Z"
+      }
+    ],
+    "evidence_snapshots": [
+      {
+        "evidence_id": "member-principal-recorder",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "member-principal-escalator",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "member-principal-decider",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "member-principal-speaker",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "member-principal-ruler",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "member-principal-proposer",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "member-principal-reviewer",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "audit-source",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "remedy-source",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "statement-policy",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "review-source",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "preauth-source",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "escalation-source",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "ruling-source",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      }
+    ],
+    "generated_auth_receipt": null,
+    "new_envelope_id": null,
+    "execution_observation": "NORMAL",
+    "program_gap_authorization": null,
+    "named_review": null
+  },
+  "after": {
+    "domain_objects": {
+      "operations": {
+        "cases": [
+          {
+            "object_id": "case-1",
+            "kind": "CASE",
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "parent_object_id": null,
+            "version_seq": 1,
+            "proposer_member_id": "member-proposer",
+            "rule_version_seq": 1,
+            "template_sod_policy": {
+              "version": "pack-a-v1",
+              "exclude_commitment_executors_from_verification": false
+            }
+          }
+        ],
+        "resource_pools": [
+          {
+            "object_id": "pool-1",
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "version_seq": 1,
+            "resource_spec": {
+              "resource_kind": "FUNDS",
+              "unit_code": "USD_CENTS"
+            },
+            "total_capacity_minor": 100000,
+            "committed_obligations_minor": 0
+          }
+        ],
+        "commitments": [],
+        "tickets": [],
+        "execution_verifications": [],
+        "protective_orders": [],
+        "protection_envelopes": [],
+        "effectiveness_envelopes": []
+      },
+      "inclusion_audits": [],
+      "speaker_statements": [
+        {
+          "statement_id": "statement-1",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "version_seq": 2,
+          "speaker_member_id": "member-speaker",
+          "original_versions": [
+            {
+              "version_seq": 1,
+              "language": "en",
+              "text": "We need a support fund.",
+              "display_permission": "PUBLIC_PERMITTED",
+              "recorded_at": "2026-11-06T04:00:00Z",
+              "recorded_command_id": "cmd-record_speaker_statement"
+            }
+          ],
+          "current_original_version_seq": 1,
+          "translations": [
+            {
+              "translation_id": "translation-1",
+              "language": "zh-CN",
+              "current_version_seq": 1,
+              "versions": [
+                {
+                  "version_seq": 1,
+                  "language": "zh-CN",
+                  "text": "我们需要一个支持基金。",
+                  "display_permission": "PUBLIC_PERMITTED",
+                  "source_original_version_seq": 1,
+                  "source_text_sha256": "sha256:45647c7ee98e80be88caea506d1880efcac12164320c7eeba0d1fa920ace6337",
+                  "recorded_at": "2026-11-06T04:00:00Z",
+                  "recorded_command_id": "cmd-record_speaker_statement"
+                }
+              ]
+            }
+          ],
+          "expression_confirmations": [
+            {
+              "confirmation_id": "confirmation-1",
+              "text_kind": "TRANSLATION",
+              "translation_id": "translation-1",
+              "text_version_seq": 1,
+              "text_sha256": "sha256:d42472e13ac57131252ac6dd324ad81be0d5587c49d05ae0ef799b6cf3596a13",
+              "confirmed_by_member_id": "member-speaker",
+              "confirmed_at": "2026-11-06T04:00:00Z",
+              "recorded_command_id": "cmd-confirm_statement_expression"
+            }
+          ],
+          "display_withdrawals": [],
+          "frozen_at": null,
+          "created_command_id": "cmd-record_speaker_statement",
+          "display_state": {
+            "original": {
+              "display_permission": "PUBLIC_PERMITTED",
+              "display_scope": "PUBLIC",
+              "withdrawal_id": null
+            },
+            "translations": [
+              {
+                "translation_id": "translation-1",
+                "display_permission": "PUBLIC_PERMITTED",
+                "display_scope": "PUBLIC",
+                "fallback_original_version_seq": null,
+                "withdrawal_id": null
+              }
+            ]
+          },
+          "representation": {
+            "original_version_seq": 1,
+            "translations": [
+              {
+                "translation_id": "translation-1",
+                "status": "CONFIRMED",
+                "confirmed_text_version_seq": 1
+              }
+            ]
+          }
+        }
+      ],
+      "materiality_rulings": [],
+      "effectiveness_envelopes": []
+    },
+    "execution_outcome": {
+      "outcome": "APPLIED",
+      "command_record": {
+        "command_id": "cmd-confirm_statement_expression",
+        "tenant_node_id": "node-1",
+        "principal_id": "principal-speaker",
+        "action_id": "CONFIRM_STATEMENT_EXPRESSION",
+        "idempotency_key": "idem-confirm_statement_expression",
+        "request_sha256": "sha256:176d6ed91a6d7874bab89e1da517ab2bb8c3536078184bb4791f02aa2d0a4ca0",
+        "current_attempt_id": "attempt-1",
+        "generation": 1,
+        "version_seq": 2,
+        "status": "APPLIED",
+        "result_id": "result-1"
+      },
+      "command_attempt": {
+        "attempt_id": "attempt-1",
+        "command_id": "cmd-confirm_statement_expression",
+        "generation": 1,
+        "version_seq": 2,
+        "status": "APPLIED"
+      },
+      "command_result": {
+        "result_id": "result-1",
+        "command_id": "cmd-confirm_statement_expression",
+        "attempt_id": "attempt-1",
+        "generation": 1,
+        "status": "APPLIED",
+        "retry_disposition": "FINAL",
+        "applied_versions": [
+          {
+            "object_id": "statement-1",
+            "version_seq": 2
+          }
+        ]
+      },
+      "command_rejection": null,
+      "auth_check_receipt": null,
+      "audit_event": {
+        "audit_id": "audit-event-1",
+        "command_id": "cmd-confirm_statement_expression",
+        "attempt_id": "attempt-1",
+        "generation": 1,
+        "principal_id": "principal-speaker",
+        "action_id": "CONFIRM_STATEMENT_EXPRESSION",
+        "outcome": "APPLIED",
+        "checked_at": "2026-11-06T04:00:00Z",
+        "before_domain_sha256": "sha256:1dd1ef539e692d7304300f992b617dc68149bbe33aaee12bcf8d0936c09a58e1",
+        "after_domain_sha256": "sha256:f7eab94f5b64ac85513fbe59a390df8df155bbd856cba3c4384584cc9b587089",
+        "written_versions": [
+          {
+            "object_id": "statement-1",
+            "version_seq": 2
+          }
+        ]
+      },
+      "fault_observation": null
+    }
+  }
+}

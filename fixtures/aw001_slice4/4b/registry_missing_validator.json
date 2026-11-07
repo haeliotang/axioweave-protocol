@@ -1,0 +1,165 @@
+{
+  "contract_version": "0.5.0-rc1-slice4b",
+  "global_lock_order": [
+    "CommandRecord",
+    "AuthorityRecord",
+    "Case / Commitment",
+    "ProtectiveOrder",
+    "FulfillmentTicket"
+  ],
+  "actions": {
+    "RECORD_BASELINE_SNAPSHOT": {
+      "required_power": "RECORD_BASELINE_SNAPSHOT",
+      "requires_effectiveness_envelope": true,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_INTAKE_OR_FOUR_TUPLE",
+        "CHECK_BASELINE_AND_BRANCH",
+        "CHECK_AI_SESSION_AND_MARKINGS",
+        "CHECK_BRANCH_GATES",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "write_policy": "CREATE_OR_UPDATE_BASELINE"
+    },
+    "RECORD_PROPOSAL_BRANCH": {
+      "required_power": "RECORD_PROPOSAL_BRANCH",
+      "requires_effectiveness_envelope": true,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_INTAKE_OR_FOUR_TUPLE",
+        "CHECK_BASELINE_AND_BRANCH",
+        "CHECK_AI_SESSION_AND_MARKINGS",
+        "CHECK_BRANCH_GATES",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "write_policy": "CREATE_BRANCH"
+    },
+    "OPEN_AI_DRAFT_SESSION": {
+      "required_power": "OPEN_AI_DRAFT_SESSION",
+      "requires_effectiveness_envelope": true,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_INTAKE_OR_FOUR_TUPLE",
+        "CHECK_BASELINE_AND_BRANCH",
+        "CHECK_AI_SESSION_AND_MARKINGS",
+        "CHECK_BRANCH_GATES",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "write_policy": "CREATE_AI_SESSION"
+    },
+    "RECORD_AI_DRAFT": {
+      "required_power": "RECORD_AI_DRAFT",
+      "requires_effectiveness_envelope": true,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_INTAKE_OR_FOUR_TUPLE",
+        "CHECK_BASELINE_AND_BRANCH",
+        "CHECK_AI_SESSION_AND_MARKINGS",
+        "CHECK_BRANCH_GATES",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "write_policy": "CREATE_AI_DRAFT"
+    },
+    "CONFIRM_AI_DRAFT": {
+      "required_power": null,
+      "requires_effectiveness_envelope": false,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_INTAKE_OR_FOUR_TUPLE",
+        "CHECK_BASELINE_AND_BRANCH",
+        "CHECK_AI_SESSION_AND_MARKINGS",
+        "CHECK_BRANCH_GATES",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "write_policy": "CONFIRM_DRAFT_ONLY"
+    },
+    "REVOKE_AI_SESSION": {
+      "required_power": "REVOKE_AI_SESSION",
+      "requires_effectiveness_envelope": true,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_INTAKE_OR_FOUR_TUPLE",
+        "CHECK_BASELINE_AND_BRANCH",
+        "CHECK_AI_SESSION_AND_MARKINGS",
+        "CHECK_BRANCH_GATES",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "write_policy": "REVOKE_SESSION"
+    },
+    "FREEZE_BRANCH_CANDIDATE": {
+      "required_power": "FREEZE_BRANCH_CANDIDATE",
+      "requires_effectiveness_envelope": true,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_INTAKE_OR_FOUR_TUPLE",
+        "CHECK_BASELINE_AND_BRANCH",
+        "CHECK_AI_SESSION_AND_MARKINGS",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "write_policy": "FREEZE_BRANCH_CANDIDATE"
+    }
+  }
+}

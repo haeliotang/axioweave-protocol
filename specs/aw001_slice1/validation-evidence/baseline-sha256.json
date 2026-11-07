@@ -1,0 +1,9 @@
+{
+  "specs/case-packet.schema.json": "744b621d53b5c62000131eaaa4901048e9c3a2a0bc8aae613fd56bbcfdde9d9a",
+  "scripts/validate_case_packet.py": "5f4c4e51721929ee26a1dc988ea6f0d20c6ad3a41a2ba265ff02c5bbf25c480f",
+  "tests/test_case_packet.py": "8897dd40a0849fbd4accba2a8213df379cc37b317ff42ef61d7c7ff5080b49f1",
+  "requirements-validation.txt": "cb9e5058abe248be8579db704a1c9e30e655b30cb7d5dd093bebf97f44766591",
+  "docs/development-plan.md": "978c32ccfcb1eee3096d453b2c1fdce47a4feb5b00f3dab32fd3d3adc12538ec",
+  "examples/consortium-review.json": "889b36272406c8209ceebd984ecebfb577ccffd4ac5a7301b0a91cfef58b159c",
+  "examples/floating-review-blocked.json": "c0d62d12bb924edc67070df4aa02370260e7d0743990063ee179c86e4fc7e5f1"
+}

@@ -1,0 +1,350 @@
+[
+  {
+    "fixture": "fixtures/aw001_slice3/3c/pt_open_round.json",
+    "expected_layer": "OFFLINE_SEMANTIC",
+    "expected_error_code": null,
+    "actual": {
+      "is_valid": true,
+      "validation_layer": "OFFLINE_SEMANTIC",
+      "error_code": null,
+      "failed_path": null
+    },
+    "assertion_passed": true
+  },
+  {
+    "fixture": "fixtures/aw001_slice3/3c/pt_cast_ballot.json",
+    "expected_layer": "OFFLINE_SEMANTIC",
+    "expected_error_code": null,
+    "actual": {
+      "is_valid": true,
+      "validation_layer": "OFFLINE_SEMANTIC",
+      "error_code": null,
+      "failed_path": null
+    },
+    "assertion_passed": true
+  },
+  {
+    "fixture": "fixtures/aw001_slice3/3c/pt_cast_second_ballot.json",
+    "expected_layer": "OFFLINE_SEMANTIC",
+    "expected_error_code": null,
+    "actual": {
+      "is_valid": true,
+      "validation_layer": "OFFLINE_SEMANTIC",
+      "error_code": null,
+      "failed_path": null
+    },
+    "assertion_passed": true
+  },
+  {
+    "fixture": "fixtures/aw001_slice3/3c/pt_close_round.json",
+    "expected_layer": "OFFLINE_SEMANTIC",
+    "expected_error_code": null,
+    "actual": {
+      "is_valid": true,
+      "validation_layer": "OFFLINE_SEMANTIC",
+      "error_code": null,
+      "failed_path": null
+    },
+    "assertion_passed": true
+  },
+  {
+    "fixture": "fixtures/aw001_slice3/3c/pt_rejected_not_eligible.json",
+    "expected_layer": "OFFLINE_SEMANTIC",
+    "expected_error_code": null,
+    "actual": {
+      "is_valid": true,
+      "validation_layer": "OFFLINE_SEMANTIC",
+      "error_code": null,
+      "failed_path": null
+    },
+    "assertion_passed": true
+  },
+  {
+    "fixture": "fixtures/aw001_slice3/3c/pt_rejected_duplicate_ballot.json",
+    "expected_layer": "OFFLINE_SEMANTIC",
+    "expected_error_code": null,
+    "actual": {
+      "is_valid": true,
+      "validation_layer": "OFFLINE_SEMANTIC",
+      "error_code": null,
+      "failed_path": null
+    },
+    "assertion_passed": true
+  },
+  {
+    "fixture": "fixtures/aw001_slice3/3c/pt_rejected_round_closed_for_cast.json",
+    "expected_layer": "OFFLINE_SEMANTIC",
+    "expected_error_code": null,
+    "actual": {
+      "is_valid": true,
+      "validation_layer": "OFFLINE_SEMANTIC",
+      "error_code": null,
+      "failed_path": null
+    },
+    "assertion_passed": true
+  },
+  {
+    "fixture": "fixtures/aw001_slice3/3c/pt_rejected_round_not_open.json",
+    "expected_layer": "OFFLINE_SEMANTIC",
+    "expected_error_code": null,
+    "actual": {
+      "is_valid": true,
+      "validation_layer": "OFFLINE_SEMANTIC",
+      "error_code": null,
+      "failed_path": null
+    },
+    "assertion_passed": true
+  },
+  {
+    "fixture": "fixtures/aw001_slice3/3c/pt_rejected_option_invalid.json",
+    "expected_layer": "OFFLINE_SEMANTIC",
+    "expected_error_code": null,
+    "actual": {
+      "is_valid": true,
+      "validation_layer": "OFFLINE_SEMANTIC",
+      "error_code": null,
+      "failed_path": null
+    },
+    "assertion_passed": true
+  },
+  {
+    "fixture": "fixtures/aw001_slice3/3c/pt_rejected_nonce_reused.json",
+    "expected_layer": "OFFLINE_SEMANTIC",
+    "expected_error_code": null,
+    "actual": {
+      "is_valid": true,
+      "validation_layer": "OFFLINE_SEMANTIC",
+      "error_code": null,
+      "failed_path": null
+    },
+    "assertion_passed": true
+  },
+  {
+    "fixture": "fixtures/aw001_slice3/3c/pt_rejected_raw_hash_fingerprint.json",
+    "expected_layer": "OFFLINE_SEMANTIC",
+    "expected_error_code": null,
+    "actual": {
+      "is_valid": true,
+      "validation_layer": "OFFLINE_SEMANTIC",
+      "error_code": null,
+      "failed_path": null
+    },
+    "assertion_passed": true
+  },
+  {
+    "fixture": "fixtures/aw001_slice3/3c/ft_bare_request_digest.json",
+    "expected_layer": "OFFLINE_SEMANTIC",
+    "expected_error_code": "ERR_BALLOT_REQUEST_DIGEST_UNSAFE",
+    "actual": {
+      "is_valid": false,
+      "validation_layer": "OFFLINE_SEMANTIC",
+      "error_code": "ERR_BALLOT_REQUEST_DIGEST_UNSAFE",
+      "failed_path": "/before/command_record/request_sha256"
+    },
+    "assertion_passed": true
+  },
+  {
+    "fixture": "fixtures/aw001_slice3/3c/pt_rejected_close_before_time.json",
+    "expected_layer": "OFFLINE_SEMANTIC",
+    "expected_error_code": null,
+    "actual": {
+      "is_valid": true,
+      "validation_layer": "OFFLINE_SEMANTIC",
+      "error_code": null,
+      "failed_path": null
+    },
+    "assertion_passed": true
+  },
+  {
+    "fixture": "fixtures/aw001_slice3/3c/pt_rejected_duplicate_round.json",
+    "expected_layer": "OFFLINE_SEMANTIC",
+    "expected_error_code": null,
+    "actual": {
+      "is_valid": true,
+      "validation_layer": "OFFLINE_SEMANTIC",
+      "error_code": null,
+      "failed_path": null
+    },
+    "assertion_passed": true
+  },
+  {
+    "fixture": "fixtures/aw001_slice3/3c/pt_rejected_open_in_past.json",
+    "expected_layer": "OFFLINE_SEMANTIC",
+    "expected_error_code": null,
+    "actual": {
+      "is_valid": true,
+      "validation_layer": "OFFLINE_SEMANTIC",
+      "error_code": null,
+      "failed_path": null
+    },
+    "assertion_passed": true
+  },
+  {
+    "fixture": "fixtures/aw001_slice3/3c/ft_missing_four_tuple.json",
+    "expected_layer": "OFFLINE_SEMANTIC",
+    "expected_error_code": "ERR_INCOMPLETE_FOUR_TUPLE",
+    "actual": {
+      "is_valid": false,
+      "validation_layer": "OFFLINE_SEMANTIC",
+      "error_code": "ERR_INCOMPLETE_FOUR_TUPLE",
+      "failed_path": "/server_context"
+    },
+    "assertion_passed": true
+  },
+  {
+    "fixture": "fixtures/aw001_slice3/3c/ft_receipt_binding.json",
+    "expected_layer": "OFFLINE_SEMANTIC",
+    "expected_error_code": "ERR_RECEIPT_BINDING_MISMATCH",
+    "actual": {
+      "is_valid": false,
+      "validation_layer": "OFFLINE_SEMANTIC",
+      "error_code": "ERR_RECEIPT_BINDING_MISMATCH",
+      "failed_path": "/server_context/generated_auth_receipt"
+    },
+    "assertion_passed": true
+  },
+  {
+    "fixture": "fixtures/aw001_slice3/3c/ft_declared_outcome.json",
+    "expected_layer": "OFFLINE_SEMANTIC",
+    "expected_error_code": "ERR_DECLARED_OUTCOME_MISMATCH",
+    "actual": {
+      "is_valid": false,
+      "validation_layer": "OFFLINE_SEMANTIC",
+      "error_code": "ERR_DECLARED_OUTCOME_MISMATCH",
+      "failed_path": "/after/execution_outcome/outcome"
+    },
+    "assertion_passed": true
+  },
+  {
+    "fixture": "fixtures/aw001_slice3/3c/ft_rejected_domain_mutation.json",
+    "expected_layer": "OFFLINE_SEMANTIC",
+    "expected_error_code": "ERR_REJECTED_DOMAIN_MUTATION",
+    "actual": {
+      "is_valid": false,
+      "validation_layer": "OFFLINE_SEMANTIC",
+      "error_code": "ERR_REJECTED_DOMAIN_MUTATION",
+      "failed_path": "/after/domain_objects"
+    },
+    "assertion_passed": true
+  },
+  {
+    "fixture": "fixtures/aw001_slice3/3c/ft_applied_wrong_domain.json",
+    "expected_layer": "OFFLINE_SEMANTIC",
+    "expected_error_code": "ERR_WRITE_SET_VIOLATION",
+    "actual": {
+      "is_valid": false,
+      "validation_layer": "OFFLINE_SEMANTIC",
+      "error_code": "ERR_WRITE_SET_VIOLATION",
+      "failed_path": "/after/domain_objects"
+    },
+    "assertion_passed": true
+  },
+  {
+    "fixture": "fixtures/aw001_slice3/3c/ft_response_leaks_ballot.json",
+    "expected_layer": "JSON_SCHEMA",
+    "expected_error_code": "ERR_SCHEMA_VALIDATION",
+    "actual": {
+      "is_valid": false,
+      "validation_layer": "JSON_SCHEMA",
+      "error_code": "ERR_SCHEMA_VALIDATION",
+      "failed_path": "/after/execution_outcome/command_result/identity_safe_response"
+    },
+    "assertion_passed": true
+  },
+  {
+    "fixture": "fixtures/aw001_slice3/3c/ft_audit_written_ballot.json",
+    "expected_layer": "OFFLINE_SEMANTIC",
+    "expected_error_code": "ERR_AUDIT_BINDING_MISMATCH",
+    "actual": {
+      "is_valid": false,
+      "validation_layer": "OFFLINE_SEMANTIC",
+      "error_code": "ERR_AUDIT_BINDING_MISMATCH",
+      "failed_path": "/after/execution_outcome/audit_event"
+    },
+    "assertion_passed": true
+  },
+  {
+    "fixture": "fixtures/aw001_slice3/3c/ft_ballot_identity_field.json",
+    "expected_layer": "JSON_SCHEMA",
+    "expected_error_code": "ERR_SCHEMA_VALIDATION",
+    "actual": {
+      "is_valid": false,
+      "validation_layer": "JSON_SCHEMA",
+      "error_code": "ERR_SCHEMA_VALIDATION",
+      "failed_path": "/after/domain_objects/ballots/0"
+    },
+    "assertion_passed": true
+  },
+  {
+    "fixture": "fixtures/aw001_slice3/3c/ft_ballot_created_at.json",
+    "expected_layer": "JSON_SCHEMA",
+    "expected_error_code": "ERR_CLIENT_FORBIDDEN_FIELD",
+    "actual": {
+      "is_valid": false,
+      "validation_layer": "JSON_SCHEMA",
+      "error_code": "ERR_CLIENT_FORBIDDEN_FIELD",
+      "failed_path": "/command/payload"
+    },
+    "assertion_passed": true
+  },
+  {
+    "fixture": "fixtures/aw001_slice3/3c/ft_serial_ballot_id.json",
+    "expected_layer": "JSON_SCHEMA",
+    "expected_error_code": "ERR_SCHEMA_VALIDATION",
+    "actual": {
+      "is_valid": false,
+      "validation_layer": "JSON_SCHEMA",
+      "error_code": "ERR_SCHEMA_VALIDATION",
+      "failed_path": "/command/payload/ballot_id"
+    },
+    "assertion_passed": true
+  },
+  {
+    "fixture": "fixtures/aw001_slice3/3c/ft_ballot_option_digest_field.json",
+    "expected_layer": "JSON_SCHEMA",
+    "expected_error_code": "ERR_CLIENT_FORBIDDEN_FIELD",
+    "actual": {
+      "is_valid": false,
+      "validation_layer": "JSON_SCHEMA",
+      "error_code": "ERR_CLIENT_FORBIDDEN_FIELD",
+      "failed_path": "/command/payload/fingerprint"
+    },
+    "assertion_passed": true
+  },
+  {
+    "fixture": "fixtures/aw001_slice3/3c/registry_valid.json",
+    "expected_layer": "REGISTRY_LOADER",
+    "expected_error_code": null,
+    "actual": {
+      "is_valid": true,
+      "validation_layer": "REGISTRY_LOADER",
+      "error_code": null,
+      "failed_path": null
+    },
+    "assertion_passed": true
+  },
+  {
+    "fixture": "fixtures/aw001_slice3/3c/registry_missing_validator.json",
+    "expected_layer": "REGISTRY_LOADER",
+    "expected_error_code": "ERR_REGISTRY_MANDATORY_VALIDATOR_MISSING",
+    "actual": {
+      "is_valid": false,
+      "validation_layer": "REGISTRY_LOADER",
+      "error_code": "ERR_REGISTRY_MANDATORY_VALIDATOR_MISSING",
+      "failed_path": "/actions/CAST_BALLOT/required_validators"
+    },
+    "assertion_passed": true
+  },
+  {
+    "fixture": "fixtures/aw001_slice3/3c/registry_wrong_lock_order.json",
+    "expected_layer": "REGISTRY_LOADER",
+    "expected_error_code": "ERR_REGISTRY_LOCK_ORDER_MISMATCH",
+    "actual": {
+      "is_valid": false,
+      "validation_layer": "REGISTRY_LOADER",
+      "error_code": "ERR_REGISTRY_LOCK_ORDER_MISMATCH",
+      "failed_path": "/global_lock_order"
+    },
+    "assertion_passed": true
+  }
+]

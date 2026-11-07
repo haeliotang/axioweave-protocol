@@ -1,0 +1,100 @@
+test_cli_reports_exact_json_and_exit_status (test_aw001_slice2c.BoundaryTests.test_cli_reports_exact_json_and_exit_status) ... ok
+test_current_receipt_cannot_certify_an_unavailable_authority (test_aw001_slice2c.BoundaryTests.test_current_receipt_cannot_certify_an_unavailable_authority) ... ok
+test_historical_member_receipt_scope_is_not_unchecked (test_aw001_slice2c.BoundaryTests.test_historical_member_receipt_scope_is_not_unchecked) ... ok
+test_historical_merits_cannot_disagree_with_its_envelope (test_aw001_slice2c.BoundaryTests.test_historical_merits_cannot_disagree_with_its_envelope) ... ok
+test_projection_requires_collective_source_binding (test_aw001_slice2c.BoundaryTests.test_projection_requires_collective_source_binding) ... ok
+test_simulation_only_and_no_external_execution (test_aw001_slice2c.BoundaryTests.test_simulation_only_and_no_external_execution) ... ok
+test_appeal_stages_do_not_affect_2a_2b_protection_predicate (test_aw001_slice2c.CrossSliceTests.test_appeal_stages_do_not_affect_2a_2b_protection_predicate) ... ok
+test_collective_approval_through_complete_two_phase_2b_flow (test_aw001_slice2c.CrossSliceTests.test_collective_approval_through_complete_two_phase_2b_flow) ... ok
+test_explicit_policy_controls_parent_approvers (test_aw001_slice2c.CrossSliceTests.test_explicit_policy_controls_parent_approvers) ... ok
+test_qualified_pool_counts_members_not_aliases_or_unauthorized_people (test_aw001_slice2c.CrossSliceTests.test_qualified_pool_counts_members_not_aliases_or_unauthorized_people) ... ok
+test_replaced_authorizer_and_collective_signers_remain_identifiable (test_aw001_slice2c.CrossSliceTests.test_replaced_authorizer_and_collective_signers_remain_identifiable) ... ok
+test_ft_adjudicate_lifts_po (test_aw001_slice2c.GoldenTests.test_ft_adjudicate_lifts_po) ... ok
+test_ft_adjudicate_mutates_pool (test_aw001_slice2c.GoldenTests.test_ft_adjudicate_mutates_pool) ... ok
+test_ft_adjudicate_mutates_ticket (test_aw001_slice2c.GoldenTests.test_ft_adjudicate_mutates_ticket) ... ok
+test_ft_audit_digest (test_aw001_slice2c.GoldenTests.test_ft_audit_digest) ... ok
+test_ft_client_identity (test_aw001_slice2c.GoldenTests.test_ft_client_identity) ... ok
+test_ft_client_panel_self_certification (test_aw001_slice2c.GoldenTests.test_ft_client_panel_self_certification) ... ok
+test_ft_consent_falsely_applied (test_aw001_slice2c.GoldenTests.test_ft_consent_falsely_applied) ... ok
+test_ft_context_digest (test_aw001_slice2c.GoldenTests.test_ft_context_digest) ... ok
+test_ft_forged_member_receipt (test_aw001_slice2c.GoldenTests.test_ft_forged_member_receipt) ... ok
+test_ft_missing_remedy (test_aw001_slice2c.GoldenTests.test_ft_missing_remedy) ... ok
+test_ft_omit_ticket (test_aw001_slice2c.GoldenTests.test_ft_omit_ticket) ... ok
+test_ft_panel_without_receipts_claims_applied (test_aw001_slice2c.GoldenTests.test_ft_panel_without_receipts_claims_applied) ... ok
+test_ft_reject_mutates_appeal (test_aw001_slice2c.GoldenTests.test_ft_reject_mutates_appeal) ... ok
+test_ft_result_generation (test_aw001_slice2c.GoldenTests.test_ft_result_generation) ... ok
+test_ft_source_retry_terminal (test_aw001_slice2c.GoldenTests.test_ft_source_retry_terminal) ... ok
+test_ft_target_version (test_aw001_slice2c.GoldenTests.test_ft_target_version) ... ok
+test_ft_unknown_action (test_aw001_slice2c.GoldenTests.test_ft_unknown_action) ... ok
+test_pt_adjudicate_denied (test_aw001_slice2c.GoldenTests.test_pt_adjudicate_denied) ... ok
+test_pt_adjudicate_upheld (test_aw001_slice2c.GoldenTests.test_pt_adjudicate_upheld) ... ok
+test_pt_adjudicate_with_active_po (test_aw001_slice2c.GoldenTests.test_pt_adjudicate_with_active_po) ... ok
+test_pt_collective_approve (test_aw001_slice2c.GoldenTests.test_pt_collective_approve) ... ok
+test_pt_commit_unknown (test_aw001_slice2c.GoldenTests.test_pt_commit_unknown) ... ok
+test_pt_confirmed_rollback (test_aw001_slice2c.GoldenTests.test_pt_confirmed_rollback) ... ok
+test_pt_deferral_referral (test_aw001_slice2c.GoldenTests.test_pt_deferral_referral) ... ok
+test_pt_deferral_registrar (test_aw001_slice2c.GoldenTests.test_pt_deferral_registrar) ... ok
+test_pt_open_collective_commitment (test_aw001_slice2c.GoldenTests.test_pt_open_collective_commitment) ... ok
+test_pt_open_review (test_aw001_slice2c.GoldenTests.test_pt_open_review) ... ok
+test_pt_open_with_active_po (test_aw001_slice2c.GoldenTests.test_pt_open_with_active_po) ... ok
+test_pt_parent_approver_policy_disabled (test_aw001_slice2c.GoldenTests.test_pt_parent_approver_policy_disabled) ... ok
+test_pt_pool_alias_not_extra_reviewer (test_aw001_slice2c.GoldenTests.test_pt_pool_alias_not_extra_reviewer) ... ok
+test_pt_rejected_adjudicate_resolved (test_aw001_slice2c.GoldenTests.test_pt_rejected_adjudicate_resolved) ... ok
+test_pt_rejected_challenged_signer (test_aw001_slice2c.GoldenTests.test_pt_rejected_challenged_signer) ... ok
+test_pt_rejected_collective_approver (test_aw001_slice2c.GoldenTests.test_pt_rejected_collective_approver) ... ok
+test_pt_rejected_consent_policy (test_aw001_slice2c.GoldenTests.test_pt_rejected_consent_policy) ... ok
+test_pt_rejected_consent_rule (test_aw001_slice2c.GoldenTests.test_pt_rejected_consent_rule) ... ok
+test_pt_rejected_consent_target (test_aw001_slice2c.GoldenTests.test_pt_rejected_consent_target) ... ok
+test_pt_rejected_consent_terms (test_aw001_slice2c.GoldenTests.test_pt_rejected_consent_terms) ... ok
+test_pt_rejected_current_revoked (test_aw001_slice2c.GoldenTests.test_pt_rejected_current_revoked) ... ok
+test_pt_rejected_deferral_deadline (test_aw001_slice2c.GoldenTests.test_pt_rejected_deferral_deadline) ... ok
+test_pt_rejected_duplicate_member (test_aw001_slice2c.GoldenTests.test_pt_rejected_duplicate_member) ... ok
+test_pt_rejected_enough_reviewers (test_aw001_slice2c.GoldenTests.test_pt_rejected_enough_reviewers) ... ok
+test_pt_rejected_historical_mapping_missing (test_aw001_slice2c.GoldenTests.test_pt_rejected_historical_mapping_missing) ... ok
+test_pt_rejected_historical_replaced_authorizer (test_aw001_slice2c.GoldenTests.test_pt_rejected_historical_replaced_authorizer) ... ok
+test_pt_rejected_member_amount (test_aw001_slice2c.GoldenTests.test_pt_rejected_member_amount) ... ok
+test_pt_rejected_member_case (test_aw001_slice2c.GoldenTests.test_pt_rejected_member_case) ... ok
+test_pt_rejected_member_expired (test_aw001_slice2c.GoldenTests.test_pt_rejected_member_expired) ... ok
+test_pt_rejected_member_power (test_aw001_slice2c.GoldenTests.test_pt_rejected_member_power) ... ok
+test_pt_rejected_member_target (test_aw001_slice2c.GoldenTests.test_pt_rejected_member_target) ... ok
+test_pt_rejected_missing_attestations (test_aw001_slice2c.GoldenTests.test_pt_rejected_missing_attestations) ... ok
+test_pt_rejected_panel_unavailable (test_aw001_slice2c.GoldenTests.test_pt_rejected_panel_unavailable) ... ok
+test_pt_rejected_parent_approver_policy_enabled (test_aw001_slice2c.GoldenTests.test_pt_rejected_parent_approver_policy_enabled) ... ok
+test_pt_rejected_pool_incomplete (test_aw001_slice2c.GoldenTests.test_pt_rejected_pool_incomplete) ... ok
+test_pt_rejected_pool_inventory_unknown (test_aw001_slice2c.GoldenTests.test_pt_rejected_pool_inventory_unknown) ... ok
+test_pt_rejected_pool_policy (test_aw001_slice2c.GoldenTests.test_pt_rejected_pool_policy) ... ok
+test_pt_rejected_pool_rule (test_aw001_slice2c.GoldenTests.test_pt_rejected_pool_rule) ... ok
+test_pt_rejected_pool_stale (test_aw001_slice2c.GoldenTests.test_pt_rejected_pool_stale) ... ok
+test_pt_rejected_registrar_appellant (test_aw001_slice2c.GoldenTests.test_pt_rejected_registrar_appellant) ... ok
+test_pt_rejected_source_unavailable (test_aw001_slice2c.GoldenTests.test_pt_rejected_source_unavailable) ... ok
+test_pt_rejected_stale_consent (test_aw001_slice2c.GoldenTests.test_pt_rejected_stale_consent) ... ok
+test_pt_rejected_unconfirmed (test_aw001_slice2c.GoldenTests.test_pt_rejected_unconfirmed) ... ok
+test_pt_rule_accepted (test_aw001_slice2c.GoldenTests.test_pt_rule_accepted) ... ok
+test_pt_rule_inadmissible (test_aw001_slice2c.GoldenTests.test_pt_rule_inadmissible) ... ok
+test_pt_rule_with_active_po (test_aw001_slice2c.GoldenTests.test_pt_rule_with_active_po) ... ok
+test_pt_submit_collective_commitment (test_aw001_slice2c.GoldenTests.test_pt_submit_collective_commitment) ... ok
+test_pt_submit_minimal (test_aw001_slice2c.GoldenTests.test_pt_submit_minimal) ... ok
+test_pt_submit_replaced_authorizer (test_aw001_slice2c.GoldenTests.test_pt_submit_replaced_authorizer) ... ok
+test_pt_submit_with_active_po (test_aw001_slice2c.GoldenTests.test_pt_submit_with_active_po) ... ok
+test_pt_unrelated_unmapped_member (test_aw001_slice2c.GoldenTests.test_pt_unrelated_unmapped_member) ... ok
+test_registry_missing_validator (test_aw001_slice2c.GoldenTests.test_registry_missing_validator) ... ok
+test_registry_valid (test_aw001_slice2c.GoldenTests.test_registry_valid) ... ok
+test_registry_wrong_lock_order (test_aw001_slice2c.GoldenTests.test_registry_wrong_lock_order) ... ok
+test_current_verifier_is_recused_when_appealing_an_earlier_authorization (test_aw001_slice2c.ResponsibilityBoundaryTests.test_current_verifier_is_recused_when_appealing_an_earlier_authorization) ... FAIL
+test_order_appeal_traces_original_issuer_and_only_restricted_executors (test_aw001_slice2c.ResponsibilityBoundaryTests.test_order_appeal_traces_original_issuer_and_only_restricted_executors) ... ok
+test_plain_2b_projection_is_not_a_complete_collective_archive (test_aw001_slice2c.ResponsibilityBoundaryTests.test_plain_2b_projection_is_not_a_complete_collective_archive) ... ok
+test_registry_rejects_unknown_action_and_relaxed_write_policy (test_aw001_slice2c.ResponsibilityBoundaryTests.test_registry_rejects_unknown_action_and_relaxed_write_policy) ... ok
+
+======================================================================
+FAIL: test_current_verifier_is_recused_when_appealing_an_earlier_authorization (test_aw001_slice2c.ResponsibilityBoundaryTests.test_current_verifier_is_recused_when_appealing_an_earlier_authorization)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/hao/Documents/axioweave/tests/test_aw001_slice2c.py", line 162, in test_current_verifier_is_recused_when_appealing_an_earlier_authorization
+    self.assertIn('member-verifier', members)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'member-verifier' not found in {'member-appellant', 'member-operator', 'member-finance'}
+
+----------------------------------------------------------------------
+Ran 86 tests in 4.130s
+
+FAILED (failures=1)

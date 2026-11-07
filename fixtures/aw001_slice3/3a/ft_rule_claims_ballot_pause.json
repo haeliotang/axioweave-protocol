@@ -1,0 +1,585 @@
+{
+  "before": {
+    "domain_objects": {
+      "operations": {
+        "cases": [
+          {
+            "object_id": "case-1",
+            "kind": "CASE",
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "parent_object_id": null,
+            "version_seq": 1,
+            "proposer_member_id": "member-proposer",
+            "rule_version_seq": 1,
+            "template_sod_policy": {
+              "version": "pack-a-v1",
+              "exclude_commitment_executors_from_verification": false
+            }
+          }
+        ],
+        "resource_pools": [
+          {
+            "object_id": "pool-1",
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "version_seq": 1,
+            "resource_spec": {
+              "resource_kind": "FUNDS",
+              "unit_code": "USD_CENTS"
+            },
+            "total_capacity_minor": 100000,
+            "committed_obligations_minor": 0
+          }
+        ],
+        "commitments": [],
+        "tickets": [],
+        "execution_verifications": [],
+        "protective_orders": [],
+        "protection_envelopes": [],
+        "effectiveness_envelopes": []
+      },
+      "inclusion_audits": [],
+      "speaker_statements": [
+        {
+          "statement_id": "statement-1",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "version_seq": 1,
+          "speaker_member_id": "member-speaker",
+          "original_versions": [
+            {
+              "version_seq": 1,
+              "language": "en",
+              "text": "We need a support fund.",
+              "display_permission": "PUBLIC_PERMITTED",
+              "recorded_at": "2026-11-06T04:00:00Z",
+              "recorded_command_id": "cmd-record_speaker_statement"
+            }
+          ],
+          "current_original_version_seq": 1,
+          "translations": [
+            {
+              "translation_id": "translation-1",
+              "language": "zh-CN",
+              "current_version_seq": 1,
+              "versions": [
+                {
+                  "version_seq": 1,
+                  "language": "zh-CN",
+                  "text": "我们需要一个支持基金。",
+                  "display_permission": "PUBLIC_PERMITTED",
+                  "source_original_version_seq": 1,
+                  "source_text_sha256": "sha256:45647c7ee98e80be88caea506d1880efcac12164320c7eeba0d1fa920ace6337",
+                  "recorded_at": "2026-11-06T04:00:00Z",
+                  "recorded_command_id": "cmd-record_speaker_statement"
+                }
+              ]
+            }
+          ],
+          "expression_confirmations": [],
+          "display_withdrawals": [],
+          "frozen_at": null,
+          "created_command_id": "cmd-record_speaker_statement",
+          "display_state": {
+            "original": {
+              "display_permission": "PUBLIC_PERMITTED",
+              "display_scope": "PUBLIC",
+              "withdrawal_id": null
+            },
+            "translations": [
+              {
+                "translation_id": "translation-1",
+                "display_permission": "PUBLIC_PERMITTED",
+                "display_scope": "PUBLIC",
+                "fallback_original_version_seq": null,
+                "withdrawal_id": null
+              }
+            ]
+          },
+          "representation": {
+            "original_version_seq": 1,
+            "translations": [
+              {
+                "translation_id": "translation-1",
+                "status": "UNCONFIRMED_DRAFT",
+                "confirmed_text_version_seq": null
+              }
+            ]
+          }
+        }
+      ],
+      "materiality_rulings": [],
+      "effectiveness_envelopes": []
+    },
+    "command_record": {
+      "command_id": "cmd-rule_ballot_materiality",
+      "tenant_node_id": "node-1",
+      "principal_id": "principal-ruler",
+      "action_id": "RULE_BALLOT_MATERIALITY",
+      "idempotency_key": "idem-rule_ballot_materiality",
+      "request_sha256": "sha256:21e60fec3fd3453f31b79973898aecfc8a29033bd6a178c077752a346ef574c8",
+      "current_attempt_id": "attempt-1",
+      "generation": 1,
+      "version_seq": 1,
+      "status": "IN_FLIGHT",
+      "result_id": null
+    },
+    "command_attempt": {
+      "attempt_id": "attempt-1",
+      "command_id": "cmd-rule_ballot_materiality",
+      "generation": 1,
+      "version_seq": 1,
+      "status": "IN_FLIGHT"
+    }
+  },
+  "command": {
+    "command_id": "cmd-rule_ballot_materiality",
+    "idempotency_key": "idem-rule_ballot_materiality",
+    "requested_action": "RULE_BALLOT_MATERIALITY",
+    "target_object_id": "statement-1",
+    "target_expected_version_seq": 1,
+    "mandate_claim": {
+      "mandate_id": "mandate-ruler",
+      "expected_version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "claimed_power": "RULE_BALLOT_MATERIALITY"
+    },
+    "payload": {
+      "ruling_id": "ruling-1",
+      "ballot_round_ref": "round-1",
+      "ruling": "MATERIAL",
+      "rationale": "x",
+      "statement_version_seq": 1,
+      "effectiveness_envelope_input": {
+        "mandate_clause_ref": "clause-mandate-ruler",
+        "evidence_refs": [
+          {
+            "evidence_id": "audit-source",
+            "revision": 1,
+            "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ],
+        "scope_spec": {
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "effective_from": "2026-09-01T00:00:00Z",
+          "effective_until": "2027-01-01T00:00:00Z",
+          "resource_spec": {
+            "resource_kind": "FUNDS",
+            "unit_code": "USD_CENTS"
+          },
+          "max_amount_minor": 100000
+        },
+        "remedy_spec": {
+          "notice_recipients": [
+            "member-recorder"
+          ],
+          "challenge_window_hours": 24,
+          "review_body_id": "review-body-1",
+          "rollback_or_compensation_procedure_ref": {
+            "evidence_id": "remedy-source",
+            "revision": 1,
+            "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        }
+      },
+      "block_ballot": true
+    },
+    "dependency_versions": [
+      {
+        "object_id": "case-1",
+        "version_seq": 1
+      }
+    ]
+  },
+  "server_context": {
+    "contract_version": "0.4.0-rc1-slice3a",
+    "mode": "simulation",
+    "data_classification": "synthetic",
+    "execution_enabled": false,
+    "tenant_node_id": "node-1",
+    "case_id": "case-1",
+    "authenticated_principal_id": "principal-ruler",
+    "authenticated_member_id": "member-ruler",
+    "member_directory": [
+      {
+        "principal_id": "principal-recorder",
+        "member_id": "member-recorder",
+        "status": "VERIFIED",
+        "source_ref": {
+          "evidence_id": "member-principal-recorder",
+          "revision": 1,
+          "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      },
+      {
+        "principal_id": "principal-escalator",
+        "member_id": "member-escalator",
+        "status": "VERIFIED",
+        "source_ref": {
+          "evidence_id": "member-principal-escalator",
+          "revision": 1,
+          "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      },
+      {
+        "principal_id": "principal-decider",
+        "member_id": "member-decider",
+        "status": "VERIFIED",
+        "source_ref": {
+          "evidence_id": "member-principal-decider",
+          "revision": 1,
+          "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      },
+      {
+        "principal_id": "principal-speaker",
+        "member_id": "member-speaker",
+        "status": "VERIFIED",
+        "source_ref": {
+          "evidence_id": "member-principal-speaker",
+          "revision": 1,
+          "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      },
+      {
+        "principal_id": "principal-ruler",
+        "member_id": "member-ruler",
+        "status": "VERIFIED",
+        "source_ref": {
+          "evidence_id": "member-principal-ruler",
+          "revision": 1,
+          "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      },
+      {
+        "principal_id": "principal-proposer",
+        "member_id": "member-proposer",
+        "status": "VERIFIED",
+        "source_ref": {
+          "evidence_id": "member-principal-proposer",
+          "revision": 1,
+          "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      },
+      {
+        "principal_id": "principal-reviewer",
+        "member_id": "member-reviewer",
+        "status": "VERIFIED",
+        "source_ref": {
+          "evidence_id": "member-principal-reviewer",
+          "revision": 1,
+          "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      }
+    ],
+    "access_granted": true,
+    "evaluated_at": "2026-11-06T04:00:00Z",
+    "attempt_id": "attempt-1",
+    "generation": 1,
+    "authority_source_id": "authority-source-1",
+    "authority_source_status": "AVAILABLE",
+    "authority_inventory_complete": true,
+    "authority_snapshots": [
+      {
+        "mandate_id": "mandate-recorder",
+        "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "principal_id": "principal-recorder",
+        "tenant_node_id": "node-1",
+        "case_id": "case-1",
+        "powers": [
+          "RECORD_INCLUSION_AUDIT"
+        ],
+        "allowed_target_ids": [
+          "case-1"
+        ],
+        "clause_reference": "clause-mandate-recorder",
+        "status": "ACTIVE",
+        "valid_from": "2026-09-01T00:00:00Z",
+        "valid_until": "2027-01-01T00:00:00Z"
+      },
+      {
+        "mandate_id": "mandate-escalator",
+        "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "principal_id": "principal-escalator",
+        "tenant_node_id": "node-1",
+        "case_id": "case-1",
+        "powers": [
+          "ESCALATE_INCLUSION_SHORTFALL"
+        ],
+        "allowed_target_ids": [
+          "case-1"
+        ],
+        "clause_reference": "clause-mandate-escalator",
+        "status": "ACTIVE",
+        "valid_from": "2026-09-01T00:00:00Z",
+        "valid_until": "2027-01-01T00:00:00Z"
+      },
+      {
+        "mandate_id": "mandate-decider",
+        "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "principal_id": "principal-decider",
+        "tenant_node_id": "node-1",
+        "case_id": "case-1",
+        "powers": [
+          "DECIDE_PROCEDURAL_GAP_DISCLOSURE"
+        ],
+        "allowed_target_ids": [
+          "case-1"
+        ],
+        "clause_reference": "clause-mandate-decider",
+        "status": "ACTIVE",
+        "valid_from": "2026-09-01T00:00:00Z",
+        "valid_until": "2027-01-01T00:00:00Z"
+      },
+      {
+        "mandate_id": "mandate-ruler",
+        "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "principal_id": "principal-ruler",
+        "tenant_node_id": "node-1",
+        "case_id": "case-1",
+        "powers": [
+          "RULE_BALLOT_MATERIALITY"
+        ],
+        "allowed_target_ids": [
+          "case-1"
+        ],
+        "clause_reference": "clause-mandate-ruler",
+        "status": "ACTIVE",
+        "valid_from": "2026-09-01T00:00:00Z",
+        "valid_until": "2027-01-01T00:00:00Z"
+      },
+      {
+        "mandate_id": "mandate-reviewer",
+        "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "principal_id": "principal-reviewer",
+        "tenant_node_id": "node-1",
+        "case_id": "case-1",
+        "powers": [
+          "REVIEW_PROCEDURAL_GAP"
+        ],
+        "allowed_target_ids": [
+          "case-1"
+        ],
+        "clause_reference": "clause-mandate-reviewer",
+        "status": "ACTIVE",
+        "valid_from": "2026-09-01T00:00:00Z",
+        "valid_until": "2027-01-01T00:00:00Z"
+      }
+    ],
+    "evidence_snapshots": [
+      {
+        "evidence_id": "member-principal-recorder",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "member-principal-escalator",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "member-principal-decider",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "member-principal-speaker",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "member-principal-ruler",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "member-principal-proposer",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "member-principal-reviewer",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "audit-source",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "remedy-source",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "statement-policy",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "review-source",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "preauth-source",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "escalation-source",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "ruling-source",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      }
+    ],
+    "generated_auth_receipt": {
+      "receipt_id": "receipt-1",
+      "command_id": "cmd-rule_ballot_materiality",
+      "attempt_id": "attempt-1",
+      "generation": 1,
+      "idempotency_key": "idem-rule_ballot_materiality",
+      "authenticated_principal_id": "principal-ruler",
+      "mandate_id": "mandate-ruler",
+      "evaluated_version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "requested_power": "RULE_BALLOT_MATERIALITY",
+      "target_object_id": "statement-1",
+      "evaluated_target_version_seq": 1,
+      "checked_at": "2026-11-06T04:00:00Z",
+      "authority_source_id": "authority-source-1",
+      "domain_sha256": "sha256:1dd1ef539e692d7304300f992b617dc68149bbe33aaee12bcf8d0936c09a58e1",
+      "context_sha256": "sha256:f646b4573043d4955a1b71471af83acd69bb2aa83e52c9e7feab4ba4062715f5",
+      "verification_status": "VERIFIED_ACTIVE"
+    },
+    "new_envelope_id": "env-rule_ballot_materiality",
+    "execution_observation": "NORMAL",
+    "program_gap_authorization": null,
+    "named_review": null
+  },
+  "after": {
+    "domain_objects": {
+      "operations": {
+        "cases": [
+          {
+            "object_id": "case-1",
+            "kind": "CASE",
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "parent_object_id": null,
+            "version_seq": 1,
+            "proposer_member_id": "member-proposer",
+            "rule_version_seq": 1,
+            "template_sod_policy": {
+              "version": "pack-a-v1",
+              "exclude_commitment_executors_from_verification": false
+            }
+          }
+        ],
+        "resource_pools": [
+          {
+            "object_id": "pool-1",
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "version_seq": 1,
+            "resource_spec": {
+              "resource_kind": "FUNDS",
+              "unit_code": "USD_CENTS"
+            },
+            "total_capacity_minor": 100000,
+            "committed_obligations_minor": 0
+          }
+        ],
+        "commitments": [],
+        "tickets": [],
+        "execution_verifications": [],
+        "protective_orders": [],
+        "protection_envelopes": [],
+        "effectiveness_envelopes": []
+      },
+      "inclusion_audits": [],
+      "speaker_statements": [],
+      "materiality_rulings": [],
+      "effectiveness_envelopes": []
+    },
+    "execution_outcome": {
+      "outcome": "REJECTED",
+      "command_record": {
+        "command_id": "cmd-record_inclusion_audit",
+        "tenant_node_id": "node-1",
+        "principal_id": "principal-recorder",
+        "action_id": "RECORD_INCLUSION_AUDIT",
+        "idempotency_key": "idem-record_inclusion_audit",
+        "request_sha256": "sha256:097a05f2ca086e6600fcac07e078e7b2fd283cbb6d2244066301f06402b230a6",
+        "current_attempt_id": "attempt-1",
+        "generation": 1,
+        "version_seq": 2,
+        "status": "REJECTED",
+        "result_id": "result-1"
+      },
+      "command_attempt": {
+        "attempt_id": "attempt-1",
+        "command_id": "cmd-record_inclusion_audit",
+        "generation": 1,
+        "version_seq": 2,
+        "status": "REJECTED"
+      },
+      "command_result": {
+        "result_id": "result-1",
+        "command_id": "cmd-record_inclusion_audit",
+        "attempt_id": "attempt-1",
+        "generation": 1,
+        "status": "REJECTED",
+        "retry_disposition": "FINAL",
+        "applied_versions": []
+      },
+      "command_rejection": {
+        "command_id": "cmd-record_inclusion_audit",
+        "attempt_id": "attempt-1",
+        "generation": 1,
+        "rejection_error_code": "ERR_SCHEMA_VALIDATION",
+        "diagnostic_codes": [
+          "ERR_SCHEMA_VALIDATION"
+        ],
+        "blocking_protective_order_ids": []
+      },
+      "auth_check_receipt": {
+        "receipt_id": "receipt-1",
+        "command_id": "cmd-record_inclusion_audit",
+        "attempt_id": "attempt-1",
+        "generation": 1,
+        "idempotency_key": "idem-record_inclusion_audit",
+        "authenticated_principal_id": "principal-recorder",
+        "mandate_id": "mandate-recorder",
+        "evaluated_version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "requested_power": "RECORD_INCLUSION_AUDIT",
+        "target_object_id": "case-1",
+        "evaluated_target_version_seq": 1,
+        "checked_at": "2026-11-06T04:00:00Z",
+        "authority_source_id": "authority-source-1",
+        "domain_sha256": "sha256:35d6c19022a8cd0c9a6cbb6b101064f8d0b667ce011bd77ffc70a33d0906db7f",
+        "context_sha256": "sha256:6e458b88f3f1fd37d832a7daa72ff829549319188b753d66341a6e23fadf067e",
+        "verification_status": "VERIFIED_ACTIVE"
+      },
+      "audit_event": {
+        "audit_id": "audit-event-1",
+        "command_id": "cmd-record_inclusion_audit",
+        "attempt_id": "attempt-1",
+        "generation": 1,
+        "principal_id": "principal-recorder",
+        "action_id": "RECORD_INCLUSION_AUDIT",
+        "outcome": "REJECTED",
+        "checked_at": "2026-11-06T04:00:00Z",
+        "before_domain_sha256": "sha256:35d6c19022a8cd0c9a6cbb6b101064f8d0b667ce011bd77ffc70a33d0906db7f",
+        "after_domain_sha256": "sha256:35d6c19022a8cd0c9a6cbb6b101064f8d0b667ce011bd77ffc70a33d0906db7f",
+        "written_versions": []
+      },
+      "fault_observation": null
+    }
+  }
+}

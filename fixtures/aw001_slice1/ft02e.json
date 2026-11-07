@@ -1,0 +1,203 @@
+{
+  "before": {
+    "constraint_record": {
+      "object_id": "constraint-01",
+      "case_id": "case-01",
+      "tenant_node_id": "node-01",
+      "acl_policy_ref": "acl-01",
+      "claimant_principal_id": "alice",
+      "version_seq": 3,
+      "constraint_stage": "RESOLVED_NON_EFFECTIVE",
+      "classification": "PROPOSED_CLAIM",
+      "review_outcome": "NOT_ADOPTED_AS_CASE_CONSTRAINT",
+      "measurement_kind": "QUALITATIVE",
+      "claimant_post_review_stance": {
+        "stance_status": "UNSPECIFIED_PENDING_CLAIMANT",
+        "tradeoff_consent": "UNSPECIFIED",
+        "expressed_participation_intent": "CONTINUE_DELIBERATION_AND_APPEAL"
+      },
+      "effective_standing_status": "ACTIVE_STANDING",
+      "claim_title": "保留维护通道",
+      "raw_statement_text": "请在预算调整时保留社区维护通道。"
+    },
+    "review_decision_record": {
+      "decision_id": "decision-reject",
+      "version_seq": 1,
+      "decision_stage": "EFFECTIVE",
+      "review_outcome": "NOT_ADOPTED_AS_CASE_CONSTRAINT",
+      "review_rationale": "根据本案程序材料作出模拟审查决定。",
+      "reviewer_principal_id": "reviewer",
+      "effectiveness_envelope": {
+        "envelope_id": "envelope-reject",
+        "action_type": "REJECT_CONSTRAINT_CLAIM",
+        "target_object_id": "constraint-01",
+        "evaluated_target_version_seq": 2,
+        "resulting_target_version_seq": 3,
+        "mandate_ref": {
+          "mandate_id": "mandate-01",
+          "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "clause_reference": "charter-7"
+        },
+        "auth_check_receipt": {
+          "receipt_id": "receipt-reject",
+          "command_id": "cmd-reject",
+          "attempt_id": "attempt-reject",
+          "idempotency_key": "key-reject",
+          "authenticated_principal_id": "reviewer",
+          "mandate_id": "mandate-01",
+          "evaluated_version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "requested_power": "REJECT_SUBMISSION",
+          "target_object_id": "constraint-01",
+          "evaluated_target_version_seq": 2,
+          "checked_at": "2026-11-05T04:00:00Z",
+          "authority_source_id": "board-01",
+          "verification_status": "VERIFIED_ACTIVE"
+        },
+        "evidence_refs": [
+          {
+            "evidence_id": "procedure",
+            "revision": 1,
+            "content_sha256": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        ],
+        "scope_spec": {
+          "tenant_node_id": "node-01",
+          "case_id": "case-01",
+          "target_object_id": "constraint-01",
+          "effective_from": "2026-11-01T00:00:00Z",
+          "effective_until": "2026-12-01T00:00:00Z"
+        },
+        "remedy_spec": {
+          "notice_recipients": [
+            "alice"
+          ],
+          "challenge_window_hours": 168,
+          "review_body_id": "appeal-board",
+          "rollback_or_compensation_procedure_ref": {
+            "evidence_id": "procedure",
+            "revision": 1,
+            "content_sha256": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        }
+      }
+    }
+  },
+  "command": {
+    "command_id": "cmd-stance",
+    "idempotency_key": "key-stance",
+    "requested_action": "RECORD_CLAIMANT_STANCE",
+    "target_object_id": "constraint-01",
+    "target_expected_version_seq": 3,
+    "payload": {
+      "formal_reservation_text": "拒绝将维护通道权益折算为积分，继续参与审议。",
+      "tradeoff_consent": "REFUSED_TRADEOFF_CONVERSION",
+      "expressed_participation_intent": "CONTINUE_DELIBERATION_AND_APPEAL"
+    }
+  },
+  "server_context": {
+    "contract_version": "0.2.0-rc1-slice1",
+    "scenario_id": "synthetic-constraint-review",
+    "mode": "simulation",
+    "data_classification": "synthetic",
+    "execution_enabled": false,
+    "authenticated_principal_id": "alice",
+    "tenant_node_id": "node-01",
+    "case_id": "case-01",
+    "checked_at": "2026-11-05T04:00:00Z",
+    "acl_policy_refs": [
+      "acl-01"
+    ],
+    "evidence_snapshots": [
+      {
+        "evidence_id": "procedure",
+        "revision": 1,
+        "content_sha256": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      }
+    ],
+    "attempt_id": "attempt-stance"
+  },
+  "after": {
+    "constraint_record": {
+      "object_id": "constraint-01",
+      "case_id": "case-01",
+      "tenant_node_id": "node-01",
+      "acl_policy_ref": "acl-01",
+      "claimant_principal_id": "alice",
+      "version_seq": 4,
+      "constraint_stage": "RESOLVED_NON_EFFECTIVE",
+      "classification": "PROPOSED_CLAIM",
+      "review_outcome": "NOT_ADOPTED_AS_CASE_CONSTRAINT",
+      "measurement_kind": "QUALITATIVE",
+      "claimant_post_review_stance": {
+        "stance_status": "RECORDED_BY_CLAIMANT",
+        "formal_reservation_text": "拒绝将维护通道权益折算为积分，继续参与审议。",
+        "tradeoff_consent": "REFUSED_TRADEOFF_CONVERSION",
+        "expressed_participation_intent": "CONTINUE_DELIBERATION_AND_APPEAL"
+      },
+      "effective_standing_status": "ACTIVE_STANDING",
+      "claim_title": "保留维护通道",
+      "raw_statement_text": "请在预算调整时保留社区维护通道。"
+    },
+    "review_decision_record": {
+      "decision_id": "decision-reject",
+      "version_seq": 1,
+      "decision_stage": "EFFECTIVE",
+      "review_outcome": "NOT_ADOPTED_AS_CASE_CONSTRAINT",
+      "review_rationale": "根据本案程序材料作出模拟审查决定。",
+      "reviewer_principal_id": "reviewer",
+      "effectiveness_envelope": {
+        "envelope_id": "envelope-reject",
+        "action_type": "REJECT_CONSTRAINT_CLAIM",
+        "target_object_id": "constraint-01",
+        "evaluated_target_version_seq": 2,
+        "resulting_target_version_seq": 4,
+        "mandate_ref": {
+          "mandate_id": "mandate-01",
+          "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "clause_reference": "charter-7"
+        },
+        "auth_check_receipt": {
+          "receipt_id": "receipt-reject",
+          "command_id": "cmd-reject",
+          "attempt_id": "attempt-reject",
+          "idempotency_key": "key-reject",
+          "authenticated_principal_id": "reviewer",
+          "mandate_id": "mandate-01",
+          "evaluated_version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "requested_power": "REJECT_SUBMISSION",
+          "target_object_id": "constraint-01",
+          "evaluated_target_version_seq": 2,
+          "checked_at": "2026-11-05T04:00:00Z",
+          "authority_source_id": "board-01",
+          "verification_status": "VERIFIED_ACTIVE"
+        },
+        "evidence_refs": [
+          {
+            "evidence_id": "procedure",
+            "revision": 1,
+            "content_sha256": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        ],
+        "scope_spec": {
+          "tenant_node_id": "node-01",
+          "case_id": "case-01",
+          "target_object_id": "constraint-01",
+          "effective_from": "2026-11-01T00:00:00Z",
+          "effective_until": "2026-12-01T00:00:00Z"
+        },
+        "remedy_spec": {
+          "notice_recipients": [
+            "alice"
+          ],
+          "challenge_window_hours": 168,
+          "review_body_id": "appeal-board",
+          "rollback_or_compensation_procedure_ref": {
+            "evidence_id": "procedure",
+            "revision": 1,
+            "content_sha256": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        }
+      }
+    }
+  }
+}

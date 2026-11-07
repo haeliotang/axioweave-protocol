@@ -1,0 +1,1784 @@
+{
+  "before": {
+    "domain_objects": {
+      "operations": {
+        "cases": [
+          {
+            "object_id": "case-1",
+            "kind": "CASE",
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "parent_object_id": null,
+            "version_seq": 1,
+            "proposer_member_id": "member-proposer",
+            "rule_version_seq": 1,
+            "template_sod_policy": {
+              "version": "pack-a-v1",
+              "exclude_commitment_executors_from_verification": false
+            }
+          }
+        ],
+        "resource_pools": [
+          {
+            "object_id": "pool-1",
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "version_seq": 1,
+            "resource_spec": {
+              "resource_kind": "FUNDS",
+              "unit_code": "USD_CENTS"
+            },
+            "total_capacity_minor": 100000,
+            "committed_obligations_minor": 0
+          }
+        ],
+        "commitments": [],
+        "tickets": [],
+        "execution_verifications": [],
+        "protective_orders": [],
+        "protection_envelopes": [],
+        "effectiveness_envelopes": []
+      },
+      "observable_metrics": [
+        {
+          "metric_id": "metric-1",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "version_seq": 1,
+          "indicator_code": "SYNTHETIC_TURBIDITY",
+          "unit_code": "SYNTHETIC_MG_PER_L",
+          "bucket_seconds": 86400,
+          "min_valid_bucket_coverage_ppm": 900000,
+          "min_samples_per_valid_bucket": 1,
+          "dedupe_rule": "BY_DEDUPE_KEY",
+          "late_revision_policy": "NEW_VERSION_ONLY",
+          "interpolation_policy": "FORBIDDEN",
+          "uncertainty_interval_type": "MEASUREMENT_UNCERTAINTY",
+          "preapproved_point_estimate": false,
+          "source_ref": {
+            "evidence_id": "metric-source",
+            "revision": 1,
+            "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "created_command_id": "cmd-define_observable_metric",
+          "created_envelope_id": "env-define_observable_metric"
+        }
+      ],
+      "metric_evaluations": [],
+      "effectiveness_envelopes": [
+        {
+          "envelope_id": "env-define_observable_metric",
+          "action_type": "DEFINE_OBSERVABLE_METRIC",
+          "target_object_id": "case-1",
+          "evaluated_target_version_seq": 1,
+          "resulting_versions": [
+            {
+              "object_id": "metric-1",
+              "version_seq": 1
+            }
+          ],
+          "mandate_ref": {
+            "mandate_id": "mandate-definer",
+            "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "clause_reference": "clause-mandate-definer"
+          },
+          "auth_check_receipt": {
+            "receipt_id": "receipt-1",
+            "command_id": "cmd-define_observable_metric",
+            "attempt_id": "attempt-1",
+            "generation": 1,
+            "idempotency_key": "idem-define_observable_metric",
+            "authenticated_principal_id": "principal-definer",
+            "mandate_id": "mandate-definer",
+            "evaluated_version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "requested_power": "DEFINE_OBSERVABLE_METRIC",
+            "target_object_id": "case-1",
+            "evaluated_target_version_seq": 1,
+            "checked_at": "2026-11-05T00:00:00Z",
+            "authority_source_id": "authority-source-1",
+            "domain_sha256": "sha256:6b3fd5636964126e1506242ef158763daea7e9b8ea607c8bf902859d9ac22213",
+            "context_sha256": "sha256:428be56da8330853b3fd011a8ef68f3e6664efef74f1df2f74213fc4233a1694",
+            "verification_status": "VERIFIED_ACTIVE"
+          },
+          "evidence_refs": [
+            {
+              "evidence_id": "metric-source",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          ],
+          "scope_spec": {
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "effective_from": "2026-09-01T00:00:00Z",
+            "effective_until": "2027-01-01T00:00:00Z",
+            "resource_spec": {
+              "resource_kind": "FUNDS",
+              "unit_code": "USD_CENTS"
+            },
+            "max_amount_minor": 100000
+          },
+          "remedy_spec": {
+            "notice_recipients": [
+              "member-definer"
+            ],
+            "challenge_window_hours": 24,
+            "review_body_id": "review-body-1",
+            "rollback_or_compensation_procedure_ref": {
+              "evidence_id": "remedy-source",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          },
+          "effect_parameters_sha256": "sha256:be0d4e261edcf9d8cbf5ace75da83f65864ad0e2ccc5c6262030a255440d47fb",
+          "actor_member_id": "member-definer",
+          "payload_snapshot": {
+            "metric_id": "metric-1",
+            "indicator_code": "SYNTHETIC_TURBIDITY",
+            "unit_code": "SYNTHETIC_MG_PER_L",
+            "bucket_seconds": 86400,
+            "min_valid_bucket_coverage_ppm": 900000,
+            "min_samples_per_valid_bucket": 1,
+            "dedupe_rule": "BY_DEDUPE_KEY",
+            "uncertainty_interval_type": "MEASUREMENT_UNCERTAINTY",
+            "preapproved_point_estimate": false,
+            "source_ref": {
+              "evidence_id": "metric-source",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "effectiveness_envelope_input": {
+              "mandate_clause_ref": "clause-mandate-definer",
+              "evidence_refs": [
+                {
+                  "evidence_id": "metric-source",
+                  "revision": 1,
+                  "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                }
+              ],
+              "scope_spec": {
+                "tenant_node_id": "node-1",
+                "case_id": "case-1",
+                "effective_from": "2026-09-01T00:00:00Z",
+                "effective_until": "2027-01-01T00:00:00Z",
+                "resource_spec": {
+                  "resource_kind": "FUNDS",
+                  "unit_code": "USD_CENTS"
+                },
+                "max_amount_minor": 100000
+              },
+              "remedy_spec": {
+                "notice_recipients": [
+                  "member-definer"
+                ],
+                "challenge_window_hours": 24,
+                "review_body_id": "review-body-1",
+                "rollback_or_compensation_procedure_ref": {
+                  "evidence_id": "remedy-source",
+                  "revision": 1,
+                  "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "command_record": {
+      "command_id": "cmd-evaluate_metric_window",
+      "tenant_node_id": "node-1",
+      "principal_id": "principal-evaluator",
+      "action_id": "EVALUATE_METRIC_WINDOW",
+      "idempotency_key": "idem-evaluate_metric_window",
+      "request_sha256": "sha256:ce1c472f22036a5f0268110e7dba674318293e383d653333a35767d8df3c1a59",
+      "current_attempt_id": "attempt-1",
+      "generation": 1,
+      "version_seq": 1,
+      "status": "IN_FLIGHT",
+      "result_id": null
+    },
+    "command_attempt": {
+      "attempt_id": "attempt-1",
+      "command_id": "cmd-evaluate_metric_window",
+      "generation": 1,
+      "version_seq": 1,
+      "status": "IN_FLIGHT"
+    }
+  },
+  "command": {
+    "command_id": "cmd-evaluate_metric_window",
+    "idempotency_key": "idem-evaluate_metric_window",
+    "requested_action": "EVALUATE_METRIC_WINDOW",
+    "target_object_id": "metric-1",
+    "target_expected_version_seq": 1,
+    "mandate_claim": {
+      "mandate_id": "mandate-evaluator",
+      "expected_version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "claimed_power": "EVALUATE_METRIC_WINDOW"
+    },
+    "payload": {
+      "evaluation_id": "evaluation-1",
+      "observation_window": {
+        "start": "2026-10-01T00:00:00Z",
+        "end": "2026-10-31T00:00:00Z"
+      },
+      "observations": [
+        {
+          "observation_id": "obs-000",
+          "observed_at": "2026-10-01T01:00:00Z",
+          "received_at": "2026-10-01T01:00:00Z",
+          "value": 80,
+          "quality": "PASS",
+          "dedupe_key": "key-0"
+        },
+        {
+          "observation_id": "obs-001",
+          "observed_at": "2026-10-02T01:00:00Z",
+          "received_at": "2026-10-02T01:00:00Z",
+          "value": 80,
+          "quality": "PASS",
+          "dedupe_key": "key-1"
+        },
+        {
+          "observation_id": "obs-002",
+          "observed_at": "2026-10-04T01:00:00Z",
+          "received_at": "2026-10-04T01:00:00Z",
+          "value": 80,
+          "quality": "PASS",
+          "dedupe_key": "key-3"
+        },
+        {
+          "observation_id": "obs-003",
+          "observed_at": "2026-10-05T01:00:00Z",
+          "received_at": "2026-10-05T01:00:00Z",
+          "value": 80,
+          "quality": "PASS",
+          "dedupe_key": "key-4"
+        },
+        {
+          "observation_id": "obs-004",
+          "observed_at": "2026-10-06T01:00:00Z",
+          "received_at": "2026-10-06T01:00:00Z",
+          "value": 80,
+          "quality": "PASS",
+          "dedupe_key": "key-5"
+        },
+        {
+          "observation_id": "obs-005",
+          "observed_at": "2026-10-07T01:00:00Z",
+          "received_at": "2026-10-07T01:00:00Z",
+          "value": 80,
+          "quality": "PASS",
+          "dedupe_key": "key-6"
+        },
+        {
+          "observation_id": "obs-006",
+          "observed_at": "2026-10-08T01:00:00Z",
+          "received_at": "2026-10-08T01:00:00Z",
+          "value": 80,
+          "quality": "PASS",
+          "dedupe_key": "key-7"
+        },
+        {
+          "observation_id": "obs-007",
+          "observed_at": "2026-10-09T01:00:00Z",
+          "received_at": "2026-10-09T01:00:00Z",
+          "value": 80,
+          "quality": "PASS",
+          "dedupe_key": "key-8"
+        },
+        {
+          "observation_id": "obs-008",
+          "observed_at": "2026-10-10T01:00:00Z",
+          "received_at": "2026-10-10T01:00:00Z",
+          "value": 80,
+          "quality": "PASS",
+          "dedupe_key": "key-9"
+        },
+        {
+          "observation_id": "obs-009",
+          "observed_at": "2026-10-11T01:00:00Z",
+          "received_at": "2026-10-11T01:00:00Z",
+          "value": 80,
+          "quality": "PASS",
+          "dedupe_key": "key-10"
+        },
+        {
+          "observation_id": "obs-010",
+          "observed_at": "2026-10-12T01:00:00Z",
+          "received_at": "2026-10-12T01:00:00Z",
+          "value": 80,
+          "quality": "PASS",
+          "dedupe_key": "key-11"
+        },
+        {
+          "observation_id": "obs-011",
+          "observed_at": "2026-10-13T01:00:00Z",
+          "received_at": "2026-10-13T01:00:00Z",
+          "value": 80,
+          "quality": "PASS",
+          "dedupe_key": "key-12"
+        },
+        {
+          "observation_id": "obs-012",
+          "observed_at": "2026-10-14T01:00:00Z",
+          "received_at": "2026-10-14T01:00:00Z",
+          "value": 80,
+          "quality": "PASS",
+          "dedupe_key": "key-13"
+        },
+        {
+          "observation_id": "obs-013",
+          "observed_at": "2026-10-15T01:00:00Z",
+          "received_at": "2026-10-15T01:00:00Z",
+          "value": 80,
+          "quality": "PASS",
+          "dedupe_key": "key-14"
+        },
+        {
+          "observation_id": "obs-014",
+          "observed_at": "2026-10-18T01:00:00Z",
+          "received_at": "2026-10-18T01:00:00Z",
+          "value": 80,
+          "quality": "PASS",
+          "dedupe_key": "key-17"
+        },
+        {
+          "observation_id": "obs-015",
+          "observed_at": "2026-10-19T01:00:00Z",
+          "received_at": "2026-10-19T01:00:00Z",
+          "value": 80,
+          "quality": "PASS",
+          "dedupe_key": "key-18"
+        },
+        {
+          "observation_id": "obs-016",
+          "observed_at": "2026-10-20T01:00:00Z",
+          "received_at": "2026-10-20T01:00:00Z",
+          "value": 80,
+          "quality": "PASS",
+          "dedupe_key": "key-19"
+        },
+        {
+          "observation_id": "obs-017",
+          "observed_at": "2026-10-21T01:00:00Z",
+          "received_at": "2026-10-21T01:00:00Z",
+          "value": 80,
+          "quality": "PASS",
+          "dedupe_key": "key-20"
+        },
+        {
+          "observation_id": "obs-018",
+          "observed_at": "2026-10-22T01:00:00Z",
+          "received_at": "2026-10-22T01:00:00Z",
+          "value": 80,
+          "quality": "PASS",
+          "dedupe_key": "key-21"
+        },
+        {
+          "observation_id": "obs-019",
+          "observed_at": "2026-10-23T01:00:00Z",
+          "received_at": "2026-10-23T01:00:00Z",
+          "value": 80,
+          "quality": "PASS",
+          "dedupe_key": "key-22"
+        },
+        {
+          "observation_id": "obs-020",
+          "observed_at": "2026-10-24T01:00:00Z",
+          "received_at": "2026-10-24T01:00:00Z",
+          "value": 80,
+          "quality": "PASS",
+          "dedupe_key": "key-23"
+        },
+        {
+          "observation_id": "obs-021",
+          "observed_at": "2026-10-25T01:00:00Z",
+          "received_at": "2026-10-25T01:00:00Z",
+          "value": 80,
+          "quality": "PASS",
+          "dedupe_key": "key-24"
+        },
+        {
+          "observation_id": "obs-022",
+          "observed_at": "2026-10-26T01:00:00Z",
+          "received_at": "2026-10-26T01:00:00Z",
+          "value": 80,
+          "quality": "PASS",
+          "dedupe_key": "key-25"
+        },
+        {
+          "observation_id": "obs-023",
+          "observed_at": "2026-10-27T01:00:00Z",
+          "received_at": "2026-10-27T01:00:00Z",
+          "value": 80,
+          "quality": "PASS",
+          "dedupe_key": "key-26"
+        },
+        {
+          "observation_id": "obs-024",
+          "observed_at": "2026-10-28T01:00:00Z",
+          "received_at": "2026-10-28T01:00:00Z",
+          "value": 80,
+          "quality": "PASS",
+          "dedupe_key": "key-27"
+        },
+        {
+          "observation_id": "obs-025",
+          "observed_at": "2026-10-29T01:00:00Z",
+          "received_at": "2026-10-29T01:00:00Z",
+          "value": 80,
+          "quality": "PASS",
+          "dedupe_key": "key-28"
+        },
+        {
+          "observation_id": "obs-026",
+          "observed_at": "2026-10-30T01:00:00Z",
+          "received_at": "2026-10-30T01:00:00Z",
+          "value": 80,
+          "quality": "PASS",
+          "dedupe_key": "key-29"
+        }
+      ],
+      "rule": {
+        "operator": "OUTSIDE_BAND",
+        "band_low_minor": 90,
+        "band_high_minor": 110
+      },
+      "uncertainty": {
+        "interval_type": "MEASUREMENT_UNCERTAINTY",
+        "lower_minor": 95,
+        "upper_minor": 105,
+        "confidence_ppm": null,
+        "computation_source_ref": {
+          "evidence_id": "eval-source",
+          "revision": 1,
+          "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      },
+      "point_estimate_minor": null,
+      "effectiveness_envelope_input": {
+        "mandate_clause_ref": "clause-mandate-evaluator",
+        "evidence_refs": [
+          {
+            "evidence_id": "metric-source",
+            "revision": 1,
+            "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ],
+        "scope_spec": {
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "effective_from": "2026-09-01T00:00:00Z",
+          "effective_until": "2027-01-01T00:00:00Z",
+          "resource_spec": {
+            "resource_kind": "FUNDS",
+            "unit_code": "USD_CENTS"
+          },
+          "max_amount_minor": 100000
+        },
+        "remedy_spec": {
+          "notice_recipients": [
+            "member-definer"
+          ],
+          "challenge_window_hours": 24,
+          "review_body_id": "review-body-1",
+          "rollback_or_compensation_procedure_ref": {
+            "evidence_id": "remedy-source",
+            "revision": 1,
+            "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        }
+      }
+    },
+    "dependency_versions": [
+      {
+        "object_id": "case-1",
+        "version_seq": 1
+      }
+    ]
+  },
+  "server_context": {
+    "contract_version": "0.4.0-rc1-slice3b",
+    "mode": "simulation",
+    "data_classification": "synthetic",
+    "execution_enabled": false,
+    "tenant_node_id": "node-1",
+    "case_id": "case-1",
+    "authenticated_principal_id": "principal-evaluator",
+    "authenticated_member_id": "member-evaluator",
+    "member_directory": [
+      {
+        "principal_id": "principal-definer",
+        "member_id": "member-definer",
+        "status": "VERIFIED",
+        "source_ref": {
+          "evidence_id": "member-principal-definer",
+          "revision": 1,
+          "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      },
+      {
+        "principal_id": "principal-evaluator",
+        "member_id": "member-evaluator",
+        "status": "VERIFIED",
+        "source_ref": {
+          "evidence_id": "member-principal-evaluator",
+          "revision": 1,
+          "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      },
+      {
+        "principal_id": "principal-extender",
+        "member_id": "member-extender",
+        "status": "VERIFIED",
+        "source_ref": {
+          "evidence_id": "member-principal-extender",
+          "revision": 1,
+          "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      },
+      {
+        "principal_id": "principal-proposer",
+        "member_id": "member-proposer",
+        "status": "VERIFIED",
+        "source_ref": {
+          "evidence_id": "member-principal-proposer",
+          "revision": 1,
+          "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      }
+    ],
+    "access_granted": true,
+    "evaluated_at": "2026-11-05T00:00:00Z",
+    "attempt_id": "attempt-1",
+    "generation": 1,
+    "authority_source_id": "authority-source-1",
+    "authority_source_status": "AVAILABLE",
+    "authority_inventory_complete": true,
+    "authority_snapshots": [
+      {
+        "mandate_id": "mandate-definer",
+        "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "principal_id": "principal-definer",
+        "tenant_node_id": "node-1",
+        "case_id": "case-1",
+        "powers": [
+          "DEFINE_OBSERVABLE_METRIC"
+        ],
+        "allowed_target_ids": [
+          "case-1"
+        ],
+        "clause_reference": "clause-mandate-definer",
+        "status": "ACTIVE",
+        "valid_from": "2026-09-01T00:00:00Z",
+        "valid_until": "2027-01-01T00:00:00Z"
+      },
+      {
+        "mandate_id": "mandate-evaluator",
+        "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "principal_id": "principal-evaluator",
+        "tenant_node_id": "node-1",
+        "case_id": "case-1",
+        "powers": [
+          "EVALUATE_METRIC_WINDOW"
+        ],
+        "allowed_target_ids": [
+          "case-1"
+        ],
+        "clause_reference": "clause-mandate-evaluator",
+        "status": "ACTIVE",
+        "valid_from": "2026-09-01T00:00:00Z",
+        "valid_until": "2027-01-01T00:00:00Z"
+      },
+      {
+        "mandate_id": "mandate-extender",
+        "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "principal_id": "principal-extender",
+        "tenant_node_id": "node-1",
+        "case_id": "case-1",
+        "powers": [
+          "EXTEND_METRIC_WINDOW"
+        ],
+        "allowed_target_ids": [
+          "case-1"
+        ],
+        "clause_reference": "clause-mandate-extender",
+        "status": "ACTIVE",
+        "valid_from": "2026-09-01T00:00:00Z",
+        "valid_until": "2027-01-01T00:00:00Z"
+      }
+    ],
+    "evidence_snapshots": [
+      {
+        "evidence_id": "member-principal-definer",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "member-principal-evaluator",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "member-principal-extender",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "member-principal-proposer",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "metric-source",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "remedy-source",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "eval-source",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "metric-policy",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      }
+    ],
+    "generated_auth_receipt": {
+      "receipt_id": "receipt-1",
+      "command_id": "cmd-evaluate_metric_window",
+      "attempt_id": "attempt-1",
+      "generation": 1,
+      "idempotency_key": "idem-evaluate_metric_window",
+      "authenticated_principal_id": "principal-evaluator",
+      "mandate_id": "mandate-evaluator",
+      "evaluated_version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "requested_power": "EVALUATE_METRIC_WINDOW",
+      "target_object_id": "metric-1",
+      "evaluated_target_version_seq": 1,
+      "checked_at": "2026-11-05T00:00:00Z",
+      "authority_source_id": "authority-source-1",
+      "domain_sha256": "sha256:9fd94d9789a50e46985d29413c916ff5c33e8352c687596bd8df1d57e08ad1cf",
+      "context_sha256": "sha256:12556ed36e12e16036ea7d158a12b9bbc6b428d5d08a26f8086683b72dd531b3",
+      "verification_status": "VERIFIED_ACTIVE"
+    },
+    "new_envelope_id": "env-evaluate_metric_window",
+    "execution_observation": "NORMAL"
+  },
+  "after": {
+    "domain_objects": {
+      "operations": {
+        "cases": [
+          {
+            "object_id": "case-1",
+            "kind": "CASE",
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "parent_object_id": null,
+            "version_seq": 1,
+            "proposer_member_id": "member-proposer",
+            "rule_version_seq": 1,
+            "template_sod_policy": {
+              "version": "pack-a-v1",
+              "exclude_commitment_executors_from_verification": false
+            }
+          }
+        ],
+        "resource_pools": [
+          {
+            "object_id": "pool-1",
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "version_seq": 1,
+            "resource_spec": {
+              "resource_kind": "FUNDS",
+              "unit_code": "USD_CENTS"
+            },
+            "total_capacity_minor": 100000,
+            "committed_obligations_minor": 0
+          }
+        ],
+        "commitments": [],
+        "tickets": [],
+        "execution_verifications": [],
+        "protective_orders": [],
+        "protection_envelopes": [],
+        "effectiveness_envelopes": []
+      },
+      "observable_metrics": [
+        {
+          "metric_id": "metric-1",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "version_seq": 1,
+          "indicator_code": "SYNTHETIC_TURBIDITY",
+          "unit_code": "SYNTHETIC_MG_PER_L",
+          "bucket_seconds": 86400,
+          "min_valid_bucket_coverage_ppm": 900000,
+          "min_samples_per_valid_bucket": 1,
+          "dedupe_rule": "BY_DEDUPE_KEY",
+          "late_revision_policy": "NEW_VERSION_ONLY",
+          "interpolation_policy": "FORBIDDEN",
+          "uncertainty_interval_type": "MEASUREMENT_UNCERTAINTY",
+          "preapproved_point_estimate": false,
+          "source_ref": {
+            "evidence_id": "metric-source",
+            "revision": 1,
+            "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "created_command_id": "cmd-define_observable_metric",
+          "created_envelope_id": "env-define_observable_metric"
+        }
+      ],
+      "metric_evaluations": [
+        {
+          "evaluation_id": "evaluation-1",
+          "metric_id": "metric-1",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "version_seq": 1,
+          "supersedes_evaluation_id": null,
+          "observation_window": {
+            "start": "2026-10-01T00:00:00Z",
+            "end": "2026-10-31T00:00:00Z"
+          },
+          "evaluated_at": "2026-11-05T00:00:00Z",
+          "observations": [
+            {
+              "observation_id": "obs-000",
+              "observed_at": "2026-10-01T01:00:00Z",
+              "received_at": "2026-10-01T01:00:00Z",
+              "value": 80,
+              "quality": "PASS",
+              "dedupe_key": "key-0"
+            },
+            {
+              "observation_id": "obs-001",
+              "observed_at": "2026-10-02T01:00:00Z",
+              "received_at": "2026-10-02T01:00:00Z",
+              "value": 80,
+              "quality": "PASS",
+              "dedupe_key": "key-1"
+            },
+            {
+              "observation_id": "obs-002",
+              "observed_at": "2026-10-04T01:00:00Z",
+              "received_at": "2026-10-04T01:00:00Z",
+              "value": 80,
+              "quality": "PASS",
+              "dedupe_key": "key-3"
+            },
+            {
+              "observation_id": "obs-003",
+              "observed_at": "2026-10-05T01:00:00Z",
+              "received_at": "2026-10-05T01:00:00Z",
+              "value": 80,
+              "quality": "PASS",
+              "dedupe_key": "key-4"
+            },
+            {
+              "observation_id": "obs-004",
+              "observed_at": "2026-10-06T01:00:00Z",
+              "received_at": "2026-10-06T01:00:00Z",
+              "value": 80,
+              "quality": "PASS",
+              "dedupe_key": "key-5"
+            },
+            {
+              "observation_id": "obs-005",
+              "observed_at": "2026-10-07T01:00:00Z",
+              "received_at": "2026-10-07T01:00:00Z",
+              "value": 80,
+              "quality": "PASS",
+              "dedupe_key": "key-6"
+            },
+            {
+              "observation_id": "obs-006",
+              "observed_at": "2026-10-08T01:00:00Z",
+              "received_at": "2026-10-08T01:00:00Z",
+              "value": 80,
+              "quality": "PASS",
+              "dedupe_key": "key-7"
+            },
+            {
+              "observation_id": "obs-007",
+              "observed_at": "2026-10-09T01:00:00Z",
+              "received_at": "2026-10-09T01:00:00Z",
+              "value": 80,
+              "quality": "PASS",
+              "dedupe_key": "key-8"
+            },
+            {
+              "observation_id": "obs-008",
+              "observed_at": "2026-10-10T01:00:00Z",
+              "received_at": "2026-10-10T01:00:00Z",
+              "value": 80,
+              "quality": "PASS",
+              "dedupe_key": "key-9"
+            },
+            {
+              "observation_id": "obs-009",
+              "observed_at": "2026-10-11T01:00:00Z",
+              "received_at": "2026-10-11T01:00:00Z",
+              "value": 80,
+              "quality": "PASS",
+              "dedupe_key": "key-10"
+            },
+            {
+              "observation_id": "obs-010",
+              "observed_at": "2026-10-12T01:00:00Z",
+              "received_at": "2026-10-12T01:00:00Z",
+              "value": 80,
+              "quality": "PASS",
+              "dedupe_key": "key-11"
+            },
+            {
+              "observation_id": "obs-011",
+              "observed_at": "2026-10-13T01:00:00Z",
+              "received_at": "2026-10-13T01:00:00Z",
+              "value": 80,
+              "quality": "PASS",
+              "dedupe_key": "key-12"
+            },
+            {
+              "observation_id": "obs-012",
+              "observed_at": "2026-10-14T01:00:00Z",
+              "received_at": "2026-10-14T01:00:00Z",
+              "value": 80,
+              "quality": "PASS",
+              "dedupe_key": "key-13"
+            },
+            {
+              "observation_id": "obs-013",
+              "observed_at": "2026-10-15T01:00:00Z",
+              "received_at": "2026-10-15T01:00:00Z",
+              "value": 80,
+              "quality": "PASS",
+              "dedupe_key": "key-14"
+            },
+            {
+              "observation_id": "obs-014",
+              "observed_at": "2026-10-18T01:00:00Z",
+              "received_at": "2026-10-18T01:00:00Z",
+              "value": 80,
+              "quality": "PASS",
+              "dedupe_key": "key-17"
+            },
+            {
+              "observation_id": "obs-015",
+              "observed_at": "2026-10-19T01:00:00Z",
+              "received_at": "2026-10-19T01:00:00Z",
+              "value": 80,
+              "quality": "PASS",
+              "dedupe_key": "key-18"
+            },
+            {
+              "observation_id": "obs-016",
+              "observed_at": "2026-10-20T01:00:00Z",
+              "received_at": "2026-10-20T01:00:00Z",
+              "value": 80,
+              "quality": "PASS",
+              "dedupe_key": "key-19"
+            },
+            {
+              "observation_id": "obs-017",
+              "observed_at": "2026-10-21T01:00:00Z",
+              "received_at": "2026-10-21T01:00:00Z",
+              "value": 80,
+              "quality": "PASS",
+              "dedupe_key": "key-20"
+            },
+            {
+              "observation_id": "obs-018",
+              "observed_at": "2026-10-22T01:00:00Z",
+              "received_at": "2026-10-22T01:00:00Z",
+              "value": 80,
+              "quality": "PASS",
+              "dedupe_key": "key-21"
+            },
+            {
+              "observation_id": "obs-019",
+              "observed_at": "2026-10-23T01:00:00Z",
+              "received_at": "2026-10-23T01:00:00Z",
+              "value": 80,
+              "quality": "PASS",
+              "dedupe_key": "key-22"
+            },
+            {
+              "observation_id": "obs-020",
+              "observed_at": "2026-10-24T01:00:00Z",
+              "received_at": "2026-10-24T01:00:00Z",
+              "value": 80,
+              "quality": "PASS",
+              "dedupe_key": "key-23"
+            },
+            {
+              "observation_id": "obs-021",
+              "observed_at": "2026-10-25T01:00:00Z",
+              "received_at": "2026-10-25T01:00:00Z",
+              "value": 80,
+              "quality": "PASS",
+              "dedupe_key": "key-24"
+            },
+            {
+              "observation_id": "obs-022",
+              "observed_at": "2026-10-26T01:00:00Z",
+              "received_at": "2026-10-26T01:00:00Z",
+              "value": 80,
+              "quality": "PASS",
+              "dedupe_key": "key-25"
+            },
+            {
+              "observation_id": "obs-023",
+              "observed_at": "2026-10-27T01:00:00Z",
+              "received_at": "2026-10-27T01:00:00Z",
+              "value": 80,
+              "quality": "PASS",
+              "dedupe_key": "key-26"
+            },
+            {
+              "observation_id": "obs-024",
+              "observed_at": "2026-10-28T01:00:00Z",
+              "received_at": "2026-10-28T01:00:00Z",
+              "value": 80,
+              "quality": "PASS",
+              "dedupe_key": "key-27"
+            },
+            {
+              "observation_id": "obs-025",
+              "observed_at": "2026-10-29T01:00:00Z",
+              "received_at": "2026-10-29T01:00:00Z",
+              "value": 80,
+              "quality": "PASS",
+              "dedupe_key": "key-28"
+            },
+            {
+              "observation_id": "obs-026",
+              "observed_at": "2026-10-30T01:00:00Z",
+              "received_at": "2026-10-30T01:00:00Z",
+              "value": 80,
+              "quality": "PASS",
+              "dedupe_key": "key-29"
+            }
+          ],
+          "buckets": [
+            {
+              "bucket_start": "2026-10-01T00:00:00Z",
+              "sample_count": 1,
+              "rejected_count": 0,
+              "duplicate_count": 0,
+              "valid_sample_count": 1,
+              "valid": true
+            },
+            {
+              "bucket_start": "2026-10-02T00:00:00Z",
+              "sample_count": 1,
+              "rejected_count": 0,
+              "duplicate_count": 0,
+              "valid_sample_count": 1,
+              "valid": true
+            },
+            {
+              "bucket_start": "2026-10-03T00:00:00Z",
+              "sample_count": 0,
+              "rejected_count": 0,
+              "duplicate_count": 0,
+              "valid_sample_count": 0,
+              "valid": false
+            },
+            {
+              "bucket_start": "2026-10-04T00:00:00Z",
+              "sample_count": 1,
+              "rejected_count": 0,
+              "duplicate_count": 0,
+              "valid_sample_count": 1,
+              "valid": true
+            },
+            {
+              "bucket_start": "2026-10-05T00:00:00Z",
+              "sample_count": 1,
+              "rejected_count": 0,
+              "duplicate_count": 0,
+              "valid_sample_count": 1,
+              "valid": true
+            },
+            {
+              "bucket_start": "2026-10-06T00:00:00Z",
+              "sample_count": 1,
+              "rejected_count": 0,
+              "duplicate_count": 0,
+              "valid_sample_count": 1,
+              "valid": true
+            },
+            {
+              "bucket_start": "2026-10-07T00:00:00Z",
+              "sample_count": 1,
+              "rejected_count": 0,
+              "duplicate_count": 0,
+              "valid_sample_count": 1,
+              "valid": true
+            },
+            {
+              "bucket_start": "2026-10-08T00:00:00Z",
+              "sample_count": 1,
+              "rejected_count": 0,
+              "duplicate_count": 0,
+              "valid_sample_count": 1,
+              "valid": true
+            },
+            {
+              "bucket_start": "2026-10-09T00:00:00Z",
+              "sample_count": 1,
+              "rejected_count": 0,
+              "duplicate_count": 0,
+              "valid_sample_count": 1,
+              "valid": true
+            },
+            {
+              "bucket_start": "2026-10-10T00:00:00Z",
+              "sample_count": 1,
+              "rejected_count": 0,
+              "duplicate_count": 0,
+              "valid_sample_count": 1,
+              "valid": true
+            },
+            {
+              "bucket_start": "2026-10-11T00:00:00Z",
+              "sample_count": 1,
+              "rejected_count": 0,
+              "duplicate_count": 0,
+              "valid_sample_count": 1,
+              "valid": true
+            },
+            {
+              "bucket_start": "2026-10-12T00:00:00Z",
+              "sample_count": 1,
+              "rejected_count": 0,
+              "duplicate_count": 0,
+              "valid_sample_count": 1,
+              "valid": true
+            },
+            {
+              "bucket_start": "2026-10-13T00:00:00Z",
+              "sample_count": 1,
+              "rejected_count": 0,
+              "duplicate_count": 0,
+              "valid_sample_count": 1,
+              "valid": true
+            },
+            {
+              "bucket_start": "2026-10-14T00:00:00Z",
+              "sample_count": 1,
+              "rejected_count": 0,
+              "duplicate_count": 0,
+              "valid_sample_count": 1,
+              "valid": true
+            },
+            {
+              "bucket_start": "2026-10-15T00:00:00Z",
+              "sample_count": 1,
+              "rejected_count": 0,
+              "duplicate_count": 0,
+              "valid_sample_count": 1,
+              "valid": true
+            },
+            {
+              "bucket_start": "2026-10-16T00:00:00Z",
+              "sample_count": 0,
+              "rejected_count": 0,
+              "duplicate_count": 0,
+              "valid_sample_count": 0,
+              "valid": false
+            },
+            {
+              "bucket_start": "2026-10-17T00:00:00Z",
+              "sample_count": 0,
+              "rejected_count": 0,
+              "duplicate_count": 0,
+              "valid_sample_count": 0,
+              "valid": false
+            },
+            {
+              "bucket_start": "2026-10-18T00:00:00Z",
+              "sample_count": 1,
+              "rejected_count": 0,
+              "duplicate_count": 0,
+              "valid_sample_count": 1,
+              "valid": true
+            },
+            {
+              "bucket_start": "2026-10-19T00:00:00Z",
+              "sample_count": 1,
+              "rejected_count": 0,
+              "duplicate_count": 0,
+              "valid_sample_count": 1,
+              "valid": true
+            },
+            {
+              "bucket_start": "2026-10-20T00:00:00Z",
+              "sample_count": 1,
+              "rejected_count": 0,
+              "duplicate_count": 0,
+              "valid_sample_count": 1,
+              "valid": true
+            },
+            {
+              "bucket_start": "2026-10-21T00:00:00Z",
+              "sample_count": 1,
+              "rejected_count": 0,
+              "duplicate_count": 0,
+              "valid_sample_count": 1,
+              "valid": true
+            },
+            {
+              "bucket_start": "2026-10-22T00:00:00Z",
+              "sample_count": 1,
+              "rejected_count": 0,
+              "duplicate_count": 0,
+              "valid_sample_count": 1,
+              "valid": true
+            },
+            {
+              "bucket_start": "2026-10-23T00:00:00Z",
+              "sample_count": 1,
+              "rejected_count": 0,
+              "duplicate_count": 0,
+              "valid_sample_count": 1,
+              "valid": true
+            },
+            {
+              "bucket_start": "2026-10-24T00:00:00Z",
+              "sample_count": 1,
+              "rejected_count": 0,
+              "duplicate_count": 0,
+              "valid_sample_count": 1,
+              "valid": true
+            },
+            {
+              "bucket_start": "2026-10-25T00:00:00Z",
+              "sample_count": 1,
+              "rejected_count": 0,
+              "duplicate_count": 0,
+              "valid_sample_count": 1,
+              "valid": true
+            },
+            {
+              "bucket_start": "2026-10-26T00:00:00Z",
+              "sample_count": 1,
+              "rejected_count": 0,
+              "duplicate_count": 0,
+              "valid_sample_count": 1,
+              "valid": true
+            },
+            {
+              "bucket_start": "2026-10-27T00:00:00Z",
+              "sample_count": 1,
+              "rejected_count": 0,
+              "duplicate_count": 0,
+              "valid_sample_count": 1,
+              "valid": true
+            },
+            {
+              "bucket_start": "2026-10-28T00:00:00Z",
+              "sample_count": 1,
+              "rejected_count": 0,
+              "duplicate_count": 0,
+              "valid_sample_count": 1,
+              "valid": true
+            },
+            {
+              "bucket_start": "2026-10-29T00:00:00Z",
+              "sample_count": 1,
+              "rejected_count": 0,
+              "duplicate_count": 0,
+              "valid_sample_count": 1,
+              "valid": true
+            },
+            {
+              "bucket_start": "2026-10-30T00:00:00Z",
+              "sample_count": 1,
+              "rejected_count": 0,
+              "duplicate_count": 0,
+              "valid_sample_count": 1,
+              "valid": true
+            }
+          ],
+          "coverage": {
+            "total_buckets": 30,
+            "valid_buckets": 27,
+            "invalid_buckets": 3,
+            "coverage_ppm": 900000,
+            "leading_gap_buckets": 0,
+            "internal_gap_buckets": 2,
+            "trailing_gap_buckets": 0
+          },
+          "rule": {
+            "operator": "OUTSIDE_BAND",
+            "band_low_minor": 90,
+            "band_high_minor": 110
+          },
+          "uncertainty": {
+            "interval_type": "MEASUREMENT_UNCERTAINTY",
+            "lower_minor": 95,
+            "upper_minor": 105,
+            "confidence_ppm": null,
+            "computation_source_ref": {
+              "evidence_id": "eval-source",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          },
+          "point_estimate_minor": null,
+          "coverage_status": "COVERAGE_SUFFICIENT",
+          "direction_outcome": "VIOLATED",
+          "result_status": "VIOLATED",
+          "interpolation_used": false,
+          "created_command_id": "cmd-evaluate_metric_window",
+          "envelope_id": "env-evaluate_metric_window"
+        }
+      ],
+      "effectiveness_envelopes": [
+        {
+          "envelope_id": "env-define_observable_metric",
+          "action_type": "DEFINE_OBSERVABLE_METRIC",
+          "target_object_id": "case-1",
+          "evaluated_target_version_seq": 1,
+          "resulting_versions": [
+            {
+              "object_id": "metric-1",
+              "version_seq": 1
+            }
+          ],
+          "mandate_ref": {
+            "mandate_id": "mandate-definer",
+            "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "clause_reference": "clause-mandate-definer"
+          },
+          "auth_check_receipt": {
+            "receipt_id": "receipt-1",
+            "command_id": "cmd-define_observable_metric",
+            "attempt_id": "attempt-1",
+            "generation": 1,
+            "idempotency_key": "idem-define_observable_metric",
+            "authenticated_principal_id": "principal-definer",
+            "mandate_id": "mandate-definer",
+            "evaluated_version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "requested_power": "DEFINE_OBSERVABLE_METRIC",
+            "target_object_id": "case-1",
+            "evaluated_target_version_seq": 1,
+            "checked_at": "2026-11-05T00:00:00Z",
+            "authority_source_id": "authority-source-1",
+            "domain_sha256": "sha256:6b3fd5636964126e1506242ef158763daea7e9b8ea607c8bf902859d9ac22213",
+            "context_sha256": "sha256:428be56da8330853b3fd011a8ef68f3e6664efef74f1df2f74213fc4233a1694",
+            "verification_status": "VERIFIED_ACTIVE"
+          },
+          "evidence_refs": [
+            {
+              "evidence_id": "metric-source",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          ],
+          "scope_spec": {
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "effective_from": "2026-09-01T00:00:00Z",
+            "effective_until": "2027-01-01T00:00:00Z",
+            "resource_spec": {
+              "resource_kind": "FUNDS",
+              "unit_code": "USD_CENTS"
+            },
+            "max_amount_minor": 100000
+          },
+          "remedy_spec": {
+            "notice_recipients": [
+              "member-definer"
+            ],
+            "challenge_window_hours": 24,
+            "review_body_id": "review-body-1",
+            "rollback_or_compensation_procedure_ref": {
+              "evidence_id": "remedy-source",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          },
+          "effect_parameters_sha256": "sha256:be0d4e261edcf9d8cbf5ace75da83f65864ad0e2ccc5c6262030a255440d47fb",
+          "actor_member_id": "member-definer",
+          "payload_snapshot": {
+            "metric_id": "metric-1",
+            "indicator_code": "SYNTHETIC_TURBIDITY",
+            "unit_code": "SYNTHETIC_MG_PER_L",
+            "bucket_seconds": 86400,
+            "min_valid_bucket_coverage_ppm": 900000,
+            "min_samples_per_valid_bucket": 1,
+            "dedupe_rule": "BY_DEDUPE_KEY",
+            "uncertainty_interval_type": "MEASUREMENT_UNCERTAINTY",
+            "preapproved_point_estimate": false,
+            "source_ref": {
+              "evidence_id": "metric-source",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "effectiveness_envelope_input": {
+              "mandate_clause_ref": "clause-mandate-definer",
+              "evidence_refs": [
+                {
+                  "evidence_id": "metric-source",
+                  "revision": 1,
+                  "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                }
+              ],
+              "scope_spec": {
+                "tenant_node_id": "node-1",
+                "case_id": "case-1",
+                "effective_from": "2026-09-01T00:00:00Z",
+                "effective_until": "2027-01-01T00:00:00Z",
+                "resource_spec": {
+                  "resource_kind": "FUNDS",
+                  "unit_code": "USD_CENTS"
+                },
+                "max_amount_minor": 100000
+              },
+              "remedy_spec": {
+                "notice_recipients": [
+                  "member-definer"
+                ],
+                "challenge_window_hours": 24,
+                "review_body_id": "review-body-1",
+                "rollback_or_compensation_procedure_ref": {
+                  "evidence_id": "remedy-source",
+                  "revision": 1,
+                  "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                }
+              }
+            }
+          }
+        },
+        {
+          "envelope_id": "env-evaluate_metric_window",
+          "action_type": "EVALUATE_METRIC_WINDOW",
+          "target_object_id": "metric-1",
+          "evaluated_target_version_seq": 1,
+          "resulting_versions": [
+            {
+              "object_id": "evaluation-1",
+              "version_seq": 1
+            }
+          ],
+          "mandate_ref": {
+            "mandate_id": "mandate-evaluator",
+            "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "clause_reference": "clause-mandate-evaluator"
+          },
+          "auth_check_receipt": {
+            "receipt_id": "receipt-1",
+            "command_id": "cmd-evaluate_metric_window",
+            "attempt_id": "attempt-1",
+            "generation": 1,
+            "idempotency_key": "idem-evaluate_metric_window",
+            "authenticated_principal_id": "principal-evaluator",
+            "mandate_id": "mandate-evaluator",
+            "evaluated_version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "requested_power": "EVALUATE_METRIC_WINDOW",
+            "target_object_id": "metric-1",
+            "evaluated_target_version_seq": 1,
+            "checked_at": "2026-11-05T00:00:00Z",
+            "authority_source_id": "authority-source-1",
+            "domain_sha256": "sha256:9fd94d9789a50e46985d29413c916ff5c33e8352c687596bd8df1d57e08ad1cf",
+            "context_sha256": "sha256:12556ed36e12e16036ea7d158a12b9bbc6b428d5d08a26f8086683b72dd531b3",
+            "verification_status": "VERIFIED_ACTIVE"
+          },
+          "evidence_refs": [
+            {
+              "evidence_id": "metric-source",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          ],
+          "scope_spec": {
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "effective_from": "2026-09-01T00:00:00Z",
+            "effective_until": "2027-01-01T00:00:00Z",
+            "resource_spec": {
+              "resource_kind": "FUNDS",
+              "unit_code": "USD_CENTS"
+            },
+            "max_amount_minor": 100000
+          },
+          "remedy_spec": {
+            "notice_recipients": [
+              "member-definer"
+            ],
+            "challenge_window_hours": 24,
+            "review_body_id": "review-body-1",
+            "rollback_or_compensation_procedure_ref": {
+              "evidence_id": "remedy-source",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          },
+          "effect_parameters_sha256": "sha256:99fdb768f4733768306d58892e202f4b5add273ae0415a7bebb8c2f560b9504c",
+          "actor_member_id": "member-evaluator",
+          "payload_snapshot": {
+            "evaluation_id": "evaluation-1",
+            "observation_window": {
+              "start": "2026-10-01T00:00:00Z",
+              "end": "2026-10-31T00:00:00Z"
+            },
+            "observations": [
+              {
+                "observation_id": "obs-000",
+                "observed_at": "2026-10-01T01:00:00Z",
+                "received_at": "2026-10-01T01:00:00Z",
+                "value": 80,
+                "quality": "PASS",
+                "dedupe_key": "key-0"
+              },
+              {
+                "observation_id": "obs-001",
+                "observed_at": "2026-10-02T01:00:00Z",
+                "received_at": "2026-10-02T01:00:00Z",
+                "value": 80,
+                "quality": "PASS",
+                "dedupe_key": "key-1"
+              },
+              {
+                "observation_id": "obs-002",
+                "observed_at": "2026-10-04T01:00:00Z",
+                "received_at": "2026-10-04T01:00:00Z",
+                "value": 80,
+                "quality": "PASS",
+                "dedupe_key": "key-3"
+              },
+              {
+                "observation_id": "obs-003",
+                "observed_at": "2026-10-05T01:00:00Z",
+                "received_at": "2026-10-05T01:00:00Z",
+                "value": 80,
+                "quality": "PASS",
+                "dedupe_key": "key-4"
+              },
+              {
+                "observation_id": "obs-004",
+                "observed_at": "2026-10-06T01:00:00Z",
+                "received_at": "2026-10-06T01:00:00Z",
+                "value": 80,
+                "quality": "PASS",
+                "dedupe_key": "key-5"
+              },
+              {
+                "observation_id": "obs-005",
+                "observed_at": "2026-10-07T01:00:00Z",
+                "received_at": "2026-10-07T01:00:00Z",
+                "value": 80,
+                "quality": "PASS",
+                "dedupe_key": "key-6"
+              },
+              {
+                "observation_id": "obs-006",
+                "observed_at": "2026-10-08T01:00:00Z",
+                "received_at": "2026-10-08T01:00:00Z",
+                "value": 80,
+                "quality": "PASS",
+                "dedupe_key": "key-7"
+              },
+              {
+                "observation_id": "obs-007",
+                "observed_at": "2026-10-09T01:00:00Z",
+                "received_at": "2026-10-09T01:00:00Z",
+                "value": 80,
+                "quality": "PASS",
+                "dedupe_key": "key-8"
+              },
+              {
+                "observation_id": "obs-008",
+                "observed_at": "2026-10-10T01:00:00Z",
+                "received_at": "2026-10-10T01:00:00Z",
+                "value": 80,
+                "quality": "PASS",
+                "dedupe_key": "key-9"
+              },
+              {
+                "observation_id": "obs-009",
+                "observed_at": "2026-10-11T01:00:00Z",
+                "received_at": "2026-10-11T01:00:00Z",
+                "value": 80,
+                "quality": "PASS",
+                "dedupe_key": "key-10"
+              },
+              {
+                "observation_id": "obs-010",
+                "observed_at": "2026-10-12T01:00:00Z",
+                "received_at": "2026-10-12T01:00:00Z",
+                "value": 80,
+                "quality": "PASS",
+                "dedupe_key": "key-11"
+              },
+              {
+                "observation_id": "obs-011",
+                "observed_at": "2026-10-13T01:00:00Z",
+                "received_at": "2026-10-13T01:00:00Z",
+                "value": 80,
+                "quality": "PASS",
+                "dedupe_key": "key-12"
+              },
+              {
+                "observation_id": "obs-012",
+                "observed_at": "2026-10-14T01:00:00Z",
+                "received_at": "2026-10-14T01:00:00Z",
+                "value": 80,
+                "quality": "PASS",
+                "dedupe_key": "key-13"
+              },
+              {
+                "observation_id": "obs-013",
+                "observed_at": "2026-10-15T01:00:00Z",
+                "received_at": "2026-10-15T01:00:00Z",
+                "value": 80,
+                "quality": "PASS",
+                "dedupe_key": "key-14"
+              },
+              {
+                "observation_id": "obs-014",
+                "observed_at": "2026-10-18T01:00:00Z",
+                "received_at": "2026-10-18T01:00:00Z",
+                "value": 80,
+                "quality": "PASS",
+                "dedupe_key": "key-17"
+              },
+              {
+                "observation_id": "obs-015",
+                "observed_at": "2026-10-19T01:00:00Z",
+                "received_at": "2026-10-19T01:00:00Z",
+                "value": 80,
+                "quality": "PASS",
+                "dedupe_key": "key-18"
+              },
+              {
+                "observation_id": "obs-016",
+                "observed_at": "2026-10-20T01:00:00Z",
+                "received_at": "2026-10-20T01:00:00Z",
+                "value": 80,
+                "quality": "PASS",
+                "dedupe_key": "key-19"
+              },
+              {
+                "observation_id": "obs-017",
+                "observed_at": "2026-10-21T01:00:00Z",
+                "received_at": "2026-10-21T01:00:00Z",
+                "value": 80,
+                "quality": "PASS",
+                "dedupe_key": "key-20"
+              },
+              {
+                "observation_id": "obs-018",
+                "observed_at": "2026-10-22T01:00:00Z",
+                "received_at": "2026-10-22T01:00:00Z",
+                "value": 80,
+                "quality": "PASS",
+                "dedupe_key": "key-21"
+              },
+              {
+                "observation_id": "obs-019",
+                "observed_at": "2026-10-23T01:00:00Z",
+                "received_at": "2026-10-23T01:00:00Z",
+                "value": 80,
+                "quality": "PASS",
+                "dedupe_key": "key-22"
+              },
+              {
+                "observation_id": "obs-020",
+                "observed_at": "2026-10-24T01:00:00Z",
+                "received_at": "2026-10-24T01:00:00Z",
+                "value": 80,
+                "quality": "PASS",
+                "dedupe_key": "key-23"
+              },
+              {
+                "observation_id": "obs-021",
+                "observed_at": "2026-10-25T01:00:00Z",
+                "received_at": "2026-10-25T01:00:00Z",
+                "value": 80,
+                "quality": "PASS",
+                "dedupe_key": "key-24"
+              },
+              {
+                "observation_id": "obs-022",
+                "observed_at": "2026-10-26T01:00:00Z",
+                "received_at": "2026-10-26T01:00:00Z",
+                "value": 80,
+                "quality": "PASS",
+                "dedupe_key": "key-25"
+              },
+              {
+                "observation_id": "obs-023",
+                "observed_at": "2026-10-27T01:00:00Z",
+                "received_at": "2026-10-27T01:00:00Z",
+                "value": 80,
+                "quality": "PASS",
+                "dedupe_key": "key-26"
+              },
+              {
+                "observation_id": "obs-024",
+                "observed_at": "2026-10-28T01:00:00Z",
+                "received_at": "2026-10-28T01:00:00Z",
+                "value": 80,
+                "quality": "PASS",
+                "dedupe_key": "key-27"
+              },
+              {
+                "observation_id": "obs-025",
+                "observed_at": "2026-10-29T01:00:00Z",
+                "received_at": "2026-10-29T01:00:00Z",
+                "value": 80,
+                "quality": "PASS",
+                "dedupe_key": "key-28"
+              },
+              {
+                "observation_id": "obs-026",
+                "observed_at": "2026-10-30T01:00:00Z",
+                "received_at": "2026-10-30T01:00:00Z",
+                "value": 80,
+                "quality": "PASS",
+                "dedupe_key": "key-29"
+              }
+            ],
+            "rule": {
+              "operator": "OUTSIDE_BAND",
+              "band_low_minor": 90,
+              "band_high_minor": 110
+            },
+            "uncertainty": {
+              "interval_type": "MEASUREMENT_UNCERTAINTY",
+              "lower_minor": 95,
+              "upper_minor": 105,
+              "confidence_ppm": null,
+              "computation_source_ref": {
+                "evidence_id": "eval-source",
+                "revision": 1,
+                "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+              }
+            },
+            "point_estimate_minor": null,
+            "effectiveness_envelope_input": {
+              "mandate_clause_ref": "clause-mandate-evaluator",
+              "evidence_refs": [
+                {
+                  "evidence_id": "metric-source",
+                  "revision": 1,
+                  "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                }
+              ],
+              "scope_spec": {
+                "tenant_node_id": "node-1",
+                "case_id": "case-1",
+                "effective_from": "2026-09-01T00:00:00Z",
+                "effective_until": "2027-01-01T00:00:00Z",
+                "resource_spec": {
+                  "resource_kind": "FUNDS",
+                  "unit_code": "USD_CENTS"
+                },
+                "max_amount_minor": 100000
+              },
+              "remedy_spec": {
+                "notice_recipients": [
+                  "member-definer"
+                ],
+                "challenge_window_hours": 24,
+                "review_body_id": "review-body-1",
+                "rollback_or_compensation_procedure_ref": {
+                  "evidence_id": "remedy-source",
+                  "revision": 1,
+                  "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "execution_outcome": {
+      "outcome": "APPLIED",
+      "command_record": {
+        "command_id": "cmd-evaluate_metric_window",
+        "tenant_node_id": "node-1",
+        "principal_id": "principal-evaluator",
+        "action_id": "EVALUATE_METRIC_WINDOW",
+        "idempotency_key": "idem-evaluate_metric_window",
+        "request_sha256": "sha256:ce1c472f22036a5f0268110e7dba674318293e383d653333a35767d8df3c1a59",
+        "current_attempt_id": "attempt-1",
+        "generation": 1,
+        "version_seq": 2,
+        "status": "APPLIED",
+        "result_id": "result-1"
+      },
+      "command_attempt": {
+        "attempt_id": "attempt-1",
+        "command_id": "cmd-evaluate_metric_window",
+        "generation": 1,
+        "version_seq": 2,
+        "status": "APPLIED"
+      },
+      "command_result": {
+        "result_id": "result-1",
+        "command_id": "cmd-evaluate_metric_window",
+        "attempt_id": "attempt-1",
+        "generation": 1,
+        "status": "APPLIED",
+        "retry_disposition": "FINAL",
+        "applied_versions": [
+          {
+            "object_id": "evaluation-1",
+            "version_seq": 1
+          }
+        ]
+      },
+      "command_rejection": null,
+      "auth_check_receipt": {
+        "receipt_id": "receipt-1",
+        "command_id": "cmd-evaluate_metric_window",
+        "attempt_id": "attempt-1",
+        "generation": 1,
+        "idempotency_key": "idem-evaluate_metric_window",
+        "authenticated_principal_id": "principal-evaluator",
+        "mandate_id": "mandate-evaluator",
+        "evaluated_version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "requested_power": "EVALUATE_METRIC_WINDOW",
+        "target_object_id": "metric-1",
+        "evaluated_target_version_seq": 1,
+        "checked_at": "2026-11-05T00:00:00Z",
+        "authority_source_id": "authority-source-1",
+        "domain_sha256": "sha256:9fd94d9789a50e46985d29413c916ff5c33e8352c687596bd8df1d57e08ad1cf",
+        "context_sha256": "sha256:12556ed36e12e16036ea7d158a12b9bbc6b428d5d08a26f8086683b72dd531b3",
+        "verification_status": "VERIFIED_ACTIVE"
+      },
+      "audit_event": {
+        "audit_id": "audit-event-1",
+        "command_id": "cmd-evaluate_metric_window",
+        "attempt_id": "attempt-1",
+        "generation": 1,
+        "principal_id": "principal-evaluator",
+        "action_id": "EVALUATE_METRIC_WINDOW",
+        "outcome": "APPLIED",
+        "checked_at": "2026-11-05T00:00:00Z",
+        "before_domain_sha256": "sha256:9fd94d9789a50e46985d29413c916ff5c33e8352c687596bd8df1d57e08ad1cf",
+        "after_domain_sha256": "sha256:cee32affcb20796921bfeff839778087a106dde8383891052959a3c35f2295ca",
+        "written_versions": [
+          {
+            "object_id": "evaluation-1",
+            "version_seq": 1
+          }
+        ]
+      },
+      "fault_observation": null
+    }
+  }
+}

@@ -1,0 +1,126 @@
+test_2a_and_2b_share_time_scope_and_multi_order_truth_table (test_aw001_slice2b.BoundaryTests.test_2a_and_2b_share_time_scope_and_multi_order_truth_table) ... ok
+test_cancel_changes_only_ticket_and_derived_reservation (test_aw001_slice2b.BoundaryTests.test_cancel_changes_only_ticket_and_derived_reservation) ... ok
+test_cli_valid_refusal_and_invalid_record (test_aw001_slice2b.BoundaryTests.test_cli_valid_refusal_and_invalid_record) ... ok
+test_closed_inputs_strict_json_and_invalid_dates (test_aw001_slice2b.BoundaryTests.test_closed_inputs_strict_json_and_invalid_dates) ... ok
+test_dependent_mandate_and_metric_bindings (test_aw001_slice2b.BoundaryTests.test_dependent_mandate_and_metric_bindings) ... ok
+test_each_refusal_rejects_business_mutation_and_false_success (test_aw001_slice2b.BoundaryTests.test_each_refusal_rejects_business_mutation_and_false_success) ... ok
+test_expiry_boundaries_and_origin_unavailable (test_aw001_slice2b.BoundaryTests.test_expiry_boundaries_and_origin_unavailable) ... ok
+test_fixture_inventory_matches_registered_assertions (test_aw001_slice2b.BoundaryTests.test_fixture_inventory_matches_registered_assertions) ... ok
+test_full_chain_counts_only_independent_verified_increments (test_aw001_slice2b.BoundaryTests.test_full_chain_counts_only_independent_verified_increments) ... ok
+test_incorrect_state_cannot_skip_handoff_or_cancelled_ticket (test_aw001_slice2b.BoundaryTests.test_incorrect_state_cannot_skip_handoff_or_cancelled_ticket) ... ok
+test_ledger_and_units_cannot_be_redefined_by_summary (test_aw001_slice2b.BoundaryTests.test_ledger_and_units_cannot_be_redefined_by_summary) ... ok
+test_malformed_parent_and_cross_tenant_fail_closed (test_aw001_slice2b.BoundaryTests.test_malformed_parent_and_cross_tenant_fail_closed) ... ok
+test_negative_fixtures_isolate_one_declared_path (test_aw001_slice2b.BoundaryTests.test_negative_fixtures_isolate_one_declared_path) ... ok
+test_new_log_power_is_checked_and_unknown_power_is_not_ignored (test_aw001_slice2b.BoundaryTests.test_new_log_power_is_checked_and_unknown_power_is_not_ignored) ... ok
+test_pool_reference_cannot_point_to_a_case_object (test_aw001_slice2b.BoundaryTests.test_pool_reference_cannot_point_to_a_case_object) ... ERROR
+test_receipt_version_and_nonexistent_receipt_fail (test_aw001_slice2b.BoundaryTests.test_receipt_version_and_nonexistent_receipt_fail) ... ok
+test_refusals_do_not_mutate_domain_or_claim_success (test_aw001_slice2b.BoundaryTests.test_refusals_do_not_mutate_domain_or_claim_success) ... ok
+test_registry_cannot_disable_money_or_sod_checks (test_aw001_slice2b.BoundaryTests.test_registry_cannot_disable_money_or_sod_checks) ... ok
+test_required_responsible_member_unknown_and_optional_template_rule (test_aw001_slice2b.BoundaryTests.test_required_responsible_member_unknown_and_optional_template_rule) ... ok
+test_result_unknown_does_not_claim_rollback (test_aw001_slice2b.BoundaryTests.test_result_unknown_does_not_claim_rollback) ... ok
+test_scope_and_authority_amount_caps_apply (test_aw001_slice2b.BoundaryTests.test_scope_and_authority_amount_caps_apply) ... ok
+test_unmapped_responsible_member_cannot_pass_sod (test_aw001_slice2b.BoundaryTests.test_unmapped_responsible_member_cannot_pass_sod) ... ok
+test_unmapped_sentinel_is_not_a_verified_member (test_aw001_slice2b.BoundaryTests.test_unmapped_sentinel_is_not_a_verified_member) ... ok
+test_verified_amount_cannot_exceed_phase_even_across_receipts (test_aw001_slice2b.BoundaryTests.test_verified_amount_cannot_exceed_phase_even_across_receipts) ... ok
+test_zero_delta_verdicts_preserve_parent_and_do_not_hold (test_aw001_slice2b.BoundaryTests.test_zero_delta_verdicts_preserve_parent_and_do_not_hold) ... ok
+test_ft_approval_omits_second_ticket (test_aw001_slice2b.GoldenTests.test_ft_approval_omits_second_ticket) ... ok
+test_ft_attempt_generation (test_aw001_slice2b.GoldenTests.test_ft_attempt_generation) ... ok
+test_ft_audit_digest (test_aw001_slice2b.GoldenTests.test_ft_audit_digest) ... ok
+test_ft_authorize_claims_handoff (test_aw001_slice2b.GoldenTests.test_ft_authorize_claims_handoff) ... ok
+test_ft_cancel_reduces_commitment (test_aw001_slice2b.GoldenTests.test_ft_cancel_reduces_commitment) ... ok
+test_ft_cancel_releases_pool (test_aw001_slice2b.GoldenTests.test_ft_cancel_releases_pool) ... ok
+test_ft_client_identity (test_aw001_slice2b.GoldenTests.test_ft_client_identity) ... ok
+test_ft_collective_approval (test_aw001_slice2b.GoldenTests.test_ft_collective_approval) ... ok
+test_ft_context_digest (test_aw001_slice2b.GoldenTests.test_ft_context_digest) ... ok
+test_ft_dependency_version (test_aw001_slice2b.GoldenTests.test_ft_dependency_version) ... ok
+test_ft_empty_evidence (test_aw001_slice2b.GoldenTests.test_ft_empty_evidence) ... ok
+test_ft_log_counts_fulfilled (test_aw001_slice2b.GoldenTests.test_ft_log_counts_fulfilled) ... ok
+test_ft_missing_remedy (test_aw001_slice2b.GoldenTests.test_ft_missing_remedy) ... ok
+test_ft_money_fraction (test_aw001_slice2b.GoldenTests.test_ft_money_fraction) ... ok
+test_ft_partial_completes_commitment (test_aw001_slice2b.GoldenTests.test_ft_partial_completes_commitment) ... ok
+test_ft_pool_claims_applied (test_aw001_slice2b.GoldenTests.test_ft_pool_claims_applied) ... ok
+test_ft_reauthorize_rewrites_history (test_aw001_slice2b.GoldenTests.test_ft_reauthorize_rewrites_history) ... ok
+test_ft_receipt_attempt (test_aw001_slice2b.GoldenTests.test_ft_receipt_attempt) ... ok
+test_ft_rejection_mutates_blocked (test_aw001_slice2b.GoldenTests.test_ft_rejection_mutates_blocked) ... ok
+test_ft_rejection_wrong_code (test_aw001_slice2b.GoldenTests.test_ft_rejection_wrong_code) ... ok
+test_ft_result_generation (test_aw001_slice2b.GoldenTests.test_ft_result_generation) ... ok
+test_ft_retry_terminal (test_aw001_slice2b.GoldenTests.test_ft_retry_terminal) ... ok
+test_ft_self_approval_claims_applied (test_aw001_slice2b.GoldenTests.test_ft_self_approval_claims_applied) ... ok
+test_ft_skip_check (test_aw001_slice2b.GoldenTests.test_ft_skip_check) ... ok
+test_ft_source_claims_verified (test_aw001_slice2b.GoldenTests.test_ft_source_claims_verified) ... ok
+test_ft_target_version (test_aw001_slice2b.GoldenTests.test_ft_target_version) ... ok
+test_ft_unknown_action (test_aw001_slice2b.GoldenTests.test_ft_unknown_action) ... ok
+test_ft_unknown_claims_rollback (test_aw001_slice2b.GoldenTests.test_ft_unknown_claims_rollback) ... ok
+test_ft_verify_adds_verified_state (test_aw001_slice2b.GoldenTests.test_ft_verify_adds_verified_state) ... ok
+test_ft_zero_verdict_changes_commitment_version (test_aw001_slice2b.GoldenTests.test_ft_zero_verdict_changes_commitment_version) ... ok
+test_pt_approve_all_phases (test_aw001_slice2b.GoldenTests.test_pt_approve_all_phases) ... ok
+test_pt_authorize_phase1 (test_aw001_slice2b.GoldenTests.test_pt_authorize_phase1) ... ok
+test_pt_authorize_phase2 (test_aw001_slice2b.GoldenTests.test_pt_authorize_phase2) ... ok
+test_pt_cancel_queued (test_aw001_slice2b.GoldenTests.test_pt_cancel_queued) ... ok
+test_pt_commit_unknown (test_aw001_slice2b.GoldenTests.test_pt_commit_unknown) ... ok
+test_pt_commitment_completed (test_aw001_slice2b.GoldenTests.test_pt_commitment_completed) ... ok
+test_pt_confirmed_rollback (test_aw001_slice2b.GoldenTests.test_pt_confirmed_rollback) ... ok
+test_pt_handoff_after_order_expiry (test_aw001_slice2b.GoldenTests.test_pt_handoff_after_order_expiry) ... ok
+test_pt_log_phase2 (test_aw001_slice2b.GoldenTests.test_pt_log_phase2) ... ok
+test_pt_log_receipt (test_aw001_slice2b.GoldenTests.test_pt_log_receipt) ... ok
+test_pt_log_second_receipt (test_aw001_slice2b.GoldenTests.test_pt_log_second_receipt) ... ok
+test_pt_reauthorize_expired (test_aw001_slice2b.GoldenTests.test_pt_reauthorize_expired) ... ok
+test_pt_record_handoff (test_aw001_slice2b.GoldenTests.test_pt_record_handoff) ... ok
+test_pt_record_phase2 (test_aw001_slice2b.GoldenTests.test_pt_record_phase2) ... ok
+test_pt_rejected_authorize_parent_po (test_aw001_slice2b.GoldenTests.test_pt_rejected_authorize_parent_po) ... ok
+test_pt_rejected_cancel_after_handoff (test_aw001_slice2b.GoldenTests.test_pt_rejected_cancel_after_handoff) ... ok
+test_pt_rejected_current_revoked (test_aw001_slice2b.GoldenTests.test_pt_rejected_current_revoked) ... ok
+test_pt_rejected_delta_exceeds_claim (test_aw001_slice2b.GoldenTests.test_pt_rejected_delta_exceeds_claim) ... ok
+test_pt_rejected_expired_order_metric_unmet (test_aw001_slice2b.GoldenTests.test_pt_rejected_expired_order_metric_unmet) ... ok
+test_pt_rejected_handoff_permission_expired (test_aw001_slice2b.GoldenTests.test_pt_rejected_handoff_permission_expired) ... ok
+test_pt_rejected_member_unmapped (test_aw001_slice2b.GoldenTests.test_pt_rejected_member_unmapped) ... ok
+test_pt_rejected_metric_noncompliant (test_aw001_slice2b.GoldenTests.test_pt_rejected_metric_noncompliant) ... ok
+test_pt_rejected_metric_stale (test_aw001_slice2b.GoldenTests.test_pt_rejected_metric_stale) ... ok
+test_pt_rejected_new_po_before_handoff (test_aw001_slice2b.GoldenTests.test_pt_rejected_new_po_before_handoff) ... ok
+test_pt_rejected_origin_revoked (test_aw001_slice2b.GoldenTests.test_pt_rejected_origin_revoked) ... ok
+test_pt_rejected_phase2_partial_only (test_aw001_slice2b.GoldenTests.test_pt_rejected_phase2_partial_only) ... ok
+test_pt_rejected_pool_exhausted (test_aw001_slice2b.GoldenTests.test_pt_rejected_pool_exhausted) ... ok
+test_pt_rejected_proposer_approves (test_aw001_slice2b.GoldenTests.test_pt_rejected_proposer_approves) ... ok
+test_pt_rejected_receipt_already_verified (test_aw001_slice2b.GoldenTests.test_pt_rejected_receipt_already_verified) ... ok
+test_pt_rejected_relabelled_receipt (test_aw001_slice2b.GoldenTests.test_pt_rejected_relabelled_receipt) ... ok
+test_pt_rejected_rules_changed (test_aw001_slice2b.GoldenTests.test_pt_rejected_rules_changed) ... ok
+test_pt_rejected_source_and_hold (test_aw001_slice2b.GoldenTests.test_pt_rejected_source_and_hold) ... ok
+test_pt_rejected_source_unavailable (test_aw001_slice2b.GoldenTests.test_pt_rejected_source_unavailable) ... ok
+test_pt_rejected_template_executor (test_aw001_slice2b.GoldenTests.test_pt_rejected_template_executor) ... ok
+test_pt_rejected_terms_changed (test_aw001_slice2b.GoldenTests.test_pt_rejected_terms_changed) ... ok
+test_pt_rejected_verifier_is_finance (test_aw001_slice2b.GoldenTests.test_pt_rejected_verifier_is_finance) ... ok
+test_pt_rejected_verifier_is_operator (test_aw001_slice2b.GoldenTests.test_pt_rejected_verifier_is_operator) ... ok
+test_pt_rejected_wrong_power (test_aw001_slice2b.GoldenTests.test_pt_rejected_wrong_power) ... ok
+test_pt_verify_executor_rule_disabled (test_aw001_slice2b.GoldenTests.test_pt_verify_executor_rule_disabled) ... ok
+test_pt_verify_insufficient (test_aw001_slice2b.GoldenTests.test_pt_verify_insufficient) ... ok
+test_pt_verify_not_fulfilled (test_aw001_slice2b.GoldenTests.test_pt_verify_not_fulfilled) ... ok
+test_pt_verify_partial (test_aw001_slice2b.GoldenTests.test_pt_verify_partial) ... ok
+test_pt_verify_phase1_complete (test_aw001_slice2b.GoldenTests.test_pt_verify_phase1_complete) ... ok
+test_registry_missing_validator (test_aw001_slice2b.GoldenTests.test_registry_missing_validator) ... ok
+test_registry_valid (test_aw001_slice2b.GoldenTests.test_registry_valid) ... ok
+test_registry_wrong_lock_order (test_aw001_slice2b.GoldenTests.test_registry_wrong_lock_order) ... ok
+
+======================================================================
+ERROR: test_pool_reference_cannot_point_to_a_case_object (test_aw001_slice2b.BoundaryTests.test_pool_reference_cannot_point_to_a_case_object)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/hao/Documents/axioweave/tests/test_aw001_slice2b.py", line 400, in test_pool_reference_cannot_point_to_a_case_object
+    self.assert_code(data, "ERR_INVALID_RESOURCE_POOL_REFERENCE")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hao/Documents/axioweave/tests/test_aw001_slice2b.py", line 120, in assert_code
+    result = b.validate_transition(data)
+  File "/Users/hao/Documents/axioweave/tools/validate_aw001_slice2b.py", line 424, in validate_transition
+    validate_semantics(data)
+    ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/hao/Documents/axioweave/tools/validate_aw001_slice2b.py", line 391, in validate_semantics
+    codes, matched = decision_diagnostics(data, idx, target)
+                     ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Users/hao/Documents/axioweave/tools/validate_aw001_slice2b.py", line 242, in decision_diagnostics
+    pool = idx["resource_pools"][pool_id]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+KeyError: 'case-1'
+
+----------------------------------------------------------------------
+Ran 101 tests in 5.107s
+
+FAILED (errors=1)

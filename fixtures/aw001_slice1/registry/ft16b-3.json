@@ -1,0 +1,80 @@
+{
+  "contract_version": "0.2.0-rc1-slice1",
+  "global_lock_order": [
+    "CommandRecord",
+    "AuthorityRecord",
+    "Case / Commitment",
+    "ProtectiveOrder",
+    "FulfillmentTicket"
+  ],
+  "actions": {
+    "SUBMIT_CONSTRAINT_CLAIM": {
+      "required_power": null,
+      "verification_mechanism": "INTAKE_POLICY_CHECK",
+      "requires_effectiveness_envelope": false,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_SCOPE",
+        "CHECK_VERSION_TRANSITION",
+        "CHECK_INTAKE_POLICY"
+      ],
+      "lock_levels": [
+        0,
+        2
+      ]
+    },
+    "CERTIFY_CASE_CONSTRAINT": {
+      "required_power": "CERTIFY_CONSTRAINT",
+      "verification_mechanism": "MANDATE_CHECK",
+      "requires_effectiveness_envelope": true,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_SCOPE",
+        "CHECK_VERSION_TRANSITION",
+        "CHECK_FOUR_TUPLE_COMPLETE",
+        "CHECK_MANDATE_SNAPSHOT",
+        "CHECK_RECEIPT_BINDING",
+        "CHECK_CLAIMANT_STATE_PRESERVED"
+      ],
+      "lock_levels": [
+        0,
+        2,
+        1,
+        3
+      ]
+    },
+    "REJECT_CONSTRAINT_CLAIM": {
+      "required_power": "REJECT_SUBMISSION",
+      "verification_mechanism": "MANDATE_CHECK",
+      "requires_effectiveness_envelope": true,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_SCOPE",
+        "CHECK_VERSION_TRANSITION",
+        "CHECK_FOUR_TUPLE_COMPLETE",
+        "CHECK_MANDATE_SNAPSHOT",
+        "CHECK_RECEIPT_BINDING",
+        "CHECK_CLAIMANT_STATE_PRESERVED"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "RECORD_CLAIMANT_STANCE": {
+      "required_power": null,
+      "verification_mechanism": "CLAIMANT_SELF_ATTESTATION",
+      "requires_effectiveness_envelope": false,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_SCOPE",
+        "CHECK_VERSION_TRANSITION",
+        "CHECK_CLAIMANT_PRINCIPAL",
+        "CHECK_HISTORICAL_DECISION_IMMUTABLE",
+        "CHECK_EFFECTIVE_STANDING_PRESERVED"
+      ],
+      "lock_levels": [
+        0,
+        2
+      ]
+    }
+  }
+}

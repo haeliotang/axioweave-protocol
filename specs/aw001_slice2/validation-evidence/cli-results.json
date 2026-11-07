@@ -1,0 +1,39 @@
+[
+  {
+    "command": [
+      "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+      "tools/validate_aw001_slice2.py",
+      "fixtures/aw001_slice2/2a/pt_issue.json",
+      "fixtures/aw001_slice2/2a/pt_rejected_revoked.json",
+      "fixtures/aw001_slice2/2a/pt_commit_unknown.json"
+    ],
+    "expected_exit_code": 0,
+    "exit_code": 0,
+    "stdout": "{\"input\": \"fixtures/aw001_slice2/2a/pt_issue.json\", \"is_valid\": true, \"validation_layer\": \"OFFLINE_SEMANTIC\", \"error_code\": null, \"failed_path\": null}\n{\"input\": \"fixtures/aw001_slice2/2a/pt_rejected_revoked.json\", \"is_valid\": true, \"validation_layer\": \"OFFLINE_SEMANTIC\", \"error_code\": null, \"failed_path\": null}\n{\"input\": \"fixtures/aw001_slice2/2a/pt_commit_unknown.json\", \"is_valid\": true, \"validation_layer\": \"OFFLINE_SEMANTIC\", \"error_code\": null, \"failed_path\": null}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+      "tools/validate_aw001_slice2.py",
+      "fixtures/aw001_slice2/2a/ft_missing_remedy.json",
+      "fixtures/aw001_slice2/2a/pt_issue.json"
+    ],
+    "expected_exit_code": 1,
+    "exit_code": 1,
+    "stdout": "{\"input\": \"fixtures/aw001_slice2/2a/ft_missing_remedy.json\", \"is_valid\": false, \"validation_layer\": \"JSON_SCHEMA\", \"error_code\": \"ERR_INCOMPLETE_FOUR_TUPLE\", \"failed_path\": \"/command/payload/effectiveness_envelope_input\"}\n{\"input\": \"fixtures/aw001_slice2/2a/pt_issue.json\", \"is_valid\": true, \"validation_layer\": \"OFFLINE_SEMANTIC\", \"error_code\": null, \"failed_path\": null}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+      "scripts/validate_case_packet.py",
+      "examples/consortium-review.json",
+      "examples/floating-review-blocked.json"
+    ],
+    "expected_exit_code": 0,
+    "exit_code": 0,
+    "stdout": "VALID examples/consortium-review.json (ready_for_round; synthetic snapshot only; no authorization)\nVALID examples/floating-review-blocked.json (blocked; synthetic snapshot only; no authorization)\n",
+    "stderr": ""
+  }
+]

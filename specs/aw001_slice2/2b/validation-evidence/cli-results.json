@@ -1,0 +1,27 @@
+[
+  {
+    "command": [
+      "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+      "tools/validate_aw001_slice2b.py",
+      "fixtures/aw001_slice2/2b/pt_approve_all_phases.json",
+      "fixtures/aw001_slice2/2b/pt_rejected_origin_revoked.json",
+      "fixtures/aw001_slice2/2b/pt_commit_unknown.json"
+    ],
+    "expected_exit_code": 0,
+    "exit_code": 0,
+    "stdout": "{\"input\": \"fixtures/aw001_slice2/2b/pt_approve_all_phases.json\", \"is_valid\": true, \"validation_layer\": \"OFFLINE_SEMANTIC\", \"error_code\": null, \"failed_path\": null}\n{\"input\": \"fixtures/aw001_slice2/2b/pt_rejected_origin_revoked.json\", \"is_valid\": true, \"validation_layer\": \"OFFLINE_SEMANTIC\", \"error_code\": null, \"failed_path\": null}\n{\"input\": \"fixtures/aw001_slice2/2b/pt_commit_unknown.json\", \"is_valid\": true, \"validation_layer\": \"OFFLINE_SEMANTIC\", \"error_code\": null, \"failed_path\": null}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+      "tools/validate_aw001_slice2b.py",
+      "fixtures/aw001_slice2/2b/ft_missing_remedy.json",
+      "fixtures/aw001_slice2/2b/pt_record_handoff.json"
+    ],
+    "expected_exit_code": 1,
+    "exit_code": 1,
+    "stdout": "{\"input\": \"fixtures/aw001_slice2/2b/ft_missing_remedy.json\", \"is_valid\": false, \"validation_layer\": \"JSON_SCHEMA\", \"error_code\": \"ERR_INCOMPLETE_FOUR_TUPLE\", \"failed_path\": \"/command/payload/effectiveness_envelope_input\"}\n{\"input\": \"fixtures/aw001_slice2/2b/pt_record_handoff.json\", \"is_valid\": true, \"validation_layer\": \"OFFLINE_SEMANTIC\", \"error_code\": null, \"failed_path\": null}\n",
+    "stderr": ""
+  }
+]

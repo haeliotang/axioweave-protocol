@@ -1,0 +1,150 @@
+{
+  "contract_version": "0.3.0-rc1-slice2b",
+  "global_lock_order": [
+    "CommandRecord",
+    "AuthorityRecord",
+    "Case / Commitment",
+    "ProtectiveOrder",
+    "FulfillmentTicket"
+  ],
+  "resource_pool_lock_rule": "LEVEL_2_STABLE_ID_ORDER_WITH_CASE_AND_COMMITMENT",
+  "actions": {
+    "APPROVE_COMMITMENT": {
+      "required_power": "APPROVE_COMMITMENT",
+      "requires_effectiveness_envelope": true,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_FOUR_TUPLE_COMPLETE",
+        "CHECK_AUTHORITY_SNAPSHOT",
+        "CHECK_PROTECTION_SCOPE_AND_TIME",
+        "CHECK_SOD_AND_DEPENDENCIES",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "write_policy": "UPDATE_POOL_CREATE_COMMITMENT_ALL_TICKETS"
+    },
+    "CANCEL_INTERNAL_TICKET": {
+      "required_power": "CANCEL_INTERNAL_TICKET",
+      "requires_effectiveness_envelope": true,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_FOUR_TUPLE_COMPLETE",
+        "CHECK_AUTHORITY_SNAPSHOT",
+        "CHECK_PROTECTION_SCOPE_AND_TIME",
+        "CHECK_RESOURCE_LEDGER",
+        "CHECK_SOD_AND_DEPENDENCIES",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "write_policy": "CANCEL_TICKET_ONLY"
+    },
+    "AUTHORIZE_TICKET_HANDOFF": {
+      "required_power": "AUTHORIZE_TICKET_HANDOFF",
+      "requires_effectiveness_envelope": true,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_FOUR_TUPLE_COMPLETE",
+        "CHECK_AUTHORITY_SNAPSHOT",
+        "CHECK_PROTECTION_SCOPE_AND_TIME",
+        "CHECK_RESOURCE_LEDGER",
+        "CHECK_SOD_AND_DEPENDENCIES",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "write_policy": "APPEND_HANDOFF_AUTHORIZATION"
+    },
+    "RECORD_TICKET_HANDOFF": {
+      "required_power": "RECORD_TICKET_HANDOFF",
+      "requires_effectiveness_envelope": true,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_FOUR_TUPLE_COMPLETE",
+        "CHECK_AUTHORITY_SNAPSHOT",
+        "CHECK_PROTECTION_SCOPE_AND_TIME",
+        "CHECK_RESOURCE_LEDGER",
+        "CHECK_SOD_AND_DEPENDENCIES",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "write_policy": "RECORD_HANDOFF_ONLY"
+    },
+    "LOG_EXTERNAL_RECEIPT": {
+      "required_power": "LOG_EXTERNAL_RECEIPT",
+      "requires_effectiveness_envelope": true,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_FOUR_TUPLE_COMPLETE",
+        "CHECK_AUTHORITY_SNAPSHOT",
+        "CHECK_PROTECTION_SCOPE_AND_TIME",
+        "CHECK_RESOURCE_LEDGER",
+        "CHECK_SOD_AND_DEPENDENCIES",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "write_policy": "APPEND_RECEIPT_ONLY"
+    },
+    "VERIFY_EXECUTION_RECEIPT": {
+      "required_power": "VERIFY_EXECUTION_RECEIPT",
+      "requires_effectiveness_envelope": true,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_FOUR_TUPLE_COMPLETE",
+        "CHECK_AUTHORITY_SNAPSHOT",
+        "CHECK_PROTECTION_SCOPE_AND_TIME",
+        "CHECK_RESOURCE_LEDGER",
+        "CHECK_SOD_AND_DEPENDENCIES",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "write_policy": "APPEND_VERIFICATION_UPDATE_VERIFIED_DELTA"
+    }
+  }
+}

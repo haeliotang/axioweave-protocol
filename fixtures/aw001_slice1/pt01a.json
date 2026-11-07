@@ -1,0 +1,87 @@
+{
+  "before": {
+    "constraint_record": {
+      "object_id": "constraint-01",
+      "case_id": "case-01",
+      "tenant_node_id": "node-01",
+      "acl_policy_ref": "acl-01",
+      "claimant_principal_id": "alice",
+      "version_seq": 1,
+      "constraint_stage": "DRAFT",
+      "classification": "PROPOSED_CLAIM",
+      "review_outcome": "PENDING_REVIEW",
+      "measurement_kind": "QUALITATIVE",
+      "claimant_post_review_stance": {
+        "stance_status": "UNSPECIFIED_PENDING_CLAIMANT",
+        "tradeoff_consent": "UNSPECIFIED",
+        "expressed_participation_intent": "CONTINUE_DELIBERATION_AND_APPEAL"
+      },
+      "effective_standing_status": "ACTIVE_STANDING"
+    },
+    "review_decision_record": null
+  },
+  "command": {
+    "command_id": "cmd-submit",
+    "idempotency_key": "key-submit",
+    "requested_action": "SUBMIT_CONSTRAINT_CLAIM",
+    "target_object_id": "constraint-01",
+    "target_expected_version_seq": 1,
+    "payload": {
+      "claim_title": "保留维护通道",
+      "raw_statement_text": "请在预算调整时保留社区维护通道。",
+      "claimed_classification": "PROPOSED_CLAIM"
+    }
+  },
+  "server_context": {
+    "contract_version": "0.2.0-rc1-slice1",
+    "scenario_id": "synthetic-constraint-review",
+    "mode": "simulation",
+    "data_classification": "synthetic",
+    "execution_enabled": false,
+    "authenticated_principal_id": "alice",
+    "tenant_node_id": "node-01",
+    "case_id": "case-01",
+    "checked_at": "2026-11-05T04:00:00Z",
+    "acl_policy_refs": [
+      "acl-01"
+    ],
+    "evidence_snapshots": [
+      {
+        "evidence_id": "procedure",
+        "revision": 1,
+        "content_sha256": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      }
+    ],
+    "intake_policy_check": {
+      "policy_ref": "intake-01",
+      "authenticated_principal_id": "alice",
+      "target_object_id": "constraint-01",
+      "checked_at": "2026-11-05T04:00:00Z",
+      "result": "ALLOWED"
+    },
+    "attempt_id": "attempt-submit"
+  },
+  "after": {
+    "constraint_record": {
+      "object_id": "constraint-01",
+      "case_id": "case-01",
+      "tenant_node_id": "node-01",
+      "acl_policy_ref": "acl-01",
+      "claimant_principal_id": "alice",
+      "version_seq": 2,
+      "constraint_stage": "SUBMITTED",
+      "classification": "PROPOSED_CLAIM",
+      "review_outcome": "PENDING_REVIEW",
+      "measurement_kind": "QUALITATIVE",
+      "claimant_post_review_stance": {
+        "stance_status": "UNSPECIFIED_PENDING_CLAIMANT",
+        "tradeoff_consent": "UNSPECIFIED",
+        "expressed_participation_intent": "CONTINUE_DELIBERATION_AND_APPEAL"
+      },
+      "effective_standing_status": "ACTIVE_STANDING",
+      "claim_title": "保留维护通道",
+      "raw_statement_text": "请在预算调整时保留社区维护通道。"
+    },
+    "review_decision_record": null
+  }
+}

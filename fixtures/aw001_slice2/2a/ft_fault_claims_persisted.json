@@ -1,0 +1,279 @@
+{
+  "before": {
+    "domain_objects": {
+      "resources": [
+        {
+          "object_id": "case-1",
+          "kind": "CASE",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "parent_object_id": null,
+          "version_seq": 1,
+          "executor_member_id": null,
+          "recorded_status": "ACTIVE"
+        },
+        {
+          "object_id": "commitment-1",
+          "kind": "COMMITMENT",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "parent_object_id": "case-1",
+          "version_seq": 2,
+          "executor_member_id": null,
+          "recorded_status": "PARTIALLY_FULFILLED"
+        },
+        {
+          "object_id": "ticket-1",
+          "kind": "TICKET",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "parent_object_id": "commitment-1",
+          "version_seq": 3,
+          "executor_member_id": "member-worker",
+          "recorded_status": "READY_FOR_HANDOFF"
+        },
+        {
+          "object_id": "ticket-2",
+          "kind": "TICKET",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "parent_object_id": "case-1",
+          "version_seq": 1,
+          "executor_member_id": "member-other",
+          "recorded_status": "QUEUED_INTERNAL"
+        }
+      ],
+      "protective_orders": [],
+      "effectiveness_envelopes": []
+    },
+    "command_record": {
+      "command_id": "cmd-rollback",
+      "tenant_node_id": "node-1",
+      "principal_id": "principal-reviewer",
+      "action_id": "ISSUE_PROTECTIVE_ORDER",
+      "idempotency_key": "idem-rollback",
+      "request_sha256": "sha256:527b3f81736e70700fa774336291f746e27ae4d4bfc648dc92e42190d9150d94",
+      "current_attempt_id": "attempt-rollback",
+      "generation": 1,
+      "version_seq": 1,
+      "status": "IN_FLIGHT",
+      "result_id": null
+    },
+    "command_attempt": {
+      "attempt_id": "attempt-rollback",
+      "command_id": "cmd-rollback",
+      "generation": 1,
+      "version_seq": 1,
+      "status": "IN_FLIGHT"
+    }
+  },
+  "command": {
+    "command_id": "cmd-rollback",
+    "idempotency_key": "idem-rollback",
+    "requested_action": "ISSUE_PROTECTIVE_ORDER",
+    "target_object_id": "case-1",
+    "target_expected_version_seq": 1,
+    "mandate_claim": {
+      "mandate_id": "mandate-review",
+      "expected_version_hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "claimed_power": "ISSUE_PROTECTIVE_ORDER"
+    },
+    "payload": {
+      "rationale": "Synthetic institutional review",
+      "effectiveness_envelope_input": {
+        "mandate_clause_ref": "charter-1:section-9",
+        "evidence_refs": [
+          {
+            "evidence_id": "synthetic-review",
+            "revision": 1,
+            "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ],
+        "scope_spec": {
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "effective_from": "2026-11-01T00:00:00Z",
+          "effective_until": "2026-12-01T00:00:00Z"
+        },
+        "remedy_spec": {
+          "notice_recipients": [
+            "claimant-1"
+          ],
+          "challenge_window_hours": 24,
+          "review_body_id": "review-board",
+          "rollback_or_compensation_procedure_ref": {
+            "evidence_id": "synthetic-review",
+            "revision": 1,
+            "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        }
+      },
+      "new_order": {
+        "order_id": "po-rollback",
+        "protected_target_object_ids": [
+          "commitment-1"
+        ],
+        "blocked_powers": [
+          "AUTHORIZE_TICKET_HANDOFF"
+        ],
+        "scope_mode": "INCLUDE_DESCENDANTS",
+        "source_type": "APPEAL_STAY",
+        "source_reference": {
+          "evidence_id": "synthetic-review",
+          "revision": 1,
+          "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "effective_from": "2026-11-05T04:00:00Z",
+        "expires_at": "2026-11-08T04:00:00Z",
+        "execution_boundary": "INTERNAL_PLATFORM_TICKET_HOLD",
+        "side_effect_disclosure": {
+          "known_adverse_impacts": [
+            "Synthetic delay risk"
+          ],
+          "carved_out_essential_operations": []
+        }
+      }
+    }
+  },
+  "server_context": {
+    "contract_version": "0.3.0-rc1-slice2a",
+    "mode": "simulation",
+    "data_classification": "synthetic",
+    "execution_enabled": false,
+    "tenant_node_id": "node-1",
+    "case_id": "case-1",
+    "authenticated_principal_id": "principal-reviewer",
+    "authenticated_member_id": "member-reviewer",
+    "member_mappings": [
+      {
+        "principal_id": "principal-reviewer",
+        "member_id": "member-reviewer",
+        "status": "VERIFIED"
+      }
+    ],
+    "access_granted": true,
+    "evaluated_at": "2026-11-05T04:00:00Z",
+    "attempt_id": "attempt-rollback",
+    "generation": 1,
+    "authority_source_id": "synthetic-authority",
+    "authority_source_status": "AVAILABLE",
+    "authority_snapshot": {
+      "mandate_id": "mandate-review",
+      "version_hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "principal_id": "principal-reviewer",
+      "tenant_node_id": "node-1",
+      "case_id": "case-1",
+      "powers": [
+        "ISSUE_PROTECTIVE_ORDER",
+        "LIFT_PROTECTIVE_ORDER",
+        "EXTEND_PROTECTIVE_ORDER"
+      ],
+      "allowed_target_ids": [
+        "case-1"
+      ],
+      "allowed_blocked_powers": [
+        "AUTHORIZE_TICKET_HANDOFF",
+        "LIFT_PROTECTIVE_ORDER"
+      ],
+      "max_order_duration_hours": 168,
+      "clause_reference": "charter-1:section-9",
+      "status": "ACTIVE",
+      "valid_from": "2026-11-01T00:00:00Z",
+      "valid_until": "2026-12-01T00:00:00Z"
+    },
+    "evidence_snapshots": [
+      {
+        "evidence_id": "synthetic-review",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      }
+    ],
+    "generated_auth_receipt": null,
+    "new_envelope_id": "env-rollback",
+    "execution_observation": "ROLLED_BACK_CONFIRMED"
+  },
+  "after": {
+    "domain_objects": {
+      "resources": [
+        {
+          "object_id": "case-1",
+          "kind": "CASE",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "parent_object_id": null,
+          "version_seq": 1,
+          "executor_member_id": null,
+          "recorded_status": "ACTIVE"
+        },
+        {
+          "object_id": "commitment-1",
+          "kind": "COMMITMENT",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "parent_object_id": "case-1",
+          "version_seq": 2,
+          "executor_member_id": null,
+          "recorded_status": "PARTIALLY_FULFILLED"
+        },
+        {
+          "object_id": "ticket-1",
+          "kind": "TICKET",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "parent_object_id": "commitment-1",
+          "version_seq": 3,
+          "executor_member_id": "member-worker",
+          "recorded_status": "READY_FOR_HANDOFF"
+        },
+        {
+          "object_id": "ticket-2",
+          "kind": "TICKET",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "parent_object_id": "case-1",
+          "version_seq": 1,
+          "executor_member_id": "member-other",
+          "recorded_status": "QUEUED_INTERNAL"
+        }
+      ],
+      "protective_orders": [],
+      "effectiveness_envelopes": []
+    },
+    "execution_outcome": {
+      "outcome": "SYSTEM_FAULT",
+      "command_record": {
+        "command_id": "cmd-rollback",
+        "tenant_node_id": "node-1",
+        "principal_id": "principal-reviewer",
+        "action_id": "ISSUE_PROTECTIVE_ORDER",
+        "idempotency_key": "idem-rollback",
+        "request_sha256": "sha256:527b3f81736e70700fa774336291f746e27ae4d4bfc648dc92e42190d9150d94",
+        "current_attempt_id": "attempt-rollback",
+        "generation": 1,
+        "version_seq": 1,
+        "status": "IN_FLIGHT",
+        "result_id": null
+      },
+      "command_attempt": {
+        "attempt_id": "attempt-rollback",
+        "command_id": "cmd-rollback",
+        "generation": 1,
+        "version_seq": 1,
+        "status": "IN_FLIGHT"
+      },
+      "command_result": null,
+      "command_rejection": null,
+      "auth_check_receipt": null,
+      "audit_event": null,
+      "fault_observation": {
+        "command_id": "cmd-rollback",
+        "attempt_id": "attempt-rollback",
+        "generation": 1,
+        "observed_at": "2026-11-05T04:00:00Z",
+        "kind": "ROLLED_BACK_CONFIRMED",
+        "recovery_action": "RETRY_AFTER_RECONCILIATION",
+        "persistence_claim": "PERSISTED"
+      }
+    }
+  }
+}

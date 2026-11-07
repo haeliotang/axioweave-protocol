@@ -1,0 +1,39 @@
+{
+  "recorded_at": "2026-11-05T14:38:11.938433+00:00",
+  "contract_version": "0.3.0-rc1-slice2b",
+  "python_executable": "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+  "python_version": "3.14.0",
+  "jsonschema_version": "4.23.0",
+  "test_runs": [
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_aw001_slice2b.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "output": "slice2b-tests.txt"
+    },
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "output": "all-tests.txt"
+    }
+  ]
+}

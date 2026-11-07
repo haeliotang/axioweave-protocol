@@ -1,0 +1,66 @@
+test_FT_01a (test_aw001_slice1.GoldenTransitionTests.test_FT_01a) ... ok
+test_FT_01b (test_aw001_slice1.GoldenTransitionTests.test_FT_01b) ... ok
+test_FT_01c (test_aw001_slice1.GoldenTransitionTests.test_FT_01c) ... ok
+test_FT_01d (test_aw001_slice1.GoldenTransitionTests.test_FT_01d) ... ok
+test_FT_01e (test_aw001_slice1.GoldenTransitionTests.test_FT_01e) ... ok
+test_FT_02a (test_aw001_slice1.GoldenTransitionTests.test_FT_02a) ... ok
+test_FT_02b (test_aw001_slice1.GoldenTransitionTests.test_FT_02b) ... ok
+test_FT_02c (test_aw001_slice1.GoldenTransitionTests.test_FT_02c) ... ok
+test_FT_02d (test_aw001_slice1.GoldenTransitionTests.test_FT_02d) ... ok
+test_FT_02e (test_aw001_slice1.GoldenTransitionTests.test_FT_02e) ... ok
+test_FT_02f (test_aw001_slice1.GoldenTransitionTests.test_FT_02f) ... ok
+test_FT_16a (test_aw001_slice1.GoldenTransitionTests.test_FT_16a) ... ok
+test_FT_16b_1 (test_aw001_slice1.GoldenTransitionTests.test_FT_16b_1) ... ok
+test_FT_16b_2 (test_aw001_slice1.GoldenTransitionTests.test_FT_16b_2) ... ok
+test_FT_16b_3 (test_aw001_slice1.GoldenTransitionTests.test_FT_16b_3) ... ok
+test_PT_01a (test_aw001_slice1.GoldenTransitionTests.test_PT_01a) ... ok
+test_PT_01b (test_aw001_slice1.GoldenTransitionTests.test_PT_01b) ... ok
+test_PT_02a (test_aw001_slice1.GoldenTransitionTests.test_PT_02a) ... ok
+test_PT_02b (test_aw001_slice1.GoldenTransitionTests.test_PT_02b) ... ok
+test_PT_16a (test_aw001_slice1.GoldenTransitionTests.test_PT_16a) ... ok
+test_cli_reports_each_input_and_preserves_negative_result (test_aw001_slice1.SliceBoundaryTests.test_cli_reports_each_input_and_preserves_negative_result) ... ok
+test_negative_fixtures_change_only_the_declared_condition (test_aw001_slice1.SliceBoundaryTests.test_negative_fixtures_change_only_the_declared_condition) ... 
+  test_negative_fixtures_change_only_the_declared_condition (test_aw001_slice1.SliceBoundaryTests.test_negative_fixtures_change_only_the_declared_condition) (fixture='registry/ft16b-2') ... FAIL
+test_no_stale_intake_or_fabricated_review_receipt_for_self_action (test_aw001_slice1.SliceBoundaryTests.test_no_stale_intake_or_fabricated_review_receipt_for_self_action) ... ok
+test_quantitative_confirmation_needs_versioned_definition (test_aw001_slice1.SliceBoundaryTests.test_quantitative_confirmation_needs_versioned_definition) ... ok
+test_receipt_and_authority_bindings_are_not_trusted_by_status (test_aw001_slice1.SliceBoundaryTests.test_receipt_and_authority_bindings_are_not_trusted_by_status) ... ok
+test_registry_tampering_cannot_redefine_required_contract (test_aw001_slice1.SliceBoundaryTests.test_registry_tampering_cannot_redefine_required_contract) ... ok
+test_rejection_preserves_preexisting_stance_and_needs_remedy (test_aw001_slice1.SliceBoundaryTests.test_rejection_preserves_preexisting_stance_and_needs_remedy) ... ok
+test_requested_withdrawal_preserves_standing_and_history (test_aw001_slice1.SliceBoundaryTests.test_requested_withdrawal_preserves_standing_and_history) ... ok
+test_root_schema_is_executable_and_closed (test_aw001_slice1.SliceBoundaryTests.test_root_schema_is_executable_and_closed) ... ok
+test_strict_input_and_invalid_dates (test_aw001_slice1.SliceBoundaryTests.test_strict_input_and_invalid_dates) ... ok
+test_blocked_case_cannot_claim_ready (test_case_packet.CasePacketTests.test_blocked_case_cannot_claim_ready) ... ok
+test_both_scenarios_are_valid_snapshots (test_case_packet.CasePacketTests.test_both_scenarios_are_valid_snapshots) ... ok
+test_cli_reports_all_inputs_and_nonzero_on_failure (test_case_packet.CasePacketTests.test_cli_reports_all_inputs_and_nonzero_on_failure) ... ok
+test_historical_assessment_can_be_retained_in_blocked_snapshot (test_case_packet.CasePacketTests.test_historical_assessment_can_be_retained_in_blocked_snapshot) ... ok
+test_in_review_snapshot_can_record_pending_assessments (test_case_packet.CasePacketTests.test_in_review_snapshot_can_record_pending_assessments) ... ok
+test_invalid_declarations_are_rejected (test_case_packet.CasePacketTests.test_invalid_declarations_are_rejected) ... ok
+test_strict_json_loading (test_case_packet.CasePacketTests.test_strict_json_loading) ... ok
+test_unknown_denominator_is_not_zero_or_representativeness (test_case_packet.CasePacketTests.test_unknown_denominator_is_not_zero_or_representativeness) ... ok
+test_unresolved_constraint_cannot_be_hidden_by_pass_gates (test_case_packet.CasePacketTests.test_unresolved_constraint_cannot_be_hidden_by_pass_gates) ... ok
+
+======================================================================
+FAIL: test_negative_fixtures_change_only_the_declared_condition (test_aw001_slice1.SliceBoundaryTests.test_negative_fixtures_change_only_the_declared_condition) (fixture='registry/ft16b-2')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/hao/Documents/axioweave/tests/test_aw001_slice1.py", line 108, in test_negative_fixtures_change_only_the_declared_condition
+    self.assertEqual(differences(fixture(base),fixture(name)),sorted(paths))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [('ac[52 chars]ors'), ('actions', 'REJECT_CONSTRAINT_CLAIM', [18 chars]rs')] != [('ac[52 chars]ors')]
+
+First list contains 1 additional elements.
+First extra element 1:
+('actions', 'REJECT_CONSTRAINT_CLAIM', 'required_validators')
+
+- [('actions', 'CERTIFY_CASE_CONSTRAINT', 'required_validators'),
+?                                                               ^
+
++ [('actions', 'CERTIFY_CASE_CONSTRAINT', 'required_validators')]
+?                                                               ^
+
+-  ('actions', 'REJECT_CONSTRAINT_CLAIM', 'required_validators')]
+
+----------------------------------------------------------------------
+Ran 39 tests in 0.677s
+
+FAILED (failures=1)

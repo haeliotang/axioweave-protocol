@@ -1,0 +1,1270 @@
+{
+  "before": {
+    "domain_objects": {
+      "cases": [
+        {
+          "object_id": "case-1",
+          "kind": "CASE",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "parent_object_id": null,
+          "version_seq": 1,
+          "proposer_member_id": "member-proposer",
+          "rule_version_seq": 1,
+          "template_sod_policy": {
+            "version": "pack-a-v1",
+            "exclude_commitment_executors_from_verification": false
+          }
+        }
+      ],
+      "resource_pools": [
+        {
+          "object_id": "pool-1",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "version_seq": 2,
+          "resource_spec": {
+            "resource_kind": "FUNDS",
+            "unit_code": "USD_CENTS"
+          },
+          "total_capacity_minor": 20000,
+          "committed_obligations_minor": 10000
+        }
+      ],
+      "commitments": [
+        {
+          "object_id": "commitment-1",
+          "kind": "COMMITMENT",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "parent_object_id": "case-1",
+          "version_seq": 1,
+          "budget_pool_id": "pool-1",
+          "resource_spec": {
+            "resource_kind": "FUNDS",
+            "unit_code": "USD_CENTS"
+          },
+          "total_obligated_minor": 10000,
+          "verified_fulfilled_minor": 0,
+          "terms_version_seq": 1,
+          "commitment_status": "ACTIVE",
+          "executor_member_ids": [
+            "member-executor"
+          ],
+          "phases": [
+            {
+              "phase_seq": 1,
+              "ticket_id": "ticket-1",
+              "allocated_minor": 4000,
+              "required_metric_id": "metric-1",
+              "require_fresh_compliance_at_handoff": true
+            },
+            {
+              "phase_seq": 2,
+              "ticket_id": "ticket-2",
+              "allocated_minor": 6000,
+              "required_metric_id": "metric-2",
+              "require_fresh_compliance_at_handoff": true
+            }
+          ],
+          "creation_envelope_id": "env-approve"
+        }
+      ],
+      "tickets": [
+        {
+          "object_id": "ticket-1",
+          "kind": "TICKET",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "parent_object_id": "commitment-1",
+          "version_seq": 4,
+          "phase_seq": 1,
+          "resource_spec": {
+            "resource_kind": "FUNDS",
+            "unit_code": "USD_CENTS"
+          },
+          "allocated_minor": 4000,
+          "cumulative_verified_minor": 0,
+          "ticket_status": "EXTERNAL_RECEIPT_LOGGED",
+          "assignee_executor_member_id": "member-operator",
+          "creation_envelope_id": "env-approve",
+          "handoff_authorization": {
+            "authorization_id": "permission-authorize",
+            "status": "ACTIVE",
+            "authorizer_principal_id": "principal-finance",
+            "authorizer_member_id": "member-finance",
+            "origin_mandate_id": "mandate-finance",
+            "origin_mandate_version_hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "authorized_ticket_version_seq": 2,
+            "handoff_expires_at": "2026-11-20T00:00:00Z",
+            "commitment_terms_version_seq": 1,
+            "case_rule_version_seq": 1,
+            "template_policy_sha256": "sha256:313e7416c8f4d7802f17074b483b95783f5ba4bf96cd036fa433e3994b073906",
+            "envelope_id": "env-authorize"
+          },
+          "handoff_authorization_history": [],
+          "handoff_record": {
+            "operator_member_id": "member-operator",
+            "operator_principal_id": "principal-operator",
+            "recipient_reference": "external-manual-recipient",
+            "recorded_at": "2026-11-06T04:00:00Z",
+            "authorization_id": "permission-authorize",
+            "envelope_id": "env-handoff"
+          },
+          "receipt_entries": [
+            {
+              "receipt_id": "receipt-log1",
+              "logged_at_ticket_version_seq": 4,
+              "external_reference_number": "external-log1",
+              "attachment_sha256": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+              "claimed_amount_minor": 2500,
+              "envelope_id": "env-log1"
+            }
+          ],
+          "verification_ids": []
+        },
+        {
+          "object_id": "ticket-2",
+          "kind": "TICKET",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "parent_object_id": "commitment-1",
+          "version_seq": 1,
+          "phase_seq": 2,
+          "resource_spec": {
+            "resource_kind": "FUNDS",
+            "unit_code": "USD_CENTS"
+          },
+          "allocated_minor": 6000,
+          "cumulative_verified_minor": 0,
+          "ticket_status": "QUEUED_INTERNAL",
+          "assignee_executor_member_id": "member-operator",
+          "creation_envelope_id": "env-approve",
+          "handoff_authorization": null,
+          "handoff_authorization_history": [],
+          "handoff_record": null,
+          "receipt_entries": [],
+          "verification_ids": []
+        }
+      ],
+      "execution_verifications": [],
+      "protective_orders": [],
+      "protection_envelopes": [],
+      "effectiveness_envelopes": [
+        {
+          "envelope_id": "env-approve",
+          "action_type": "APPROVE_COMMITMENT",
+          "target_object_id": "case-1",
+          "evaluated_target_version_seq": 1,
+          "resulting_versions": [
+            {
+              "object_id": "commitment-1",
+              "version_seq": 1
+            },
+            {
+              "object_id": "pool-1",
+              "version_seq": 2
+            },
+            {
+              "object_id": "ticket-1",
+              "version_seq": 1
+            },
+            {
+              "object_id": "ticket-2",
+              "version_seq": 1
+            }
+          ],
+          "mandate_ref": {
+            "mandate_id": "mandate-approver",
+            "version_hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clause_reference": "charter-1:section-9"
+          },
+          "auth_check_receipt": {
+            "receipt_id": "auth-cmd-approve",
+            "command_id": "cmd-approve",
+            "attempt_id": "attempt-approve",
+            "generation": 1,
+            "idempotency_key": "idem-approve",
+            "authenticated_principal_id": "principal-approver",
+            "mandate_id": "mandate-approver",
+            "evaluated_version_hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "requested_power": "APPROVE_COMMITMENT",
+            "target_object_id": "case-1",
+            "evaluated_target_version_seq": 1,
+            "checked_at": "2026-11-06T04:00:00Z",
+            "authority_source_id": "synthetic-authority",
+            "domain_sha256": "sha256:8b134da53f084121f620cfa1f36342df09a34b90bddbd4d3e54e2670cc2828cf",
+            "context_sha256": "sha256:d192db6e86f5f2c2444fcea1697424905d8533ed93d6f4b0a9aef0b10cfbb345",
+            "verification_status": "VERIFIED_ACTIVE"
+          },
+          "evidence_refs": [
+            {
+              "evidence_id": "review-record",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          ],
+          "scope_spec": {
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "effective_from": "2026-11-01T00:00:00Z",
+            "effective_until": "2026-12-01T00:00:00Z",
+            "resource_spec": {
+              "resource_kind": "FUNDS",
+              "unit_code": "USD_CENTS"
+            },
+            "max_amount_minor": 20000
+          },
+          "remedy_spec": {
+            "notice_recipients": [
+              "proposer"
+            ],
+            "challenge_window_hours": 24,
+            "review_body_id": "independent-board",
+            "rollback_or_compensation_procedure_ref": {
+              "evidence_id": "review-record",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          },
+          "effect_parameters_sha256": "sha256:97bd581982093d14da6109884ad55e1ff5b333f0edb978f9576074ee4989c144"
+        },
+        {
+          "envelope_id": "env-authorize",
+          "action_type": "AUTHORIZE_TICKET_HANDOFF",
+          "target_object_id": "ticket-1",
+          "evaluated_target_version_seq": 1,
+          "resulting_versions": [
+            {
+              "object_id": "ticket-1",
+              "version_seq": 2
+            }
+          ],
+          "mandate_ref": {
+            "mandate_id": "mandate-finance",
+            "version_hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clause_reference": "charter-1:section-9"
+          },
+          "auth_check_receipt": {
+            "receipt_id": "auth-cmd-authorize",
+            "command_id": "cmd-authorize",
+            "attempt_id": "attempt-authorize",
+            "generation": 1,
+            "idempotency_key": "idem-authorize",
+            "authenticated_principal_id": "principal-finance",
+            "mandate_id": "mandate-finance",
+            "evaluated_version_hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "requested_power": "AUTHORIZE_TICKET_HANDOFF",
+            "target_object_id": "ticket-1",
+            "evaluated_target_version_seq": 1,
+            "checked_at": "2026-11-06T04:00:00Z",
+            "authority_source_id": "synthetic-authority",
+            "domain_sha256": "sha256:6104de89f1db8a1dfedb732b739e4c7b6811409a4a316f7895f7700e3b5ee365",
+            "context_sha256": "sha256:57b4fadb6b352488ca1c489fac8dedbb77eed9dcf37ee1dcec19cea7392fa53e",
+            "verification_status": "VERIFIED_ACTIVE"
+          },
+          "evidence_refs": [
+            {
+              "evidence_id": "review-record",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          ],
+          "scope_spec": {
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "effective_from": "2026-11-01T00:00:00Z",
+            "effective_until": "2026-12-01T00:00:00Z",
+            "resource_spec": {
+              "resource_kind": "FUNDS",
+              "unit_code": "USD_CENTS"
+            },
+            "max_amount_minor": 20000
+          },
+          "remedy_spec": {
+            "notice_recipients": [
+              "proposer"
+            ],
+            "challenge_window_hours": 24,
+            "review_body_id": "independent-board",
+            "rollback_or_compensation_procedure_ref": {
+              "evidence_id": "review-record",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          },
+          "effect_parameters_sha256": "sha256:95833070795f4eb28582ffcc3adb8a7bc7e10d4a59d78a2d91003cb597e1e24d"
+        },
+        {
+          "envelope_id": "env-handoff",
+          "action_type": "RECORD_TICKET_HANDOFF",
+          "target_object_id": "ticket-1",
+          "evaluated_target_version_seq": 2,
+          "resulting_versions": [
+            {
+              "object_id": "ticket-1",
+              "version_seq": 3
+            }
+          ],
+          "mandate_ref": {
+            "mandate_id": "mandate-operator",
+            "version_hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clause_reference": "charter-1:section-9"
+          },
+          "auth_check_receipt": {
+            "receipt_id": "auth-cmd-handoff",
+            "command_id": "cmd-handoff",
+            "attempt_id": "attempt-handoff",
+            "generation": 1,
+            "idempotency_key": "idem-handoff",
+            "authenticated_principal_id": "principal-operator",
+            "mandate_id": "mandate-operator",
+            "evaluated_version_hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "requested_power": "RECORD_TICKET_HANDOFF",
+            "target_object_id": "ticket-1",
+            "evaluated_target_version_seq": 2,
+            "checked_at": "2026-11-06T04:00:00Z",
+            "authority_source_id": "synthetic-authority",
+            "domain_sha256": "sha256:2a13515111c29034ab313a32d964bb80747c54b400d7ef3449c1fd1585d38f97",
+            "context_sha256": "sha256:8298ed4829f74241b7f9e3ff34ed346b211a9d90f84d43ba4704b773fb5dad47",
+            "verification_status": "VERIFIED_ACTIVE"
+          },
+          "evidence_refs": [
+            {
+              "evidence_id": "review-record",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          ],
+          "scope_spec": {
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "effective_from": "2026-11-01T00:00:00Z",
+            "effective_until": "2026-12-01T00:00:00Z",
+            "resource_spec": {
+              "resource_kind": "FUNDS",
+              "unit_code": "USD_CENTS"
+            },
+            "max_amount_minor": 20000
+          },
+          "remedy_spec": {
+            "notice_recipients": [
+              "proposer"
+            ],
+            "challenge_window_hours": 24,
+            "review_body_id": "independent-board",
+            "rollback_or_compensation_procedure_ref": {
+              "evidence_id": "review-record",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          },
+          "effect_parameters_sha256": "sha256:181b68f95bf40690fbc4886929156a7986abab4bf59a0c675feab29889698cc8"
+        },
+        {
+          "envelope_id": "env-log1",
+          "action_type": "LOG_EXTERNAL_RECEIPT",
+          "target_object_id": "ticket-1",
+          "evaluated_target_version_seq": 3,
+          "resulting_versions": [
+            {
+              "object_id": "ticket-1",
+              "version_seq": 4
+            }
+          ],
+          "mandate_ref": {
+            "mandate_id": "mandate-clerk",
+            "version_hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clause_reference": "charter-1:section-9"
+          },
+          "auth_check_receipt": {
+            "receipt_id": "auth-cmd-log1",
+            "command_id": "cmd-log1",
+            "attempt_id": "attempt-log1",
+            "generation": 1,
+            "idempotency_key": "idem-log1",
+            "authenticated_principal_id": "principal-clerk",
+            "mandate_id": "mandate-clerk",
+            "evaluated_version_hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "requested_power": "LOG_EXTERNAL_RECEIPT",
+            "target_object_id": "ticket-1",
+            "evaluated_target_version_seq": 3,
+            "checked_at": "2026-11-06T04:00:00Z",
+            "authority_source_id": "synthetic-authority",
+            "domain_sha256": "sha256:a231382f06a6677f16899402cdda7962a216fe0210a97425a453af66d2e8e0b8",
+            "context_sha256": "sha256:6e9b8e25fbab253dfa2fa120a57cdbce3ac0a29f8ad9b6e075d625c30005b347",
+            "verification_status": "VERIFIED_ACTIVE"
+          },
+          "evidence_refs": [
+            {
+              "evidence_id": "review-record",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          ],
+          "scope_spec": {
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "effective_from": "2026-11-01T00:00:00Z",
+            "effective_until": "2026-12-01T00:00:00Z",
+            "resource_spec": {
+              "resource_kind": "FUNDS",
+              "unit_code": "USD_CENTS"
+            },
+            "max_amount_minor": 20000
+          },
+          "remedy_spec": {
+            "notice_recipients": [
+              "proposer"
+            ],
+            "challenge_window_hours": 24,
+            "review_body_id": "independent-board",
+            "rollback_or_compensation_procedure_ref": {
+              "evidence_id": "review-record",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          },
+          "effect_parameters_sha256": "sha256:da70defa4bd6f35fa93f93bfd934ca45a05897d1d873008734d9c75aa8a09ce6"
+        }
+      ]
+    },
+    "command_record": {
+      "command_id": "cmd-insufficient",
+      "tenant_node_id": "node-1",
+      "principal_id": "principal-verifier",
+      "action_id": "VERIFY_EXECUTION_RECEIPT",
+      "idempotency_key": "idem-insufficient",
+      "request_sha256": "sha256:87d4216aa076d15c6b9557b66638c24fc0c14d8fb85a7f444aa8edf2a8f7f332",
+      "current_attempt_id": "attempt-insufficient",
+      "generation": 1,
+      "version_seq": 1,
+      "status": "IN_FLIGHT",
+      "result_id": null
+    },
+    "command_attempt": {
+      "attempt_id": "attempt-insufficient",
+      "command_id": "cmd-insufficient",
+      "generation": 1,
+      "version_seq": 1,
+      "status": "IN_FLIGHT"
+    }
+  },
+  "command": {
+    "command_id": "cmd-insufficient",
+    "idempotency_key": "idem-insufficient",
+    "requested_action": "VERIFY_EXECUTION_RECEIPT",
+    "target_object_id": "ticket-1",
+    "target_expected_version_seq": 4,
+    "dependency_versions": [
+      {
+        "object_id": "case-1",
+        "version_seq": 1
+      },
+      {
+        "object_id": "commitment-1",
+        "version_seq": 1
+      }
+    ],
+    "mandate_claim": {
+      "mandate_id": "mandate-verifier",
+      "expected_version_hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "claimed_power": "VERIFY_EXECUTION_RECEIPT"
+    },
+    "payload": {
+      "rationale": "Synthetic single-reviewer decision",
+      "effectiveness_envelope_input": {
+        "mandate_clause_ref": "charter-1:section-9",
+        "evidence_refs": [
+          {
+            "evidence_id": "review-record",
+            "revision": 1,
+            "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ],
+        "scope_spec": {
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "effective_from": "2026-11-01T00:00:00Z",
+          "effective_until": "2026-12-01T00:00:00Z",
+          "resource_spec": {
+            "resource_kind": "FUNDS",
+            "unit_code": "USD_CENTS"
+          },
+          "max_amount_minor": 20000
+        },
+        "remedy_spec": {
+          "notice_recipients": [
+            "proposer"
+          ],
+          "challenge_window_hours": 24,
+          "review_body_id": "independent-board",
+          "rollback_or_compensation_procedure_ref": {
+            "evidence_id": "review-record",
+            "revision": 1,
+            "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        }
+      },
+      "verification_id": "verification-insufficient",
+      "target_receipt_id": "receipt-log1",
+      "target_receipt_logged_version_seq": 4,
+      "verification_outcome": "INSUFFICIENT_EVIDENCE",
+      "verified_delta_minor": 0
+    }
+  },
+  "server_context": {
+    "contract_version": "0.3.0-rc1-slice2b",
+    "mode": "simulation",
+    "data_classification": "synthetic",
+    "execution_enabled": false,
+    "tenant_node_id": "node-1",
+    "case_id": "case-1",
+    "authenticated_principal_id": "principal-verifier",
+    "authenticated_member_id": "member-verifier",
+    "member_mappings": [
+      {
+        "principal_id": "principal-verifier",
+        "member_id": "member-verifier",
+        "status": "VERIFIED"
+      }
+    ],
+    "access_granted": true,
+    "evaluated_at": "2026-11-06T04:00:00Z",
+    "attempt_id": "attempt-insufficient",
+    "generation": 1,
+    "authority_source_id": "synthetic-authority",
+    "authority_source_status": "AVAILABLE",
+    "authority_snapshot": {
+      "mandate_id": "mandate-verifier",
+      "version_hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "principal_id": "principal-verifier",
+      "tenant_node_id": "node-1",
+      "case_id": "case-1",
+      "powers": [
+        "APPROVE_COMMITMENT",
+        "CANCEL_INTERNAL_TICKET",
+        "AUTHORIZE_TICKET_HANDOFF",
+        "RECORD_TICKET_HANDOFF",
+        "LOG_EXTERNAL_RECEIPT",
+        "VERIFY_EXECUTION_RECEIPT"
+      ],
+      "allowed_target_ids": [
+        "case-1"
+      ],
+      "allowed_pool_ids": [
+        "pool-1"
+      ],
+      "resource_spec": {
+        "resource_kind": "FUNDS",
+        "unit_code": "USD_CENTS"
+      },
+      "max_amount_minor": 20000,
+      "clause_reference": "charter-1:section-9",
+      "status": "ACTIVE",
+      "valid_from": "2026-11-01T00:00:00Z",
+      "valid_until": "2026-12-01T00:00:00Z"
+    },
+    "authority_snapshots": [
+      {
+        "mandate_id": "mandate-finance",
+        "version_hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "principal_id": "principal-finance",
+        "tenant_node_id": "node-1",
+        "case_id": "case-1",
+        "powers": [
+          "APPROVE_COMMITMENT",
+          "CANCEL_INTERNAL_TICKET",
+          "AUTHORIZE_TICKET_HANDOFF",
+          "RECORD_TICKET_HANDOFF",
+          "LOG_EXTERNAL_RECEIPT",
+          "VERIFY_EXECUTION_RECEIPT"
+        ],
+        "allowed_target_ids": [
+          "case-1"
+        ],
+        "allowed_pool_ids": [
+          "pool-1"
+        ],
+        "resource_spec": {
+          "resource_kind": "FUNDS",
+          "unit_code": "USD_CENTS"
+        },
+        "max_amount_minor": 20000,
+        "clause_reference": "charter-1:section-9",
+        "status": "ACTIVE",
+        "valid_from": "2026-11-01T00:00:00Z",
+        "valid_until": "2026-12-01T00:00:00Z"
+      }
+    ],
+    "origin_authority_source_status": "AVAILABLE",
+    "metric_evaluations": [
+      {
+        "metric_id": "metric-1",
+        "version_seq": 1,
+        "tenant_node_id": "node-1",
+        "case_id": "case-1",
+        "commitment_id": "commitment-1",
+        "phase_seq": 1,
+        "commitment_terms_version_seq": 1,
+        "case_rule_version_seq": 1,
+        "status": "COMPLIANT",
+        "valid_from": "2026-11-01T00:00:00Z",
+        "valid_until": "2026-12-01T00:00:00Z",
+        "evidence_ref": {
+          "evidence_id": "review-record",
+          "revision": 1,
+          "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      },
+      {
+        "metric_id": "metric-2",
+        "version_seq": 1,
+        "tenant_node_id": "node-1",
+        "case_id": "case-1",
+        "commitment_id": "commitment-1",
+        "phase_seq": 2,
+        "commitment_terms_version_seq": 1,
+        "case_rule_version_seq": 1,
+        "status": "COMPLIANT",
+        "valid_from": "2026-11-01T00:00:00Z",
+        "valid_until": "2026-12-01T00:00:00Z",
+        "evidence_ref": {
+          "evidence_id": "review-record",
+          "revision": 1,
+          "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      }
+    ],
+    "pool_inventory_complete": true,
+    "evidence_snapshots": [
+      {
+        "evidence_id": "review-record",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      }
+    ],
+    "generated_auth_receipt": {
+      "receipt_id": "auth-cmd-insufficient",
+      "command_id": "cmd-insufficient",
+      "attempt_id": "attempt-insufficient",
+      "generation": 1,
+      "idempotency_key": "idem-insufficient",
+      "authenticated_principal_id": "principal-verifier",
+      "mandate_id": "mandate-verifier",
+      "evaluated_version_hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "requested_power": "VERIFY_EXECUTION_RECEIPT",
+      "target_object_id": "ticket-1",
+      "evaluated_target_version_seq": 4,
+      "checked_at": "2026-11-06T04:00:00Z",
+      "authority_source_id": "synthetic-authority",
+      "domain_sha256": "sha256:ff5049c0e7d022dee257460bd01a56e0b726a9babbd566d5725be7404a41bb9b",
+      "context_sha256": "sha256:72be701ec5677fb6c903f0b845a264118b9ccf5d7aa289c80fb2436c5efb695d",
+      "verification_status": "VERIFIED_ACTIVE"
+    },
+    "new_envelope_id": "env-insufficient",
+    "execution_observation": "NORMAL"
+  },
+  "after": {
+    "domain_objects": {
+      "cases": [
+        {
+          "object_id": "case-1",
+          "kind": "CASE",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "parent_object_id": null,
+          "version_seq": 1,
+          "proposer_member_id": "member-proposer",
+          "rule_version_seq": 1,
+          "template_sod_policy": {
+            "version": "pack-a-v1",
+            "exclude_commitment_executors_from_verification": false
+          }
+        }
+      ],
+      "resource_pools": [
+        {
+          "object_id": "pool-1",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "version_seq": 2,
+          "resource_spec": {
+            "resource_kind": "FUNDS",
+            "unit_code": "USD_CENTS"
+          },
+          "total_capacity_minor": 20000,
+          "committed_obligations_minor": 10000
+        }
+      ],
+      "commitments": [
+        {
+          "object_id": "commitment-1",
+          "kind": "COMMITMENT",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "parent_object_id": "case-1",
+          "version_seq": 2,
+          "budget_pool_id": "pool-1",
+          "resource_spec": {
+            "resource_kind": "FUNDS",
+            "unit_code": "USD_CENTS"
+          },
+          "total_obligated_minor": 10000,
+          "verified_fulfilled_minor": 0,
+          "terms_version_seq": 1,
+          "commitment_status": "ACTIVE",
+          "executor_member_ids": [
+            "member-executor"
+          ],
+          "phases": [
+            {
+              "phase_seq": 1,
+              "ticket_id": "ticket-1",
+              "allocated_minor": 4000,
+              "required_metric_id": "metric-1",
+              "require_fresh_compliance_at_handoff": true
+            },
+            {
+              "phase_seq": 2,
+              "ticket_id": "ticket-2",
+              "allocated_minor": 6000,
+              "required_metric_id": "metric-2",
+              "require_fresh_compliance_at_handoff": true
+            }
+          ],
+          "creation_envelope_id": "env-approve"
+        }
+      ],
+      "tickets": [
+        {
+          "object_id": "ticket-1",
+          "kind": "TICKET",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "parent_object_id": "commitment-1",
+          "version_seq": 5,
+          "phase_seq": 1,
+          "resource_spec": {
+            "resource_kind": "FUNDS",
+            "unit_code": "USD_CENTS"
+          },
+          "allocated_minor": 4000,
+          "cumulative_verified_minor": 0,
+          "ticket_status": "EXTERNAL_RECEIPT_LOGGED",
+          "assignee_executor_member_id": "member-operator",
+          "creation_envelope_id": "env-approve",
+          "handoff_authorization": {
+            "authorization_id": "permission-authorize",
+            "status": "ACTIVE",
+            "authorizer_principal_id": "principal-finance",
+            "authorizer_member_id": "member-finance",
+            "origin_mandate_id": "mandate-finance",
+            "origin_mandate_version_hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "authorized_ticket_version_seq": 2,
+            "handoff_expires_at": "2026-11-20T00:00:00Z",
+            "commitment_terms_version_seq": 1,
+            "case_rule_version_seq": 1,
+            "template_policy_sha256": "sha256:313e7416c8f4d7802f17074b483b95783f5ba4bf96cd036fa433e3994b073906",
+            "envelope_id": "env-authorize"
+          },
+          "handoff_authorization_history": [],
+          "handoff_record": {
+            "operator_member_id": "member-operator",
+            "operator_principal_id": "principal-operator",
+            "recipient_reference": "external-manual-recipient",
+            "recorded_at": "2026-11-06T04:00:00Z",
+            "authorization_id": "permission-authorize",
+            "envelope_id": "env-handoff"
+          },
+          "receipt_entries": [
+            {
+              "receipt_id": "receipt-log1",
+              "logged_at_ticket_version_seq": 4,
+              "external_reference_number": "external-log1",
+              "attachment_sha256": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+              "claimed_amount_minor": 2500,
+              "envelope_id": "env-log1"
+            }
+          ],
+          "verification_ids": [
+            "verification-insufficient"
+          ]
+        },
+        {
+          "object_id": "ticket-2",
+          "kind": "TICKET",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "parent_object_id": "commitment-1",
+          "version_seq": 1,
+          "phase_seq": 2,
+          "resource_spec": {
+            "resource_kind": "FUNDS",
+            "unit_code": "USD_CENTS"
+          },
+          "allocated_minor": 6000,
+          "cumulative_verified_minor": 0,
+          "ticket_status": "QUEUED_INTERNAL",
+          "assignee_executor_member_id": "member-operator",
+          "creation_envelope_id": "env-approve",
+          "handoff_authorization": null,
+          "handoff_authorization_history": [],
+          "handoff_record": null,
+          "receipt_entries": [],
+          "verification_ids": []
+        }
+      ],
+      "execution_verifications": [
+        {
+          "verification_id": "verification-insufficient",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "version_seq": 1,
+          "ticket_id": "ticket-1",
+          "ticket_evaluated_version_seq": 4,
+          "target_receipt_id": "receipt-log1",
+          "target_receipt_logged_version_seq": 4,
+          "receipt_attachment_sha256": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "verification_outcome": "INSUFFICIENT_EVIDENCE",
+          "verified_delta_minor": 0,
+          "verifier_member_id": "member-verifier",
+          "envelope_id": "env-insufficient"
+        }
+      ],
+      "protective_orders": [],
+      "protection_envelopes": [],
+      "effectiveness_envelopes": [
+        {
+          "envelope_id": "env-approve",
+          "action_type": "APPROVE_COMMITMENT",
+          "target_object_id": "case-1",
+          "evaluated_target_version_seq": 1,
+          "resulting_versions": [
+            {
+              "object_id": "commitment-1",
+              "version_seq": 1
+            },
+            {
+              "object_id": "pool-1",
+              "version_seq": 2
+            },
+            {
+              "object_id": "ticket-1",
+              "version_seq": 1
+            },
+            {
+              "object_id": "ticket-2",
+              "version_seq": 1
+            }
+          ],
+          "mandate_ref": {
+            "mandate_id": "mandate-approver",
+            "version_hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clause_reference": "charter-1:section-9"
+          },
+          "auth_check_receipt": {
+            "receipt_id": "auth-cmd-approve",
+            "command_id": "cmd-approve",
+            "attempt_id": "attempt-approve",
+            "generation": 1,
+            "idempotency_key": "idem-approve",
+            "authenticated_principal_id": "principal-approver",
+            "mandate_id": "mandate-approver",
+            "evaluated_version_hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "requested_power": "APPROVE_COMMITMENT",
+            "target_object_id": "case-1",
+            "evaluated_target_version_seq": 1,
+            "checked_at": "2026-11-06T04:00:00Z",
+            "authority_source_id": "synthetic-authority",
+            "domain_sha256": "sha256:8b134da53f084121f620cfa1f36342df09a34b90bddbd4d3e54e2670cc2828cf",
+            "context_sha256": "sha256:d192db6e86f5f2c2444fcea1697424905d8533ed93d6f4b0a9aef0b10cfbb345",
+            "verification_status": "VERIFIED_ACTIVE"
+          },
+          "evidence_refs": [
+            {
+              "evidence_id": "review-record",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          ],
+          "scope_spec": {
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "effective_from": "2026-11-01T00:00:00Z",
+            "effective_until": "2026-12-01T00:00:00Z",
+            "resource_spec": {
+              "resource_kind": "FUNDS",
+              "unit_code": "USD_CENTS"
+            },
+            "max_amount_minor": 20000
+          },
+          "remedy_spec": {
+            "notice_recipients": [
+              "proposer"
+            ],
+            "challenge_window_hours": 24,
+            "review_body_id": "independent-board",
+            "rollback_or_compensation_procedure_ref": {
+              "evidence_id": "review-record",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          },
+          "effect_parameters_sha256": "sha256:97bd581982093d14da6109884ad55e1ff5b333f0edb978f9576074ee4989c144"
+        },
+        {
+          "envelope_id": "env-authorize",
+          "action_type": "AUTHORIZE_TICKET_HANDOFF",
+          "target_object_id": "ticket-1",
+          "evaluated_target_version_seq": 1,
+          "resulting_versions": [
+            {
+              "object_id": "ticket-1",
+              "version_seq": 2
+            }
+          ],
+          "mandate_ref": {
+            "mandate_id": "mandate-finance",
+            "version_hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clause_reference": "charter-1:section-9"
+          },
+          "auth_check_receipt": {
+            "receipt_id": "auth-cmd-authorize",
+            "command_id": "cmd-authorize",
+            "attempt_id": "attempt-authorize",
+            "generation": 1,
+            "idempotency_key": "idem-authorize",
+            "authenticated_principal_id": "principal-finance",
+            "mandate_id": "mandate-finance",
+            "evaluated_version_hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "requested_power": "AUTHORIZE_TICKET_HANDOFF",
+            "target_object_id": "ticket-1",
+            "evaluated_target_version_seq": 1,
+            "checked_at": "2026-11-06T04:00:00Z",
+            "authority_source_id": "synthetic-authority",
+            "domain_sha256": "sha256:6104de89f1db8a1dfedb732b739e4c7b6811409a4a316f7895f7700e3b5ee365",
+            "context_sha256": "sha256:57b4fadb6b352488ca1c489fac8dedbb77eed9dcf37ee1dcec19cea7392fa53e",
+            "verification_status": "VERIFIED_ACTIVE"
+          },
+          "evidence_refs": [
+            {
+              "evidence_id": "review-record",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          ],
+          "scope_spec": {
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "effective_from": "2026-11-01T00:00:00Z",
+            "effective_until": "2026-12-01T00:00:00Z",
+            "resource_spec": {
+              "resource_kind": "FUNDS",
+              "unit_code": "USD_CENTS"
+            },
+            "max_amount_minor": 20000
+          },
+          "remedy_spec": {
+            "notice_recipients": [
+              "proposer"
+            ],
+            "challenge_window_hours": 24,
+            "review_body_id": "independent-board",
+            "rollback_or_compensation_procedure_ref": {
+              "evidence_id": "review-record",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          },
+          "effect_parameters_sha256": "sha256:95833070795f4eb28582ffcc3adb8a7bc7e10d4a59d78a2d91003cb597e1e24d"
+        },
+        {
+          "envelope_id": "env-handoff",
+          "action_type": "RECORD_TICKET_HANDOFF",
+          "target_object_id": "ticket-1",
+          "evaluated_target_version_seq": 2,
+          "resulting_versions": [
+            {
+              "object_id": "ticket-1",
+              "version_seq": 3
+            }
+          ],
+          "mandate_ref": {
+            "mandate_id": "mandate-operator",
+            "version_hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clause_reference": "charter-1:section-9"
+          },
+          "auth_check_receipt": {
+            "receipt_id": "auth-cmd-handoff",
+            "command_id": "cmd-handoff",
+            "attempt_id": "attempt-handoff",
+            "generation": 1,
+            "idempotency_key": "idem-handoff",
+            "authenticated_principal_id": "principal-operator",
+            "mandate_id": "mandate-operator",
+            "evaluated_version_hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "requested_power": "RECORD_TICKET_HANDOFF",
+            "target_object_id": "ticket-1",
+            "evaluated_target_version_seq": 2,
+            "checked_at": "2026-11-06T04:00:00Z",
+            "authority_source_id": "synthetic-authority",
+            "domain_sha256": "sha256:2a13515111c29034ab313a32d964bb80747c54b400d7ef3449c1fd1585d38f97",
+            "context_sha256": "sha256:8298ed4829f74241b7f9e3ff34ed346b211a9d90f84d43ba4704b773fb5dad47",
+            "verification_status": "VERIFIED_ACTIVE"
+          },
+          "evidence_refs": [
+            {
+              "evidence_id": "review-record",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          ],
+          "scope_spec": {
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "effective_from": "2026-11-01T00:00:00Z",
+            "effective_until": "2026-12-01T00:00:00Z",
+            "resource_spec": {
+              "resource_kind": "FUNDS",
+              "unit_code": "USD_CENTS"
+            },
+            "max_amount_minor": 20000
+          },
+          "remedy_spec": {
+            "notice_recipients": [
+              "proposer"
+            ],
+            "challenge_window_hours": 24,
+            "review_body_id": "independent-board",
+            "rollback_or_compensation_procedure_ref": {
+              "evidence_id": "review-record",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          },
+          "effect_parameters_sha256": "sha256:181b68f95bf40690fbc4886929156a7986abab4bf59a0c675feab29889698cc8"
+        },
+        {
+          "envelope_id": "env-log1",
+          "action_type": "LOG_EXTERNAL_RECEIPT",
+          "target_object_id": "ticket-1",
+          "evaluated_target_version_seq": 3,
+          "resulting_versions": [
+            {
+              "object_id": "ticket-1",
+              "version_seq": 4
+            }
+          ],
+          "mandate_ref": {
+            "mandate_id": "mandate-clerk",
+            "version_hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clause_reference": "charter-1:section-9"
+          },
+          "auth_check_receipt": {
+            "receipt_id": "auth-cmd-log1",
+            "command_id": "cmd-log1",
+            "attempt_id": "attempt-log1",
+            "generation": 1,
+            "idempotency_key": "idem-log1",
+            "authenticated_principal_id": "principal-clerk",
+            "mandate_id": "mandate-clerk",
+            "evaluated_version_hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "requested_power": "LOG_EXTERNAL_RECEIPT",
+            "target_object_id": "ticket-1",
+            "evaluated_target_version_seq": 3,
+            "checked_at": "2026-11-06T04:00:00Z",
+            "authority_source_id": "synthetic-authority",
+            "domain_sha256": "sha256:a231382f06a6677f16899402cdda7962a216fe0210a97425a453af66d2e8e0b8",
+            "context_sha256": "sha256:6e9b8e25fbab253dfa2fa120a57cdbce3ac0a29f8ad9b6e075d625c30005b347",
+            "verification_status": "VERIFIED_ACTIVE"
+          },
+          "evidence_refs": [
+            {
+              "evidence_id": "review-record",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          ],
+          "scope_spec": {
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "effective_from": "2026-11-01T00:00:00Z",
+            "effective_until": "2026-12-01T00:00:00Z",
+            "resource_spec": {
+              "resource_kind": "FUNDS",
+              "unit_code": "USD_CENTS"
+            },
+            "max_amount_minor": 20000
+          },
+          "remedy_spec": {
+            "notice_recipients": [
+              "proposer"
+            ],
+            "challenge_window_hours": 24,
+            "review_body_id": "independent-board",
+            "rollback_or_compensation_procedure_ref": {
+              "evidence_id": "review-record",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          },
+          "effect_parameters_sha256": "sha256:da70defa4bd6f35fa93f93bfd934ca45a05897d1d873008734d9c75aa8a09ce6"
+        },
+        {
+          "envelope_id": "env-insufficient",
+          "action_type": "VERIFY_EXECUTION_RECEIPT",
+          "target_object_id": "ticket-1",
+          "evaluated_target_version_seq": 4,
+          "resulting_versions": [
+            {
+              "object_id": "ticket-1",
+              "version_seq": 5
+            },
+            {
+              "object_id": "verification-insufficient",
+              "version_seq": 1
+            }
+          ],
+          "mandate_ref": {
+            "mandate_id": "mandate-verifier",
+            "version_hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clause_reference": "charter-1:section-9"
+          },
+          "auth_check_receipt": {
+            "receipt_id": "auth-cmd-insufficient",
+            "command_id": "cmd-insufficient",
+            "attempt_id": "attempt-insufficient",
+            "generation": 1,
+            "idempotency_key": "idem-insufficient",
+            "authenticated_principal_id": "principal-verifier",
+            "mandate_id": "mandate-verifier",
+            "evaluated_version_hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "requested_power": "VERIFY_EXECUTION_RECEIPT",
+            "target_object_id": "ticket-1",
+            "evaluated_target_version_seq": 4,
+            "checked_at": "2026-11-06T04:00:00Z",
+            "authority_source_id": "synthetic-authority",
+            "domain_sha256": "sha256:ff5049c0e7d022dee257460bd01a56e0b726a9babbd566d5725be7404a41bb9b",
+            "context_sha256": "sha256:72be701ec5677fb6c903f0b845a264118b9ccf5d7aa289c80fb2436c5efb695d",
+            "verification_status": "VERIFIED_ACTIVE"
+          },
+          "evidence_refs": [
+            {
+              "evidence_id": "review-record",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          ],
+          "scope_spec": {
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "effective_from": "2026-11-01T00:00:00Z",
+            "effective_until": "2026-12-01T00:00:00Z",
+            "resource_spec": {
+              "resource_kind": "FUNDS",
+              "unit_code": "USD_CENTS"
+            },
+            "max_amount_minor": 20000
+          },
+          "remedy_spec": {
+            "notice_recipients": [
+              "proposer"
+            ],
+            "challenge_window_hours": 24,
+            "review_body_id": "independent-board",
+            "rollback_or_compensation_procedure_ref": {
+              "evidence_id": "review-record",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          },
+          "effect_parameters_sha256": "sha256:4b33708b6b058e73bcf5e0e961296b3df41396629926006c6605b0e47ef74d9d"
+        }
+      ]
+    },
+    "execution_outcome": {
+      "outcome": "APPLIED",
+      "command_record": {
+        "command_id": "cmd-insufficient",
+        "tenant_node_id": "node-1",
+        "principal_id": "principal-verifier",
+        "action_id": "VERIFY_EXECUTION_RECEIPT",
+        "idempotency_key": "idem-insufficient",
+        "request_sha256": "sha256:87d4216aa076d15c6b9557b66638c24fc0c14d8fb85a7f444aa8edf2a8f7f332",
+        "current_attempt_id": "attempt-insufficient",
+        "generation": 1,
+        "version_seq": 2,
+        "status": "APPLIED",
+        "result_id": "result-cmd-insufficient"
+      },
+      "command_attempt": {
+        "attempt_id": "attempt-insufficient",
+        "command_id": "cmd-insufficient",
+        "generation": 1,
+        "version_seq": 2,
+        "status": "APPLIED"
+      },
+      "command_result": {
+        "result_id": "result-cmd-insufficient",
+        "command_id": "cmd-insufficient",
+        "attempt_id": "attempt-insufficient",
+        "generation": 1,
+        "status": "APPLIED",
+        "retry_disposition": "FINAL",
+        "applied_versions": [
+          {
+            "object_id": "ticket-1",
+            "version_seq": 5
+          },
+          {
+            "object_id": "verification-insufficient",
+            "version_seq": 1
+          }
+        ]
+      },
+      "command_rejection": null,
+      "auth_check_receipt": {
+        "receipt_id": "auth-cmd-insufficient",
+        "command_id": "cmd-insufficient",
+        "attempt_id": "attempt-insufficient",
+        "generation": 1,
+        "idempotency_key": "idem-insufficient",
+        "authenticated_principal_id": "principal-verifier",
+        "mandate_id": "mandate-verifier",
+        "evaluated_version_hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "requested_power": "VERIFY_EXECUTION_RECEIPT",
+        "target_object_id": "ticket-1",
+        "evaluated_target_version_seq": 4,
+        "checked_at": "2026-11-06T04:00:00Z",
+        "authority_source_id": "synthetic-authority",
+        "domain_sha256": "sha256:ff5049c0e7d022dee257460bd01a56e0b726a9babbd566d5725be7404a41bb9b",
+        "context_sha256": "sha256:72be701ec5677fb6c903f0b845a264118b9ccf5d7aa289c80fb2436c5efb695d",
+        "verification_status": "VERIFIED_ACTIVE"
+      },
+      "audit_event": {
+        "audit_id": "audit-cmd-insufficient",
+        "command_id": "cmd-insufficient",
+        "attempt_id": "attempt-insufficient",
+        "generation": 1,
+        "principal_id": "principal-verifier",
+        "action_id": "VERIFY_EXECUTION_RECEIPT",
+        "outcome": "APPLIED",
+        "checked_at": "2026-11-06T04:00:00Z",
+        "before_domain_sha256": "sha256:ff5049c0e7d022dee257460bd01a56e0b726a9babbd566d5725be7404a41bb9b",
+        "after_domain_sha256": "sha256:5a0936fba43f6783299758c9adfa970eeed5e3482847d17393646a2454b03bee",
+        "written_versions": [
+          {
+            "object_id": "ticket-1",
+            "version_seq": 5
+          },
+          {
+            "object_id": "verification-insufficient",
+            "version_seq": 1
+          }
+        ]
+      },
+      "fault_observation": null
+    }
+  }
+}

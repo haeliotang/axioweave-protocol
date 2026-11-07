@@ -1,0 +1,26 @@
+[
+  {
+    "command": [
+      "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+      "tools/validate_aw001_slice3b.py",
+      "fixtures/aw001_slice3/3b/pt_evaluation_satisfied_lt.json",
+      "fixtures/aw001_slice3/3b/pt_extend_window_late_data.json"
+    ],
+    "expected_exit_code": 0,
+    "exit_code": 0,
+    "stdout": "{\"input\": \"fixtures/aw001_slice3/3b/pt_evaluation_satisfied_lt.json\", \"is_valid\": true, \"validation_layer\": \"OFFLINE_SEMANTIC\", \"error_code\": null, \"failed_path\": null}\n{\"input\": \"fixtures/aw001_slice3/3b/pt_extend_window_late_data.json\", \"is_valid\": true, \"validation_layer\": \"OFFLINE_SEMANTIC\", \"error_code\": null, \"failed_path\": null}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+      "tools/validate_aw001_slice3b.py",
+      "fixtures/aw001_slice3/3b/ft_schema_interpolation.json",
+      "fixtures/aw001_slice3/3b/pt_evaluation_satisfied_lt.json"
+    ],
+    "expected_exit_code": 1,
+    "exit_code": 1,
+    "stdout": "{\"input\": \"fixtures/aw001_slice3/3b/ft_schema_interpolation.json\", \"is_valid\": false, \"validation_layer\": \"JSON_SCHEMA\", \"error_code\": \"ERR_CLIENT_FORBIDDEN_FIELD\", \"failed_path\": \"/command/payload\"}\n{\"input\": \"fixtures/aw001_slice3/3b/pt_evaluation_satisfied_lt.json\", \"is_valid\": true, \"validation_layer\": \"OFFLINE_SEMANTIC\", \"error_code\": null, \"failed_path\": null}\n",
+    "stderr": ""
+  }
+]

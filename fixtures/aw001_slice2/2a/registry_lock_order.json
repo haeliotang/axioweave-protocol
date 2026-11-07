@@ -1,0 +1,73 @@
+{
+  "contract_version": "0.3.0-rc1-slice2a",
+  "global_lock_order": [
+    "AuthorityRecord",
+    "CommandRecord",
+    "Case / Commitment",
+    "ProtectiveOrder",
+    "FulfillmentTicket"
+  ],
+  "actions": {
+    "ISSUE_PROTECTIVE_ORDER": {
+      "required_power": "ISSUE_PROTECTIVE_ORDER",
+      "requires_effectiveness_envelope": true,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_FOUR_TUPLE_COMPLETE",
+        "CHECK_AUTHORITY_SNAPSHOT",
+        "CHECK_PROTECTION_SCOPE_AND_TIME",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "write_policy": "APPEND_NEW_ORDER_AND_ENVELOPE"
+    },
+    "LIFT_PROTECTIVE_ORDER": {
+      "required_power": "LIFT_PROTECTIVE_ORDER",
+      "requires_effectiveness_envelope": true,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_FOUR_TUPLE_COMPLETE",
+        "CHECK_AUTHORITY_SNAPSHOT",
+        "CHECK_PROTECTION_SCOPE_AND_TIME",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING",
+        "CHECK_EXECUTOR_CANNOT_LIFT"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "write_policy": "LIFT_TARGET_AND_APPEND_ENVELOPE"
+    },
+    "EXTEND_PROTECTIVE_ORDER": {
+      "required_power": "EXTEND_PROTECTIVE_ORDER",
+      "requires_effectiveness_envelope": true,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_FOUR_TUPLE_COMPLETE",
+        "CHECK_AUTHORITY_SNAPSHOT",
+        "CHECK_PROTECTION_SCOPE_AND_TIME",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "write_policy": "SUPERSEDE_TARGET_APPEND_NEW_ORDER_AND_ENVELOPE"
+    }
+  }
+}

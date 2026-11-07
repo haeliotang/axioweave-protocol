@@ -1,0 +1,159 @@
+{
+  "contract_version": "0.4.0-rc1-slice3a",
+  "global_lock_order": [
+    "FulfillmentTicket",
+    "ProtectiveOrder",
+    "Case / Commitment",
+    "AuthorityRecord",
+    "CommandRecord"
+  ],
+  "actions": {
+    "RECORD_INCLUSION_AUDIT": {
+      "required_power": "RECORD_INCLUSION_AUDIT",
+      "requires_effectiveness_envelope": true,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_INTAKE_OR_FOUR_TUPLE",
+        "CHECK_PARTICIPATION_LEDGER",
+        "CHECK_STATEMENT_VERSION_CHAIN",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "write_policy": "CREATE_INCLUSION_AUDIT"
+    },
+    "ESCALATE_INCLUSION_SHORTFALL": {
+      "required_power": "ESCALATE_INCLUSION_SHORTFALL",
+      "requires_effectiveness_envelope": true,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_INTAKE_OR_FOUR_TUPLE",
+        "CHECK_PARTICIPATION_LEDGER",
+        "CHECK_STATEMENT_VERSION_CHAIN",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "write_policy": "APPEND_ESCALATION"
+    },
+    "PROCEED_WITH_DISCLOSURE": {
+      "required_power": "DECIDE_PROCEDURAL_GAP_DISCLOSURE",
+      "requires_effectiveness_envelope": true,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_INTAKE_OR_FOUR_TUPLE",
+        "CHECK_PARTICIPATION_LEDGER",
+        "CHECK_STATEMENT_VERSION_CHAIN",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "write_policy": "APPEND_DISCLOSURE"
+    },
+    "RECORD_SPEAKER_STATEMENT": {
+      "required_power": null,
+      "requires_effectiveness_envelope": false,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_INTAKE_OR_FOUR_TUPLE",
+        "CHECK_PARTICIPATION_LEDGER",
+        "CHECK_STATEMENT_VERSION_CHAIN",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "write_policy": "CREATE_SPEAKER_STATEMENT"
+    },
+    "CONFIRM_STATEMENT_EXPRESSION": {
+      "required_power": null,
+      "requires_effectiveness_envelope": false,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_INTAKE_OR_FOUR_TUPLE",
+        "CHECK_PARTICIPATION_LEDGER",
+        "CHECK_STATEMENT_VERSION_CHAIN",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "write_policy": "APPEND_EXPRESSION_CONFIRMATION"
+    },
+    "WITHDRAW_STATEMENT_PERMISSION": {
+      "required_power": null,
+      "requires_effectiveness_envelope": false,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_INTAKE_OR_FOUR_TUPLE",
+        "CHECK_PARTICIPATION_LEDGER",
+        "CHECK_STATEMENT_VERSION_CHAIN",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "write_policy": "APPEND_DISPLAY_WITHDRAWAL"
+    },
+    "RULE_BALLOT_MATERIALITY": {
+      "required_power": "RULE_BALLOT_MATERIALITY",
+      "requires_effectiveness_envelope": true,
+      "required_validators": [
+        "CHECK_CONTEXT_AND_VERSIONS",
+        "CHECK_COMMAND_COORDINATION",
+        "CHECK_INTAKE_OR_FOUR_TUPLE",
+        "CHECK_PARTICIPATION_LEDGER",
+        "CHECK_STATEMENT_VERSION_CHAIN",
+        "CHECK_ALLOWED_WRITE_SET",
+        "CHECK_RESULT_AND_AUDIT_BINDING"
+      ],
+      "lock_levels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "write_policy": "CREATE_MATERIALITY_RULING"
+    }
+  }
+}

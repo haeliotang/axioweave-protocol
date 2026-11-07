@@ -1,0 +1,14 @@
+test_blocked_case_cannot_claim_ready (test_case_packet.CasePacketTests.test_blocked_case_cannot_claim_ready) ... ok
+test_both_scenarios_are_valid_snapshots (test_case_packet.CasePacketTests.test_both_scenarios_are_valid_snapshots) ... ok
+test_cli_reports_all_inputs_and_nonzero_on_failure (test_case_packet.CasePacketTests.test_cli_reports_all_inputs_and_nonzero_on_failure) ... ok
+test_historical_assessment_can_be_retained_in_blocked_snapshot (test_case_packet.CasePacketTests.test_historical_assessment_can_be_retained_in_blocked_snapshot) ... ok
+test_in_review_snapshot_can_record_pending_assessments (test_case_packet.CasePacketTests.test_in_review_snapshot_can_record_pending_assessments) ... ok
+test_invalid_declarations_are_rejected (test_case_packet.CasePacketTests.test_invalid_declarations_are_rejected) ... ok
+test_strict_json_loading (test_case_packet.CasePacketTests.test_strict_json_loading) ... ok
+test_unknown_denominator_is_not_zero_or_representativeness (test_case_packet.CasePacketTests.test_unknown_denominator_is_not_zero_or_representativeness) ... ok
+test_unresolved_constraint_cannot_be_hidden_by_pass_gates (test_case_packet.CasePacketTests.test_unresolved_constraint_cannot_be_hidden_by_pass_gates) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.184s
+
+OK

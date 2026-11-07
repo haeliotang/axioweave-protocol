@@ -1,0 +1,58 @@
+{
+  "schema_version": "aw-acceptance-authority-1",
+  "status": "SIGNED_AND_BOUND",
+  "authority": "HUMAN_REVIEWER_ONLY",
+  "reviewer": {
+    "id": "haeliotang",
+    "role": "Project Maintainer & Fiduciary Reviewer",
+    "decision_date": "2026-11-06"
+  },
+  "signed_baseline": {
+    "code_and_evidence_commit": "8ba8cfe550be36c4947d74be7c8544adbbcbb144",
+    "review_record_commit": "f521d36d840dbdf0f4f133dd960b8fb04927e601",
+    "scope": "AW-001 offline contract freeze plus the stated nine-table/ten-trigger runtime scope at the baseline; not a production or pilot authorization."
+  },
+  "gates": {
+    "SPEC_FROZEN": {
+      "status": "GRANTED",
+      "bound_to": "8ba8cfe550be36c4947d74be7c8544adbbcbb144",
+      "note": "615/615 Python and 417/417 Golden parity at the signed baseline."
+    },
+    "IMPL_CONFORMANT": {
+      "status": "GRANTED_SCOPED",
+      "bound_to": "8ba8cfe550be36c4947d74be7c8544adbbcbb144",
+      "note": "Scoped to the runtime/security properties listed in the signed decision; later commits are outside the signed scope."
+    },
+    "PILOT_AUTHORIZED": {
+      "status": "NOT_GRANTED",
+      "bound_to": null,
+      "note": "No real community mandate, external IdP binding, or production fiduciary arrangement."
+    }
+  },
+  "freeze_candidate": {
+    "path": "specs/aw001-freeze/freeze-candidate.json",
+    "sha256": "sha256:9e914d1c44d1aac880d4a71ef65d858632ca80d3f85d32a8a7994769c035622b",
+    "status": "CANDIDATE_ONLY_INDEPENDENT_REVIEW_REQUIRED",
+    "spec_frozen_achieved": false,
+    "explanation": "The candidate manifest is intentionally candidate-only and its spec_frozen_achieved flag is fixed false by the offline contract validator. The signed human decision above is the authority for SPEC_FROZEN; the manifest is not a counter-signature and must not be rewritten to true."
+  },
+  "evidence_binding": {
+    "review_decision_path": "docs/architecture/aw002-human-review-decision.md",
+    "review_decision_sha256": "sha256:07bad0b458d400036e107668ba4d51af7c4e8f58bb26f2f8f5e8eb1821ef6c88",
+    "environment_path": "specs/aw002/validation-evidence/environment.json",
+    "freeze_generator": "scripts/generate_freeze_candidate.py",
+    "hash_rule": "SHA-256 over raw bytes; no normalization or signature.",
+    "environment_note": "The environment file is current-run evidence, not part of this signed record; it carries its own git_commit and must be read separately."
+  },
+  "precedence": [
+    "This record binds the human signer and signed baseline; it does not grant anything to the current tree.",
+    "Current-tree evidence is provisional and must state its own commit; it cannot retroactively widen the signed scope.",
+    "PILOT_AUTHORIZED remains NOT_GRANTED until a separate human decision bound to a real external environment."
+  ],
+  "known_scope_gaps": [
+    "Current tree is after the signed baseline and includes post-baseline schema/action changes not covered by GRANTED_SCOPED.",
+    "AW-001 validator/envelope semantics remain incomplete in the provisional runtime.",
+    "Real IdP, external AI provider, 24h soak, signed commits and branch protection remain outside this record."
+  ],
+  "record_created": "2026-11-07"
+}

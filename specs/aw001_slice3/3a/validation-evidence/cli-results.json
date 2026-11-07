@@ -1,0 +1,26 @@
+[
+  {
+    "command": [
+      "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+      "tools/validate_aw001_slice3a.py",
+      "fixtures/aw001_slice3/3a/pt_audit_met.json",
+      "fixtures/aw001_slice3/3a/pt_statement_original.json"
+    ],
+    "expected_exit_code": 0,
+    "exit_code": 0,
+    "stdout": "{\"input\": \"fixtures/aw001_slice3/3a/pt_audit_met.json\", \"is_valid\": true, \"validation_layer\": \"OFFLINE_SEMANTIC\", \"error_code\": null, \"failed_path\": null}\n{\"input\": \"fixtures/aw001_slice3/3a/pt_statement_original.json\", \"is_valid\": true, \"validation_layer\": \"OFFLINE_SEMANTIC\", \"error_code\": null, \"failed_path\": null}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+      "tools/validate_aw001_slice3a.py",
+      "fixtures/aw001_slice3/3a/ft_statement_client_speaker.json",
+      "fixtures/aw001_slice3/3a/pt_audit_met.json"
+    ],
+    "expected_exit_code": 1,
+    "exit_code": 1,
+    "stdout": "{\"input\": \"fixtures/aw001_slice3/3a/ft_statement_client_speaker.json\", \"is_valid\": false, \"validation_layer\": \"JSON_SCHEMA\", \"error_code\": \"ERR_CLIENT_FORBIDDEN_FIELD\", \"failed_path\": \"/command/payload\"}\n{\"input\": \"fixtures/aw001_slice3/3a/pt_audit_met.json\", \"is_valid\": true, \"validation_layer\": \"OFFLINE_SEMANTIC\", \"error_code\": null, \"failed_path\": null}\n",
+    "stderr": ""
+  }
+]

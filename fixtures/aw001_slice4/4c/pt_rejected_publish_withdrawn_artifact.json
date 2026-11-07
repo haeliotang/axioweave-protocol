@@ -1,0 +1,1165 @@
+{
+  "before": {
+    "domain_objects": {
+      "operations": {
+        "cases": [
+          {
+            "object_id": "case-1",
+            "kind": "CASE",
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "parent_object_id": null,
+            "version_seq": 1,
+            "proposer_member_id": "member-proposer",
+            "rule_version_seq": 1,
+            "template_sod_policy": {
+              "version": "pack-a-v1",
+              "exclude_commitment_executors_from_verification": false
+            }
+          }
+        ],
+        "resource_pools": [
+          {
+            "object_id": "pool-1",
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "version_seq": 1,
+            "resource_spec": {
+              "resource_kind": "FUNDS",
+              "unit_code": "USD_CENTS"
+            },
+            "total_capacity_minor": 100000,
+            "committed_obligations_minor": 0
+          }
+        ],
+        "commitments": [],
+        "tickets": [],
+        "execution_verifications": [],
+        "protective_orders": [],
+        "protection_envelopes": [],
+        "effectiveness_envelopes": []
+      },
+      "case_access_policies": [
+        {
+          "case_id": "case-1",
+          "tenant_node_id": "node-1",
+          "access_policy_version": 2,
+          "updated_by_command_id": "cmd-withdraw_output-publisher"
+        }
+      ],
+      "output_artifacts": [
+        {
+          "artifact_id": "artifact-1",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "artifact_kind": "SUMMARY",
+          "source_refs": [
+            {
+              "evidence_id": "release-source",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          ],
+          "content_sha256": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "display_status": "WITHDRAWN",
+          "current_policy_version": 2
+        },
+        {
+          "artifact_id": "artifact-2",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "artifact_kind": "NOTIFICATION",
+          "source_refs": [
+            {
+              "evidence_id": "release-source",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          ],
+          "content_sha256": "sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+          "display_status": "ACTIVE",
+          "current_policy_version": 1
+        }
+      ],
+      "output_stagings": [
+        {
+          "staging_id": "staging-1",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "artifact_id": "artifact-1",
+          "staged_file_ref": {
+            "evidence_id": "staging-file",
+            "revision": 1,
+            "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "rendered_policy_version": 1,
+          "status": "STAGED",
+          "published_file_ref": null,
+          "released_at": null,
+          "created_command_id": "cmd-stage_output_release-publisher",
+          "created_envelope_id": "env-stage_output_release-publisher-staging-1",
+          "published_envelope_id": null
+        }
+      ],
+      "output_withdrawals": [
+        {
+          "withdrawal_id": "withdrawal-1",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "artifact_id": "artifact-1",
+          "policy_version_seq": 2,
+          "reason": "Source permission withdrawn.",
+          "review_todo_id": "review-todo-1",
+          "withdrawn_at": "2026-11-06T00:00:00Z",
+          "created_command_id": "cmd-withdraw_output-publisher",
+          "created_envelope_id": "env-withdraw_output-publisher-withdrawal-1"
+        }
+      ],
+      "notification_tasks": [
+        {
+          "notification_id": "task-1",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "artifact_id": "artifact-1",
+          "payload_mode": "FULL_TEXT",
+          "recorded_policy_version": 1,
+          "status": "PENDING",
+          "dispatched_at": null,
+          "attempts": 0,
+          "created_command_id": null,
+          "created_envelope_id": null
+        },
+        {
+          "notification_id": "task-2",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "artifact_id": "artifact-2",
+          "payload_mode": "METADATA_ONLY",
+          "recorded_policy_version": 1,
+          "status": "PENDING",
+          "dispatched_at": null,
+          "attempts": 0,
+          "created_command_id": null,
+          "created_envelope_id": null
+        }
+      ],
+      "recovery_manifests": [],
+      "template_installations": [],
+      "deployment_records": [],
+      "effectiveness_envelopes": [
+        {
+          "envelope_id": "env-stage_output_release-publisher-staging-1",
+          "action_type": "STAGE_OUTPUT_RELEASE",
+          "target_object_id": "artifact-1",
+          "evaluated_target_version_seq": 1,
+          "resulting_versions": [
+            {
+              "object_id": "staging-1",
+              "version_seq": 1
+            }
+          ],
+          "mandate_ref": {
+            "mandate_id": "mandate-stage",
+            "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "clause_reference": "clause-mandate-stage"
+          },
+          "auth_check_receipt": {
+            "receipt_id": "receipt-staging-1",
+            "command_id": "cmd-stage_output_release-publisher",
+            "attempt_id": "attempt-1",
+            "generation": 1,
+            "idempotency_key": "idem-stage_output_release-publisher",
+            "authenticated_principal_id": "principal-publisher",
+            "mandate_id": "mandate-stage",
+            "evaluated_version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "requested_power": "STAGE_OUTPUT_RELEASE",
+            "target_object_id": "artifact-1",
+            "evaluated_target_version_seq": 1,
+            "checked_at": "2026-11-06T00:00:00Z",
+            "authority_source_id": "authority-source-1",
+            "domain_sha256": "sha256:30f385a6f2b805f00a8f903344fa1a78130b347fd3d9c026cb3a8daacbdfe4aa",
+            "context_sha256": "sha256:df6fcb9ae8e41e6cc093af36960f72fbc24fdddef63defe72b8bc04854f91c9b",
+            "verification_status": "VERIFIED_ACTIVE"
+          },
+          "evidence_refs": [
+            {
+              "evidence_id": "release-source",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          ],
+          "scope_spec": {
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "effective_from": "2026-09-01T00:00:00Z",
+            "effective_until": "2027-01-01T00:00:00Z",
+            "resource_spec": {
+              "resource_kind": "FUNDS",
+              "unit_code": "USD_CENTS"
+            },
+            "max_amount_minor": 100000
+          },
+          "remedy_spec": {
+            "notice_recipients": [
+              "member-publisher"
+            ],
+            "challenge_window_hours": 24,
+            "review_body_id": "review-body-1",
+            "rollback_or_compensation_procedure_ref": {
+              "evidence_id": "remedy-source",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          },
+          "effect_parameters_sha256": "sha256:89fc032d94e7da0bc29611a674d6383b2b16c95ec3f804d8b494589f2ccb221e",
+          "actor_member_id": "member-publisher",
+          "payload_snapshot": {
+            "staging_id": "staging-1",
+            "staged_file_ref": {
+              "evidence_id": "staging-file",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "rendered_policy_version": 1,
+            "effectiveness_envelope_input": {
+              "mandate_clause_ref": "clause-mandate-stage",
+              "evidence_refs": [
+                {
+                  "evidence_id": "release-source",
+                  "revision": 1,
+                  "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                }
+              ],
+              "scope_spec": {
+                "tenant_node_id": "node-1",
+                "case_id": "case-1",
+                "effective_from": "2026-09-01T00:00:00Z",
+                "effective_until": "2027-01-01T00:00:00Z",
+                "resource_spec": {
+                  "resource_kind": "FUNDS",
+                  "unit_code": "USD_CENTS"
+                },
+                "max_amount_minor": 100000
+              },
+              "remedy_spec": {
+                "notice_recipients": [
+                  "member-publisher"
+                ],
+                "challenge_window_hours": 24,
+                "review_body_id": "review-body-1",
+                "rollback_or_compensation_procedure_ref": {
+                  "evidence_id": "remedy-source",
+                  "revision": 1,
+                  "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                }
+              }
+            }
+          }
+        },
+        {
+          "envelope_id": "env-withdraw_output-publisher-withdrawal-1",
+          "action_type": "WITHDRAW_OUTPUT",
+          "target_object_id": "artifact-1",
+          "evaluated_target_version_seq": 1,
+          "resulting_versions": [
+            {
+              "object_id": "withdrawal-1",
+              "version_seq": 1
+            }
+          ],
+          "mandate_ref": {
+            "mandate_id": "mandate-withdraw",
+            "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "clause_reference": "clause-mandate-withdraw"
+          },
+          "auth_check_receipt": {
+            "receipt_id": "receipt-withdrawal-1",
+            "command_id": "cmd-withdraw_output-publisher",
+            "attempt_id": "attempt-1",
+            "generation": 1,
+            "idempotency_key": "idem-withdraw_output-publisher",
+            "authenticated_principal_id": "principal-publisher",
+            "mandate_id": "mandate-withdraw",
+            "evaluated_version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "requested_power": "WITHDRAW_OUTPUT",
+            "target_object_id": "artifact-1",
+            "evaluated_target_version_seq": 1,
+            "checked_at": "2026-11-06T00:00:00Z",
+            "authority_source_id": "authority-source-1",
+            "domain_sha256": "sha256:c2a1e0687d7495d55bedb1f6eb1090b7c2345697ee04ea2667995ac5e9a39b03",
+            "context_sha256": "sha256:cb28fb9547dc2a7689368ac048edd44268a4082cec724b783f9ddd4cb54d96f7",
+            "verification_status": "VERIFIED_ACTIVE"
+          },
+          "evidence_refs": [
+            {
+              "evidence_id": "release-source",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          ],
+          "scope_spec": {
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "effective_from": "2026-09-01T00:00:00Z",
+            "effective_until": "2027-01-01T00:00:00Z",
+            "resource_spec": {
+              "resource_kind": "FUNDS",
+              "unit_code": "USD_CENTS"
+            },
+            "max_amount_minor": 100000
+          },
+          "remedy_spec": {
+            "notice_recipients": [
+              "member-publisher"
+            ],
+            "challenge_window_hours": 24,
+            "review_body_id": "review-body-1",
+            "rollback_or_compensation_procedure_ref": {
+              "evidence_id": "remedy-source",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          },
+          "effect_parameters_sha256": "sha256:01985b8c39c10df093acf8f0ce3f995ab294fe3012fb1b4b9cb6f491e961b191",
+          "actor_member_id": "member-publisher",
+          "payload_snapshot": {
+            "withdrawal_id": "withdrawal-1",
+            "reason": "Source permission withdrawn.",
+            "review_todo_id": "review-todo-1",
+            "effectiveness_envelope_input": {
+              "mandate_clause_ref": "clause-mandate-withdraw",
+              "evidence_refs": [
+                {
+                  "evidence_id": "release-source",
+                  "revision": 1,
+                  "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                }
+              ],
+              "scope_spec": {
+                "tenant_node_id": "node-1",
+                "case_id": "case-1",
+                "effective_from": "2026-09-01T00:00:00Z",
+                "effective_until": "2027-01-01T00:00:00Z",
+                "resource_spec": {
+                  "resource_kind": "FUNDS",
+                  "unit_code": "USD_CENTS"
+                },
+                "max_amount_minor": 100000
+              },
+              "remedy_spec": {
+                "notice_recipients": [
+                  "member-publisher"
+                ],
+                "challenge_window_hours": 24,
+                "review_body_id": "review-body-1",
+                "rollback_or_compensation_procedure_ref": {
+                  "evidence_id": "remedy-source",
+                  "revision": 1,
+                  "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "command_record": {
+      "command_id": "cmd-publish_local_output-publisher",
+      "tenant_node_id": "node-1",
+      "principal_id": "principal-publisher",
+      "action_id": "PUBLISH_LOCAL_OUTPUT",
+      "idempotency_key": "idem-publish_local_output-publisher",
+      "request_sha256": "sha256:b48e45325c8ce86047815d1badde0d91aff804af229f1be9a534303d42dccc02",
+      "current_attempt_id": "attempt-1",
+      "generation": 1,
+      "version_seq": 1,
+      "status": "IN_FLIGHT",
+      "result_id": null
+    },
+    "command_attempt": {
+      "attempt_id": "attempt-1",
+      "command_id": "cmd-publish_local_output-publisher",
+      "generation": 1,
+      "version_seq": 1,
+      "status": "IN_FLIGHT"
+    }
+  },
+  "command": {
+    "command_id": "cmd-publish_local_output-publisher",
+    "idempotency_key": "idem-publish_local_output-publisher",
+    "requested_action": "PUBLISH_LOCAL_OUTPUT",
+    "target_object_id": "staging-1",
+    "target_expected_version_seq": 1,
+    "mandate_claim": {
+      "mandate_id": "mandate-publish",
+      "expected_version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "claimed_power": "PUBLISH_LOCAL_OUTPUT"
+    },
+    "payload": {
+      "published_file_ref": {
+        "evidence_id": "published-file",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "effectiveness_envelope_input": {
+        "mandate_clause_ref": "clause-mandate-publish",
+        "evidence_refs": [
+          {
+            "evidence_id": "release-source",
+            "revision": 1,
+            "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ],
+        "scope_spec": {
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "effective_from": "2026-09-01T00:00:00Z",
+          "effective_until": "2027-01-01T00:00:00Z",
+          "resource_spec": {
+            "resource_kind": "FUNDS",
+            "unit_code": "USD_CENTS"
+          },
+          "max_amount_minor": 100000
+        },
+        "remedy_spec": {
+          "notice_recipients": [
+            "member-publisher"
+          ],
+          "challenge_window_hours": 24,
+          "review_body_id": "review-body-1",
+          "rollback_or_compensation_procedure_ref": {
+            "evidence_id": "remedy-source",
+            "revision": 1,
+            "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        }
+      }
+    },
+    "dependency_versions": [
+      {
+        "object_id": "case-1",
+        "version_seq": 1
+      }
+    ]
+  },
+  "server_context": {
+    "contract_version": "0.5.0-rc1-slice4c",
+    "mode": "simulation",
+    "data_classification": "synthetic",
+    "execution_enabled": false,
+    "tenant_node_id": "node-1",
+    "case_id": "case-1",
+    "authenticated_principal_id": "principal-publisher",
+    "authenticated_member_id": "member-publisher",
+    "member_directory": [
+      {
+        "principal_id": "principal-publisher",
+        "member_id": "member-publisher",
+        "status": "VERIFIED",
+        "source_ref": {
+          "evidence_id": "member-principal-publisher",
+          "revision": 1,
+          "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      },
+      {
+        "principal_id": "principal-operator",
+        "member_id": "member-operator",
+        "status": "VERIFIED",
+        "source_ref": {
+          "evidence_id": "member-principal-operator",
+          "revision": 1,
+          "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      },
+      {
+        "principal_id": "principal-recoverer",
+        "member_id": "member-recoverer",
+        "status": "VERIFIED",
+        "source_ref": {
+          "evidence_id": "member-principal-recoverer",
+          "revision": 1,
+          "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      },
+      {
+        "principal_id": "principal-proposer",
+        "member_id": "member-proposer",
+        "status": "VERIFIED",
+        "source_ref": {
+          "evidence_id": "member-principal-proposer",
+          "revision": 1,
+          "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      }
+    ],
+    "access_granted": true,
+    "evaluated_at": "2026-11-06T00:00:00Z",
+    "attempt_id": "attempt-1",
+    "generation": 1,
+    "authority_source_id": "authority-source-1",
+    "authority_source_status": "AVAILABLE",
+    "authority_inventory_complete": true,
+    "authority_snapshots": [
+      {
+        "mandate_id": "mandate-stage",
+        "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "principal_id": "principal-publisher",
+        "tenant_node_id": "node-1",
+        "case_id": "case-1",
+        "powers": [
+          "STAGE_OUTPUT_RELEASE"
+        ],
+        "allowed_target_ids": [
+          "case-1"
+        ],
+        "clause_reference": "clause-mandate-stage",
+        "status": "ACTIVE",
+        "valid_from": "2026-09-01T00:00:00Z",
+        "valid_until": "2027-01-01T00:00:00Z"
+      },
+      {
+        "mandate_id": "mandate-publish",
+        "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "principal_id": "principal-publisher",
+        "tenant_node_id": "node-1",
+        "case_id": "case-1",
+        "powers": [
+          "PUBLISH_LOCAL_OUTPUT"
+        ],
+        "allowed_target_ids": [
+          "case-1"
+        ],
+        "clause_reference": "clause-mandate-publish",
+        "status": "ACTIVE",
+        "valid_from": "2026-09-01T00:00:00Z",
+        "valid_until": "2027-01-01T00:00:00Z"
+      },
+      {
+        "mandate_id": "mandate-withdraw",
+        "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "principal_id": "principal-publisher",
+        "tenant_node_id": "node-1",
+        "case_id": "case-1",
+        "powers": [
+          "WITHDRAW_OUTPUT"
+        ],
+        "allowed_target_ids": [
+          "case-1"
+        ],
+        "clause_reference": "clause-mandate-withdraw",
+        "status": "ACTIVE",
+        "valid_from": "2026-09-01T00:00:00Z",
+        "valid_until": "2027-01-01T00:00:00Z"
+      },
+      {
+        "mandate_id": "mandate-dispatch",
+        "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "principal_id": "principal-publisher",
+        "tenant_node_id": "node-1",
+        "case_id": "case-1",
+        "powers": [
+          "DISPATCH_NOTIFICATION"
+        ],
+        "allowed_target_ids": [
+          "case-1"
+        ],
+        "clause_reference": "clause-mandate-dispatch",
+        "status": "ACTIVE",
+        "valid_from": "2026-09-01T00:00:00Z",
+        "valid_until": "2027-01-01T00:00:00Z"
+      },
+      {
+        "mandate_id": "mandate-recovery",
+        "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "principal_id": "principal-recoverer",
+        "tenant_node_id": "node-1",
+        "case_id": "case-1",
+        "powers": [
+          "RECORD_RECOVERY_MANIFEST",
+          "INSTALL_TEMPLATE_PACKAGE"
+        ],
+        "allowed_target_ids": [
+          "case-1"
+        ],
+        "clause_reference": "clause-mandate-recovery",
+        "status": "ACTIVE",
+        "valid_from": "2026-09-01T00:00:00Z",
+        "valid_until": "2027-01-01T00:00:00Z"
+      },
+      {
+        "mandate_id": "mandate-deploy",
+        "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "principal_id": "principal-operator",
+        "tenant_node_id": "node-1",
+        "case_id": "case-1",
+        "powers": [
+          "RECORD_DEPLOYMENT_MANIFEST"
+        ],
+        "allowed_target_ids": [
+          "case-1"
+        ],
+        "clause_reference": "clause-mandate-deploy",
+        "status": "ACTIVE",
+        "valid_from": "2026-09-01T00:00:00Z",
+        "valid_until": "2027-01-01T00:00:00Z"
+      }
+    ],
+    "evidence_snapshots": [
+      {
+        "evidence_id": "member-principal-publisher",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "member-principal-operator",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "member-principal-recoverer",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "member-principal-proposer",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "release-source",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "remedy-source",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "staging-file",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "published-file",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "template-source",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "local-adoption",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "build",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "schema",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "registry",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "spec-frozen",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "test-report",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "migration-plan",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "backup-recovery",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "approval",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      {
+        "evidence_id": "rollback",
+        "revision": 1,
+        "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      }
+    ],
+    "generated_auth_receipt": {
+      "receipt_id": "receipt-staging-1",
+      "command_id": "cmd-publish_local_output-publisher",
+      "attempt_id": "attempt-1",
+      "generation": 1,
+      "idempotency_key": "idem-publish_local_output-publisher",
+      "authenticated_principal_id": "principal-publisher",
+      "mandate_id": "mandate-publish",
+      "evaluated_version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "requested_power": "PUBLISH_LOCAL_OUTPUT",
+      "target_object_id": "staging-1",
+      "evaluated_target_version_seq": 1,
+      "checked_at": "2026-11-06T00:00:00Z",
+      "authority_source_id": "authority-source-1",
+      "domain_sha256": "sha256:a3b6a69ff3e50bc36a3091cf3d9f306dbb66f6a50eb55a1d566a0a8dd74efdd8",
+      "context_sha256": "sha256:c5fa066f98f31e3962a2441b7704131b63e16af6f4cd011a301b8bee363f9b3c",
+      "verification_status": "VERIFIED_ACTIVE"
+    },
+    "new_envelope_id": "env-publish_local_output-publisher-staging-1",
+    "execution_observation": "NORMAL"
+  },
+  "after": {
+    "domain_objects": {
+      "operations": {
+        "cases": [
+          {
+            "object_id": "case-1",
+            "kind": "CASE",
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "parent_object_id": null,
+            "version_seq": 1,
+            "proposer_member_id": "member-proposer",
+            "rule_version_seq": 1,
+            "template_sod_policy": {
+              "version": "pack-a-v1",
+              "exclude_commitment_executors_from_verification": false
+            }
+          }
+        ],
+        "resource_pools": [
+          {
+            "object_id": "pool-1",
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "version_seq": 1,
+            "resource_spec": {
+              "resource_kind": "FUNDS",
+              "unit_code": "USD_CENTS"
+            },
+            "total_capacity_minor": 100000,
+            "committed_obligations_minor": 0
+          }
+        ],
+        "commitments": [],
+        "tickets": [],
+        "execution_verifications": [],
+        "protective_orders": [],
+        "protection_envelopes": [],
+        "effectiveness_envelopes": []
+      },
+      "case_access_policies": [
+        {
+          "case_id": "case-1",
+          "tenant_node_id": "node-1",
+          "access_policy_version": 2,
+          "updated_by_command_id": "cmd-withdraw_output-publisher"
+        }
+      ],
+      "output_artifacts": [
+        {
+          "artifact_id": "artifact-1",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "artifact_kind": "SUMMARY",
+          "source_refs": [
+            {
+              "evidence_id": "release-source",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          ],
+          "content_sha256": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "display_status": "WITHDRAWN",
+          "current_policy_version": 2
+        },
+        {
+          "artifact_id": "artifact-2",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "artifact_kind": "NOTIFICATION",
+          "source_refs": [
+            {
+              "evidence_id": "release-source",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          ],
+          "content_sha256": "sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+          "display_status": "ACTIVE",
+          "current_policy_version": 1
+        }
+      ],
+      "output_stagings": [
+        {
+          "staging_id": "staging-1",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "artifact_id": "artifact-1",
+          "staged_file_ref": {
+            "evidence_id": "staging-file",
+            "revision": 1,
+            "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "rendered_policy_version": 1,
+          "status": "STAGED",
+          "published_file_ref": null,
+          "released_at": null,
+          "created_command_id": "cmd-stage_output_release-publisher",
+          "created_envelope_id": "env-stage_output_release-publisher-staging-1",
+          "published_envelope_id": null
+        }
+      ],
+      "output_withdrawals": [
+        {
+          "withdrawal_id": "withdrawal-1",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "artifact_id": "artifact-1",
+          "policy_version_seq": 2,
+          "reason": "Source permission withdrawn.",
+          "review_todo_id": "review-todo-1",
+          "withdrawn_at": "2026-11-06T00:00:00Z",
+          "created_command_id": "cmd-withdraw_output-publisher",
+          "created_envelope_id": "env-withdraw_output-publisher-withdrawal-1"
+        }
+      ],
+      "notification_tasks": [
+        {
+          "notification_id": "task-1",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "artifact_id": "artifact-1",
+          "payload_mode": "FULL_TEXT",
+          "recorded_policy_version": 1,
+          "status": "PENDING",
+          "dispatched_at": null,
+          "attempts": 0,
+          "created_command_id": null,
+          "created_envelope_id": null
+        },
+        {
+          "notification_id": "task-2",
+          "tenant_node_id": "node-1",
+          "case_id": "case-1",
+          "artifact_id": "artifact-2",
+          "payload_mode": "METADATA_ONLY",
+          "recorded_policy_version": 1,
+          "status": "PENDING",
+          "dispatched_at": null,
+          "attempts": 0,
+          "created_command_id": null,
+          "created_envelope_id": null
+        }
+      ],
+      "recovery_manifests": [],
+      "template_installations": [],
+      "deployment_records": [],
+      "effectiveness_envelopes": [
+        {
+          "envelope_id": "env-stage_output_release-publisher-staging-1",
+          "action_type": "STAGE_OUTPUT_RELEASE",
+          "target_object_id": "artifact-1",
+          "evaluated_target_version_seq": 1,
+          "resulting_versions": [
+            {
+              "object_id": "staging-1",
+              "version_seq": 1
+            }
+          ],
+          "mandate_ref": {
+            "mandate_id": "mandate-stage",
+            "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "clause_reference": "clause-mandate-stage"
+          },
+          "auth_check_receipt": {
+            "receipt_id": "receipt-staging-1",
+            "command_id": "cmd-stage_output_release-publisher",
+            "attempt_id": "attempt-1",
+            "generation": 1,
+            "idempotency_key": "idem-stage_output_release-publisher",
+            "authenticated_principal_id": "principal-publisher",
+            "mandate_id": "mandate-stage",
+            "evaluated_version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "requested_power": "STAGE_OUTPUT_RELEASE",
+            "target_object_id": "artifact-1",
+            "evaluated_target_version_seq": 1,
+            "checked_at": "2026-11-06T00:00:00Z",
+            "authority_source_id": "authority-source-1",
+            "domain_sha256": "sha256:30f385a6f2b805f00a8f903344fa1a78130b347fd3d9c026cb3a8daacbdfe4aa",
+            "context_sha256": "sha256:df6fcb9ae8e41e6cc093af36960f72fbc24fdddef63defe72b8bc04854f91c9b",
+            "verification_status": "VERIFIED_ACTIVE"
+          },
+          "evidence_refs": [
+            {
+              "evidence_id": "release-source",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          ],
+          "scope_spec": {
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "effective_from": "2026-09-01T00:00:00Z",
+            "effective_until": "2027-01-01T00:00:00Z",
+            "resource_spec": {
+              "resource_kind": "FUNDS",
+              "unit_code": "USD_CENTS"
+            },
+            "max_amount_minor": 100000
+          },
+          "remedy_spec": {
+            "notice_recipients": [
+              "member-publisher"
+            ],
+            "challenge_window_hours": 24,
+            "review_body_id": "review-body-1",
+            "rollback_or_compensation_procedure_ref": {
+              "evidence_id": "remedy-source",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          },
+          "effect_parameters_sha256": "sha256:89fc032d94e7da0bc29611a674d6383b2b16c95ec3f804d8b494589f2ccb221e",
+          "actor_member_id": "member-publisher",
+          "payload_snapshot": {
+            "staging_id": "staging-1",
+            "staged_file_ref": {
+              "evidence_id": "staging-file",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "rendered_policy_version": 1,
+            "effectiveness_envelope_input": {
+              "mandate_clause_ref": "clause-mandate-stage",
+              "evidence_refs": [
+                {
+                  "evidence_id": "release-source",
+                  "revision": 1,
+                  "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                }
+              ],
+              "scope_spec": {
+                "tenant_node_id": "node-1",
+                "case_id": "case-1",
+                "effective_from": "2026-09-01T00:00:00Z",
+                "effective_until": "2027-01-01T00:00:00Z",
+                "resource_spec": {
+                  "resource_kind": "FUNDS",
+                  "unit_code": "USD_CENTS"
+                },
+                "max_amount_minor": 100000
+              },
+              "remedy_spec": {
+                "notice_recipients": [
+                  "member-publisher"
+                ],
+                "challenge_window_hours": 24,
+                "review_body_id": "review-body-1",
+                "rollback_or_compensation_procedure_ref": {
+                  "evidence_id": "remedy-source",
+                  "revision": 1,
+                  "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                }
+              }
+            }
+          }
+        },
+        {
+          "envelope_id": "env-withdraw_output-publisher-withdrawal-1",
+          "action_type": "WITHDRAW_OUTPUT",
+          "target_object_id": "artifact-1",
+          "evaluated_target_version_seq": 1,
+          "resulting_versions": [
+            {
+              "object_id": "withdrawal-1",
+              "version_seq": 1
+            }
+          ],
+          "mandate_ref": {
+            "mandate_id": "mandate-withdraw",
+            "version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "clause_reference": "clause-mandate-withdraw"
+          },
+          "auth_check_receipt": {
+            "receipt_id": "receipt-withdrawal-1",
+            "command_id": "cmd-withdraw_output-publisher",
+            "attempt_id": "attempt-1",
+            "generation": 1,
+            "idempotency_key": "idem-withdraw_output-publisher",
+            "authenticated_principal_id": "principal-publisher",
+            "mandate_id": "mandate-withdraw",
+            "evaluated_version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "requested_power": "WITHDRAW_OUTPUT",
+            "target_object_id": "artifact-1",
+            "evaluated_target_version_seq": 1,
+            "checked_at": "2026-11-06T00:00:00Z",
+            "authority_source_id": "authority-source-1",
+            "domain_sha256": "sha256:c2a1e0687d7495d55bedb1f6eb1090b7c2345697ee04ea2667995ac5e9a39b03",
+            "context_sha256": "sha256:cb28fb9547dc2a7689368ac048edd44268a4082cec724b783f9ddd4cb54d96f7",
+            "verification_status": "VERIFIED_ACTIVE"
+          },
+          "evidence_refs": [
+            {
+              "evidence_id": "release-source",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          ],
+          "scope_spec": {
+            "tenant_node_id": "node-1",
+            "case_id": "case-1",
+            "effective_from": "2026-09-01T00:00:00Z",
+            "effective_until": "2027-01-01T00:00:00Z",
+            "resource_spec": {
+              "resource_kind": "FUNDS",
+              "unit_code": "USD_CENTS"
+            },
+            "max_amount_minor": 100000
+          },
+          "remedy_spec": {
+            "notice_recipients": [
+              "member-publisher"
+            ],
+            "challenge_window_hours": 24,
+            "review_body_id": "review-body-1",
+            "rollback_or_compensation_procedure_ref": {
+              "evidence_id": "remedy-source",
+              "revision": 1,
+              "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          },
+          "effect_parameters_sha256": "sha256:01985b8c39c10df093acf8f0ce3f995ab294fe3012fb1b4b9cb6f491e961b191",
+          "actor_member_id": "member-publisher",
+          "payload_snapshot": {
+            "withdrawal_id": "withdrawal-1",
+            "reason": "Source permission withdrawn.",
+            "review_todo_id": "review-todo-1",
+            "effectiveness_envelope_input": {
+              "mandate_clause_ref": "clause-mandate-withdraw",
+              "evidence_refs": [
+                {
+                  "evidence_id": "release-source",
+                  "revision": 1,
+                  "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                }
+              ],
+              "scope_spec": {
+                "tenant_node_id": "node-1",
+                "case_id": "case-1",
+                "effective_from": "2026-09-01T00:00:00Z",
+                "effective_until": "2027-01-01T00:00:00Z",
+                "resource_spec": {
+                  "resource_kind": "FUNDS",
+                  "unit_code": "USD_CENTS"
+                },
+                "max_amount_minor": 100000
+              },
+              "remedy_spec": {
+                "notice_recipients": [
+                  "member-publisher"
+                ],
+                "challenge_window_hours": 24,
+                "review_body_id": "review-body-1",
+                "rollback_or_compensation_procedure_ref": {
+                  "evidence_id": "remedy-source",
+                  "revision": 1,
+                  "content_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "execution_outcome": {
+      "outcome": "REJECTED",
+      "command_record": {
+        "command_id": "cmd-publish_local_output-publisher",
+        "tenant_node_id": "node-1",
+        "principal_id": "principal-publisher",
+        "action_id": "PUBLISH_LOCAL_OUTPUT",
+        "idempotency_key": "idem-publish_local_output-publisher",
+        "request_sha256": "sha256:b48e45325c8ce86047815d1badde0d91aff804af229f1be9a534303d42dccc02",
+        "current_attempt_id": "attempt-1",
+        "generation": 1,
+        "version_seq": 2,
+        "status": "REJECTED",
+        "result_id": "result-1"
+      },
+      "command_attempt": {
+        "attempt_id": "attempt-1",
+        "command_id": "cmd-publish_local_output-publisher",
+        "generation": 1,
+        "version_seq": 2,
+        "status": "REJECTED"
+      },
+      "command_result": {
+        "result_id": "result-1",
+        "command_id": "cmd-publish_local_output-publisher",
+        "attempt_id": "attempt-1",
+        "generation": 1,
+        "status": "REJECTED",
+        "retry_disposition": "FINAL",
+        "applied_versions": []
+      },
+      "command_rejection": {
+        "command_id": "cmd-publish_local_output-publisher",
+        "attempt_id": "attempt-1",
+        "generation": 1,
+        "rejection_error_code": "ERR_OUTPUT_WITHDRAWN",
+        "diagnostic_codes": [
+          "ERR_OUTPUT_WITHDRAWN"
+        ],
+        "blocking_protective_order_ids": []
+      },
+      "auth_check_receipt": {
+        "receipt_id": "receipt-staging-1",
+        "command_id": "cmd-publish_local_output-publisher",
+        "attempt_id": "attempt-1",
+        "generation": 1,
+        "idempotency_key": "idem-publish_local_output-publisher",
+        "authenticated_principal_id": "principal-publisher",
+        "mandate_id": "mandate-publish",
+        "evaluated_version_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "requested_power": "PUBLISH_LOCAL_OUTPUT",
+        "target_object_id": "staging-1",
+        "evaluated_target_version_seq": 1,
+        "checked_at": "2026-11-06T00:00:00Z",
+        "authority_source_id": "authority-source-1",
+        "domain_sha256": "sha256:a3b6a69ff3e50bc36a3091cf3d9f306dbb66f6a50eb55a1d566a0a8dd74efdd8",
+        "context_sha256": "sha256:c5fa066f98f31e3962a2441b7704131b63e16af6f4cd011a301b8bee363f9b3c",
+        "verification_status": "VERIFIED_ACTIVE"
+      },
+      "audit_event": {
+        "audit_id": "audit-event-1",
+        "command_id": "cmd-publish_local_output-publisher",
+        "attempt_id": "attempt-1",
+        "generation": 1,
+        "principal_id": "principal-publisher",
+        "action_id": "PUBLISH_LOCAL_OUTPUT",
+        "outcome": "REJECTED",
+        "checked_at": "2026-11-06T00:00:00Z",
+        "before_domain_sha256": "sha256:a3b6a69ff3e50bc36a3091cf3d9f306dbb66f6a50eb55a1d566a0a8dd74efdd8",
+        "after_domain_sha256": "sha256:a3b6a69ff3e50bc36a3091cf3d9f306dbb66f6a50eb55a1d566a0a8dd74efdd8",
+        "written_versions": []
+      },
+      "fault_observation": null
+    }
+  }
+}

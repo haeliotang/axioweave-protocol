@@ -1,0 +1,262 @@
+[
+  {
+    "assertion_id": "PT-01a",
+    "input": "fixtures/aw001_slice1/pt01a.json",
+    "expected_layer": "OFFLINE_SEMANTIC",
+    "expected_error_code": null,
+    "actual": {
+      "is_valid": true,
+      "validation_layer": "OFFLINE_SEMANTIC",
+      "error_code": null,
+      "failed_path": null
+    },
+    "assertion_passed": true
+  },
+  {
+    "assertion_id": "PT-01b",
+    "input": "fixtures/aw001_slice1/pt01b.json",
+    "expected_layer": "OFFLINE_SEMANTIC",
+    "expected_error_code": null,
+    "actual": {
+      "is_valid": true,
+      "validation_layer": "OFFLINE_SEMANTIC",
+      "error_code": null,
+      "failed_path": null
+    },
+    "assertion_passed": true
+  },
+  {
+    "assertion_id": "FT-01a",
+    "input": "fixtures/aw001_slice1/ft01a.json",
+    "expected_layer": "JSON_SCHEMA",
+    "expected_error_code": "ERR_CLIENT_FORBIDDEN_FIELD",
+    "actual": {
+      "is_valid": false,
+      "validation_layer": "JSON_SCHEMA",
+      "error_code": "ERR_CLIENT_FORBIDDEN_FIELD",
+      "failed_path": "/command"
+    },
+    "assertion_passed": true
+  },
+  {
+    "assertion_id": "FT-01b",
+    "input": "fixtures/aw001_slice1/ft01b.json",
+    "expected_layer": "JSON_SCHEMA",
+    "expected_error_code": "ERR_INCOMPLETE_FOUR_TUPLE",
+    "actual": {
+      "is_valid": false,
+      "validation_layer": "JSON_SCHEMA",
+      "error_code": "ERR_INCOMPLETE_FOUR_TUPLE",
+      "failed_path": "/command/payload/effectiveness_envelope_input"
+    },
+    "assertion_passed": true
+  },
+  {
+    "assertion_id": "FT-01c",
+    "input": "fixtures/aw001_slice1/ft01c.json",
+    "expected_layer": "JSON_SCHEMA",
+    "expected_error_code": "ERR_INCOMPLETE_FOUR_TUPLE",
+    "actual": {
+      "is_valid": false,
+      "validation_layer": "JSON_SCHEMA",
+      "error_code": "ERR_INCOMPLETE_FOUR_TUPLE",
+      "failed_path": "/command/payload/effectiveness_envelope_input/evidence_refs"
+    },
+    "assertion_passed": true
+  },
+  {
+    "assertion_id": "FT-01d",
+    "input": "fixtures/aw001_slice1/ft01d.json",
+    "expected_layer": "OFFLINE_SEMANTIC",
+    "expected_error_code": "ERR_RECEIPT_NOT_ACTIVE",
+    "actual": {
+      "is_valid": false,
+      "validation_layer": "OFFLINE_SEMANTIC",
+      "error_code": "ERR_RECEIPT_NOT_ACTIVE",
+      "failed_path": "/server_context/generated_auth_receipt/verification_status"
+    },
+    "assertion_passed": true
+  },
+  {
+    "assertion_id": "FT-01e",
+    "input": "fixtures/aw001_slice1/ft01e.json",
+    "expected_layer": "OFFLINE_SEMANTIC",
+    "expected_error_code": "ERR_VERSION_SEQ_MISMATCH",
+    "actual": {
+      "is_valid": false,
+      "validation_layer": "OFFLINE_SEMANTIC",
+      "error_code": "ERR_VERSION_SEQ_MISMATCH",
+      "failed_path": "/command/target_expected_version_seq"
+    },
+    "assertion_passed": true
+  },
+  {
+    "assertion_id": "PT-02a",
+    "input": "fixtures/aw001_slice1/pt02a.json",
+    "expected_layer": "OFFLINE_SEMANTIC",
+    "expected_error_code": null,
+    "actual": {
+      "is_valid": true,
+      "validation_layer": "OFFLINE_SEMANTIC",
+      "error_code": null,
+      "failed_path": null
+    },
+    "assertion_passed": true
+  },
+  {
+    "assertion_id": "PT-02b",
+    "input": "fixtures/aw001_slice1/pt02b.json",
+    "expected_layer": "OFFLINE_SEMANTIC",
+    "expected_error_code": null,
+    "actual": {
+      "is_valid": true,
+      "validation_layer": "OFFLINE_SEMANTIC",
+      "error_code": null,
+      "failed_path": null
+    },
+    "assertion_passed": true
+  },
+  {
+    "assertion_id": "FT-02a",
+    "input": "fixtures/aw001_slice1/ft02a.json",
+    "expected_layer": "OFFLINE_SEMANTIC",
+    "expected_error_code": "ERR_UNAUTHORIZED_POWER_FOR_ACTION",
+    "actual": {
+      "is_valid": false,
+      "validation_layer": "OFFLINE_SEMANTIC",
+      "error_code": "ERR_UNAUTHORIZED_POWER_FOR_ACTION",
+      "failed_path": "/command/mandate_claim/claimed_power"
+    },
+    "assertion_passed": true
+  },
+  {
+    "assertion_id": "FT-02b",
+    "input": "fixtures/aw001_slice1/ft02b.json",
+    "expected_layer": "OFFLINE_SEMANTIC",
+    "expected_error_code": "ERR_REJECTED_CLAIM_MARKED_EFFECTIVE",
+    "actual": {
+      "is_valid": false,
+      "validation_layer": "OFFLINE_SEMANTIC",
+      "error_code": "ERR_REJECTED_CLAIM_MARKED_EFFECTIVE",
+      "failed_path": "/after/constraint_record/constraint_stage"
+    },
+    "assertion_passed": true
+  },
+  {
+    "assertion_id": "FT-02c",
+    "input": "fixtures/aw001_slice1/ft02c.json",
+    "expected_layer": "OFFLINE_SEMANTIC",
+    "expected_error_code": "ERR_UNILATERAL_CLAIMANT_STANCE_MUTATION",
+    "actual": {
+      "is_valid": false,
+      "validation_layer": "OFFLINE_SEMANTIC",
+      "error_code": "ERR_UNILATERAL_CLAIMANT_STANCE_MUTATION",
+      "failed_path": "/after/constraint_record/claimant_post_review_stance"
+    },
+    "assertion_passed": true
+  },
+  {
+    "assertion_id": "FT-02d",
+    "input": "fixtures/aw001_slice1/ft02d.json",
+    "expected_layer": "OFFLINE_SEMANTIC",
+    "expected_error_code": "ERR_NOT_CLAIMANT_PRINCIPAL",
+    "actual": {
+      "is_valid": false,
+      "validation_layer": "OFFLINE_SEMANTIC",
+      "error_code": "ERR_NOT_CLAIMANT_PRINCIPAL",
+      "failed_path": "/server_context/authenticated_principal_id"
+    },
+    "assertion_passed": true
+  },
+  {
+    "assertion_id": "PT-16a",
+    "input": "fixtures/aw001_slice1/registry/pt16a.json",
+    "expected_layer": "REGISTRY_LOADER",
+    "expected_error_code": null,
+    "actual": {
+      "is_valid": true,
+      "validation_layer": "REGISTRY_LOADER",
+      "error_code": null,
+      "failed_path": null
+    },
+    "assertion_passed": true
+  },
+  {
+    "assertion_id": "FT-16a",
+    "input": "fixtures/aw001_slice1/ft16a.json",
+    "expected_layer": "JSON_SCHEMA",
+    "expected_error_code": "ERR_UNREGISTERED_ACTION_ID",
+    "actual": {
+      "is_valid": false,
+      "validation_layer": "JSON_SCHEMA",
+      "error_code": "ERR_UNREGISTERED_ACTION_ID",
+      "failed_path": "/command/requested_action"
+    },
+    "assertion_passed": true
+  },
+  {
+    "assertion_id": "FT-16b-1",
+    "input": "fixtures/aw001_slice1/ft16b-1.json",
+    "expected_layer": "JSON_SCHEMA",
+    "expected_error_code": "ERR_CLIENT_FORBIDDEN_FIELD",
+    "actual": {
+      "is_valid": false,
+      "validation_layer": "JSON_SCHEMA",
+      "error_code": "ERR_CLIENT_FORBIDDEN_FIELD",
+      "failed_path": "/command/payload"
+    },
+    "assertion_passed": true
+  },
+  {
+    "assertion_id": "FT-16b-2",
+    "input": "fixtures/aw001_slice1/registry/ft16b-2.json",
+    "expected_layer": "REGISTRY_LOADER",
+    "expected_error_code": "ERR_REGISTRY_MANDATORY_VALIDATOR_MISSING",
+    "actual": {
+      "is_valid": false,
+      "validation_layer": "REGISTRY_LOADER",
+      "error_code": "ERR_REGISTRY_MANDATORY_VALIDATOR_MISSING",
+      "failed_path": "/actions/CERTIFY_CASE_CONSTRAINT/required_validators"
+    },
+    "assertion_passed": true
+  },
+  {
+    "assertion_id": "FT-02e",
+    "input": "fixtures/aw001_slice1/ft02e.json",
+    "expected_layer": "OFFLINE_SEMANTIC",
+    "expected_error_code": "ERR_HISTORICAL_REVIEW_DECISION_MUTATION",
+    "actual": {
+      "is_valid": false,
+      "validation_layer": "OFFLINE_SEMANTIC",
+      "error_code": "ERR_HISTORICAL_REVIEW_DECISION_MUTATION",
+      "failed_path": "/after/review_decision_record"
+    },
+    "assertion_passed": true
+  },
+  {
+    "assertion_id": "FT-02f",
+    "input": "fixtures/aw001_slice1/ft02f.json",
+    "expected_layer": "OFFLINE_SEMANTIC",
+    "expected_error_code": "ERR_EFFECTIVE_STANDING_MUTATION",
+    "actual": {
+      "is_valid": false,
+      "validation_layer": "OFFLINE_SEMANTIC",
+      "error_code": "ERR_EFFECTIVE_STANDING_MUTATION",
+      "failed_path": "/after/constraint_record/effective_standing_status"
+    },
+    "assertion_passed": true
+  },
+  {
+    "assertion_id": "FT-16b-3",
+    "input": "fixtures/aw001_slice1/registry/ft16b-3.json",
+    "expected_layer": "REGISTRY_LOADER",
+    "expected_error_code": "ERR_REGISTRY_LOCK_ORDER_MISMATCH",
+    "actual": {
+      "is_valid": false,
+      "validation_layer": "REGISTRY_LOADER",
+      "error_code": "ERR_REGISTRY_LOCK_ORDER_MISMATCH",
+      "failed_path": "/actions/CERTIFY_CASE_CONSTRAINT/lock_levels"
+    },
+    "assertion_passed": true
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "command": [
+      "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+      "tools/validate_aw001_slice4b.py",
+      "fixtures/aw001_slice4/4b/pt_freeze_branch_candidate.json",
+      "fixtures/aw001_slice4/4b/pt_ai_draft.json"
+    ],
+    "expected_exit_code": 0,
+    "exit_code": 0,
+    "stdout": "{\"input\": \"fixtures/aw001_slice4/4b/pt_freeze_branch_candidate.json\", \"is_valid\": true, \"validation_layer\": \"OFFLINE_SEMANTIC\", \"error_code\": null, \"failed_path\": null}\n{\"input\": \"fixtures/aw001_slice4/4b/pt_ai_draft.json\", \"is_valid\": true, \"validation_layer\": \"OFFLINE_SEMANTIC\", \"error_code\": null, \"failed_path\": null}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+      "tools/validate_aw001_slice4b.py",
+      "fixtures/aw001_slice4/4b/ft_schema_effective_action.json",
+      "fixtures/aw001_slice4/4b/pt_branch.json"
+    ],
+    "expected_exit_code": 1,
+    "exit_code": 1,
+    "stdout": "{\"input\": \"fixtures/aw001_slice4/4b/ft_schema_effective_action.json\", \"is_valid\": false, \"validation_layer\": \"JSON_SCHEMA\", \"error_code\": \"ERR_CLIENT_FORBIDDEN_FIELD\", \"failed_path\": \"/command/payload\"}\n{\"input\": \"fixtures/aw001_slice4/4b/pt_branch.json\", \"is_valid\": true, \"validation_layer\": \"OFFLINE_SEMANTIC\", \"error_code\": null, \"failed_path\": null}\n",
+    "stderr": ""
+  }
+]

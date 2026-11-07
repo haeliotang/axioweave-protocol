@@ -1,0 +1,27 @@
+{
+  "python": "3.14.0 (v3.14.0:ebf955df7a8, Oct  7 2025, 08:20:14) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "executable": "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+  "jsonschema": "4.23.0",
+  "baseline_command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-v"
+  ],
+  "baseline_exit_code": 0,
+  "recorded_at": "2026-11-05T09:55:51.290560+00:00",
+  "contract_version": "0.3.0-rc1-slice2a",
+  "all_tests_command": [
+    "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-v"
+  ],
+  "all_tests_exit_code": 0
+}
