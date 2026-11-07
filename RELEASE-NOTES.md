@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/haeliotang/axioweave-protocol/main/assets/axioweave-mono.svg" width="120" alt="Axioweave — Four conditions">
+</p>
+
 # AW-001 Protocol Research Preview — `aw001-protocol-1.0.0-rc1`
 
 **Release type:** research candidate / public preview. Not a production
