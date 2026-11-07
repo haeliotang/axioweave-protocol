@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/axioweave-mono.svg" width="120" alt="Axioweave — Four conditions">
+</p>
+
 # AxioWeave Protocol — AW-001 Research Preview
 
 **Status: AW-001 Stage 1 Release Candidate (`aw001-protocol-1.0.0-rc1`).**
