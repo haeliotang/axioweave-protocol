@@ -20,3 +20,8 @@ the only gaps.
   this protocol preview.
 - **Value conflict expressiveness:** the suite does not prove that the protocol
   can preserve every form of dissent under real power asymmetry.
+
+- **Python version:** the suite requires Python 3.11+; on Python 3.10 the
+  `datetime.fromisoformat("...Z")` calls fail. The CI matrix intentionally
+  validates 3.11 and 3.12, not 3.10. This is a compatibility limit, not a
+  protocol semantic change.

@@ -45,6 +45,11 @@ governance protocol and not a Runtime release.
   Runtime and other repository material are not published or relicensed by this
   release.
 
+## Runtime requirement
+
+Python 3.11 or newer is required by the validators. CI validates 3.11 and 3.12;
+Python 3.10 is not supported.
+
 ## CI evidence
 
 Public GitHub Actions run (green on `main` and the frozen RC tag):

@@ -23,6 +23,9 @@ The AW-002 Rust/PostgreSQL Runtime, G1/G2 runtime and operational material are
 
 ## Quick start
 
+Requires **Python 3.11 or newer** (the validators parse ISO-8601 `Z` timestamps
+with `datetime.fromisoformat`).
+
 ```sh
 python3 -m pip install -r requirements-validation.txt
 python3 -m unittest discover -s tests
