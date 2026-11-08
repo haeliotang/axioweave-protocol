@@ -64,6 +64,7 @@ tag record the published copy; runtime code is not included.
 ```sh
 sha256sum -c MANIFEST.sha256        # GNU coreutils
 shasum -a 256 -c MANIFEST.sha256    # macOS
+python3 scripts/verify_snapshot.py # also checks that no runtime files are present
 ```
 
 ## License and rights
