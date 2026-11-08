@@ -88,6 +88,9 @@ copyright and licensing authority for the included Stage 1 files; see
 
 ## External review
 
+See `REVIEW_GUIDE.md` for a file-by-file review map and `KNOWN_GAPS.md` for
+known scope limits.
+
 External review is explicitly invited after publication. Please record the
 snapshot SHA-256, OS/Python versions, the exact test command, and any protocol
 ambiguities or contradictory fixtures. Formal 1.0.0 publication will require an
