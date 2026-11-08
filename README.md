@@ -92,3 +92,12 @@ External review is explicitly invited after publication. Please record the
 snapshot SHA-256, OS/Python versions, the exact test command, and any protocol
 ambiguities or contradictory fixtures. Formal 1.0.0 publication will require an
 independent reproduction record.
+
+## Citation
+
+Use `CITATION.cff` or cite the frozen release:
+
+```text
+AxioWeave AW-001 Protocol Research Preview, 1.0.0-rc1.
+https://github.com/haeliotang/axioweave-protocol/releases/tag/aw001-protocol-1.0.0-rc1
+```

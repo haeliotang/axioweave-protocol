@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you cite this protocol research preview, use this metadata and the frozen RC tag."
+title: "AxioWeave AW-001 Protocol Research Preview"
+abstract: >-
+  Public research preview of the AW-001 governance protocol artifacts: contracts,
+  schemas, fixed action registries, fixtures, offline validators, tests and
+  research documents. It excludes the private AW-002 Runtime and is not a
+  production governance protocol.
+type: software
+version: 1.0.0-rc1
+date-released: 2026-11-07
+license: Apache-2.0
+authors:
+  - name: "Inceptless"
+repository-code: "https://github.com/haeliotang/axioweave-protocol"
+url: "https://github.com/haeliotang/axioweave-protocol/releases/tag/aw001-protocol-1.0.0-rc1"
+keywords:
+  - governance
+  - deliberation
+  - protocol
+  - research-preview
+  - value-conflict
