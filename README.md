@@ -91,6 +91,9 @@ copyright and licensing authority for the included Stage 1 files; see
 
 ## External review
 
+The next milestone is `EV-001` — first independent protocol reproduction and
+adversarial review. See `EV-001.md`.
+
 See `REVIEW_GUIDE.md` for a file-by-file review map and `KNOWN_GAPS.md` for
 known scope limits.
 
