@@ -4,6 +4,8 @@
 
 # AxioWeave Protocol — AW-001 Research Preview
 
+[![AW-001 protocol validation](https://github.com/haeliotang/axioweave-protocol/actions/workflows/validate.yml/badge.svg)](https://github.com/haeliotang/axioweave-protocol/actions/workflows/validate.yml)
+
 **Status: AW-001 Stage 1 Release Candidate (`aw001-protocol-1.0.0-rc1`).**
 This is a research preview of the AW-001 protocol artifacts, not a production
 governance protocol and not the AxioWeave Runtime.
@@ -30,6 +32,16 @@ The suite has **606 test methods**. It was reproduced on Python 3.14, in a
 fresh virtual environment, and in a `python:3.12-slim` container; all three runs
 passed. These are **local/same-host reproductions**, not an independent
 third-party reproduction.
+
+## CI
+
+Public GitHub Actions validates both `main` and the frozen tag
+`aw001-protocol-1.0.0-rc1` (606 tests + manifest/runtime-exclusion checks):
+
+<https://github.com/haeliotang/axioweave-protocol/actions/runs/42479656418>
+
+This is hosted validation of the **public protocol snapshot**, separate from the
+private Runtime CI, which remains blocked by account billing/admission.
 
 ## What this release does and does not establish
 

@@ -45,6 +45,15 @@ governance protocol and not a Runtime release.
   Runtime and other repository material are not published or relicensed by this
   release.
 
+## CI evidence
+
+Public GitHub Actions run (green on `main` and the frozen RC tag):
+
+<https://github.com/haeliotang/axioweave-protocol/actions/runs/42479656418>
+
+This is hosted validation of the public protocol snapshot, not the private
+Runtime CI.
+
 ## Rights
 
 Copyright 2026 Inceptless. The project owner confirmed Inceptless holds the
