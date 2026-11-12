@@ -1,5 +1,8 @@
 <p align="center">
-  <img src="assets/axioweave-mono.svg" width="120" alt="Axioweave — Four conditions">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/axioweave-mono-dark.svg">
+    <img src="assets/axioweave-mono.svg" width="120" alt="Axioweave — Four conditions">
+  </picture>
 </p>
 
 # AxioWeave Protocol — AW-001 Research Preview
